@@ -1,6 +1,11 @@
 GenericEntity : "{FD0DE25AC213EC9E}Prefabs/Weapons/Rifles/MP5/Rifle_MP5K.et" {
  ID "CFBAA4B725411E45"
  components {
+  WeaponSoundComponent "{5A8685198A9AEEDD}" {
+   Filenames + {
+    "{5B649C762120A231}Sounds/Weapons/Rifles/MP5/Weapons_Rifles_MP5_Shot_Suppressed_SuperSonic.acp"
+   }
+  }
   WeaponComponent "{CFBAA4B706BA66E8}" {
    components {
     AttachmentSlotComponent "{69A6A872381C2BE3}" {
@@ -15,7 +20,9 @@ GenericEntity : "{FD0DE25AC213EC9E}Prefabs/Weapons/Rifles/MP5/Rifle_MP5K.et" {
       AttachmentSlotComponent "{629554866D9D001B}" {
        AttachmentSlot InventoryStorageSlot "{629554866CE5097A}" {
         Offset 0 0 0.0214
-        Prefab "{3A672D8B29E5C546}Prefabs/Weapons/Attachments/Muzzle/MP5K-PDW Thread_cap.et"
+        Prefab "{6288A1F1A5E3AC38}Prefabs/Weapons/Attachments/Muzzle/MP5K-PDW Thread_cap.et"
+       }
+       AttachmentType Attachment14mmCCW_9mmSuppressor "{629554866130FF2B}" {
        }
       }
       AttachmentSlotComponent "{69A6A8719DBFCB94}" {

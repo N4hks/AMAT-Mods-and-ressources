@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{5E3F62F66878C9B9}Prefabs/Weapons/Core/FlashHider_base.et"
+ Name "{2CDCFF4237E63650}Prefabs/Weapons/Attachments/Muzzle/Suppressor_M16/Suppressor_M16.et"
  Configurations {
   EntityTemplateResourceClass PC {
   }

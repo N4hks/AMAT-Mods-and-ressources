@@ -1,0 +1,23 @@
+GenericEntity : "{4308DBEE30E1A692}Prefabs/Weapons/Attachments/Muzzle/Suppressor_M16/Suppressor_M16_base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    ItemDisplayName UIInfo "{5CB8A09828130AD1}" {
+     Name "14mm CCW 9mm suppressor"
+     Description "9mm supressor that if on a 14mm CCW thread"
+    }
+    CustomAttributes {
+     SCR_WeaponAttachmentSuppressorAttributes "{5284D858FFF9BE66}" {
+      AttachmentType Attachment14mmCCW_9mmSuppressor "{618A843CE28C7529}" {
+      }
+     }
+     SCR_WeaponAttachmentObstructionAttributes "{61B08C885494492B}" {
+      AttachmentType Attachment14mmCCW_9mm "{61B08C8FA3FA3ADE}" {
+      }
+     }
+    }
+   }
+  }
+ }
+}

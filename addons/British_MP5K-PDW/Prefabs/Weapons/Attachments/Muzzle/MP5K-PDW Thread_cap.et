@@ -1,6 +1,26 @@
-GenericEntity : "{5E3F62F66878C9B9}Prefabs/Weapons/Core/FlashHider_base.et" {
+GenericEntity : "{5FE287F5F7635058}Prefabs/Weapons/Attachments/Muzzle/FlashHider_M16A2/FlashHider_M16_base.et" {
  ID "4BA426CBAED42A14"
  components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    ItemDisplayName UIInfo "{618A84201E96E177}" {
+     Name "14mm CCW Thread cap"
+     Description "Protection cap for a 14mm CCW muzzle thread"
+    }
+    CustomAttributes {
+     SCR_WeaponAttachmentSuppressorAttributes "{5284D858FFF9BE66}" {
+      AttachmentType Attachment14mmCCW "{618A8420490F13B4}" {
+      }
+     }
+     PreviewRenderAttributes "{52D69389645B4E4D}" {
+     }
+     SCR_WeaponAttachmentObstructionAttributes "{61B08C8FB18ADF25}" {
+      AttachmentType Attachment14mmCCW "{61B08C8FB311F65A}" {
+      }
+     }
+    }
+   }
+  }
   MeshObject "{5C46D45E03D7AD12}" {
    Object "{E47E4B3AC57B1B84}Assets/Weapons/Attachments/Muzzle/MP5K-PDW Thread_cap.xob"
   }
