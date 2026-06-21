@@ -1,0 +1,22 @@
+GameProject {
+ ID "BritishMP5KPDW"
+ GUID "699B752BA15F84F9"
+ TITLE "MP5K-PDW (British Forces addition)"
+ Dependencies {
+  "5AE50EC5B8D6F4AE"
+ }
+ Configurations {
+  GameProjectConfig PC {
+  }
+  GameProjectConfig XBOX_ONE {
+  }
+  GameProjectConfig XBOX_SERIES {
+  }
+  GameProjectConfig PS4 {
+  }
+  GameProjectConfig PS5 {
+  }
+  GameProjectConfig HEADLESS {
+  }
+ }
+}

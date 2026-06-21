@@ -1,0 +1,14 @@
+GenericEntity : "{2F4BBE174AFAF5E0}Prefabs/Weapons/Attachments/Stocks/Stock_VZ58/Stock_VZ58_fixed.et" {
+ ID "557E85EEE1B603F1"
+ components {
+  MeshObject "{557E85EE39CED921}" {
+   Object "{7BE86E01680E57BF}Assets/Weapons/Attachments/Stock/MP5K-PDW Stock.xob"
+   Materials {
+    MaterialAssignClass "{69A8B35DE52A8F50}" {
+     SourceMaterial "mat_12"
+     AssignedMaterial "{79DBDB0C23BF021A}Assets/Weapons/Attachments/Materials/mat_12.emat"
+    }
+   }
+  }
+ }
+}

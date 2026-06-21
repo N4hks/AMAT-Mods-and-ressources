@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{79DBDB0C23BF021A}Assets/Weapons/Attachments/Muzzle/Data/mat_12.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

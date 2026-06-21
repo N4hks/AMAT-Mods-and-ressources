@@ -1,0 +1,10 @@
+MatPBRBasic {
+ DiffuseIBL 0.604 0.604 0.604 1
+ SpecularIBL 0.604 0.604 0.604 1
+ Diffuse 0.604 0.604 0.604 1
+ Specular 0.604 0.604 0.604 1
+ SpecularMul 0.75
+ RoughnessScale 0.75
+ MetalnessScale 0.25
+ BCRMap "{F3B99D61725B3F2D}Assets/Weapons/Attachments/2435BA74.edds"
+}

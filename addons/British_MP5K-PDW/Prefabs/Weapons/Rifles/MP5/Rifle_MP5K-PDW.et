@@ -1,0 +1,35 @@
+GenericEntity : "{FD0DE25AC213EC9E}Prefabs/Weapons/Rifles/MP5/Rifle_MP5K.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    AttachmentSlotComponent "{69A6A872381C2BE3}" {
+     AttachmentSlot InventoryStorageSlot stock {
+      PivotID "Scene_Root"
+      Offset 0 0.0937 -0.0876
+      Prefab "{2F4BBE174AFAF5E1}Prefabs/Weapons/Attachments/stocks/MP5K-PDW_stock_base.et"
+     }
+    }
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     components {
+      AttachmentSlotComponent "{629554866D9D001B}" {
+       AttachmentSlot InventoryStorageSlot "{629554866CE5097A}" {
+        Offset 0 0 0.0214
+        Prefab "{3A672D8B29E5C546}Prefabs/Weapons/Attachments/Muzzle/MP5K-PDW Thread_cap.et"
+       }
+      }
+      AttachmentSlotComponent "{69A6A8719DBFCB94}" {
+       AttachmentSlot InventoryStorageSlot barrel {
+        PivotID "barrel_chamber"
+        Offset 0 0 0.0036
+        Prefab "{ADEAEC5AE1112F1B}Prefabs/Weapons/Attachments/Barrel/MP5K-PDW_barrel_base.et"
+       }
+      }
+     }
+     MagazineTemplate "{046AA0F20A54842A}Prefabs/Weapons/Magazines/Magazine_9x19_MP5_30rnd_Ball.et"
+    }
+   }
+  }
+ }
+ coords 0 -0.008 0
+}

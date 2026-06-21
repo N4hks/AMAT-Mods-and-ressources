@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{ADEAEC5AE1112F1B}Prefabs/Weapons/Attachments/Muzzle/MP5K-PDW_barrel/MP5K-PDW_barrel_base.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

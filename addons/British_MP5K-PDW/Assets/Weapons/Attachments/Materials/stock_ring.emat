@@ -1,0 +1,7 @@
+MatPBRBasic {
+ SpecularIBL 0.521 0.521 0.521 1
+ SpecularMul 0
+ RoughnessScale 1.5
+ MetalnessScale 0.5
+ BCRMap "{8A5D8B16B470E252}Assets/Weapons/Attachments/242626B4.edds"
+}
