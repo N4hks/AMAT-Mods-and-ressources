@@ -33,6 +33,14 @@ GenericEntity : "{FD0DE25AC213EC9E}Prefabs/Weapons/Rifles/MP5/Rifle_MP5K.et" {
        }
       }
      }
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{61D32A9C91D3BD28}" {
+       TurnOffsetData RecoilData "{61D32A9C91D3BD2E}" {
+        "Curve Mins" -10 40 0
+        "Curve Maxs" 13 55 0
+       }
+      }
+     }
      MagazineTemplate "{046AA0F20A54842A}Prefabs/Weapons/Magazines/Magazine_9x19_MP5_30rnd_Ball.et"
     }
    }

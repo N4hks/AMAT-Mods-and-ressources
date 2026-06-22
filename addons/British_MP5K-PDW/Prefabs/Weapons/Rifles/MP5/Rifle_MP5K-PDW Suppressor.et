@@ -1,0 +1,19 @@
+GenericEntity : "{FD0DE25AC213EC9F}Prefabs/Weapons/Rifles/MP5/Rifle_MP5K-PDW.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     components {
+      AttachmentSlotComponent "{629554866D9D001B}" {
+       AttachmentSlot InventoryStorageSlot "{629554866CE5097A}" {
+        Offset 0 0 0.1298
+        Prefab "{2CDCFF4237E63650}Prefabs/Weapons/Attachments/Muzzle/Suppressor_9mm_placeholder.et"
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

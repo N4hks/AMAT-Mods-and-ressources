@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{E08D76FE59F3DE0E}Prefabs/Weapons/Rifles/MP5/Rifle_MP5K-PDW Suppressor.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}
