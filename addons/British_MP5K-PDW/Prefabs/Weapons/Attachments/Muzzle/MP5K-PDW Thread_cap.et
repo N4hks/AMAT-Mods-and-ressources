@@ -24,5 +24,16 @@ GenericEntity : "{5FE287F5F7635058}Prefabs/Weapons/Attachments/Muzzle/FlashHider
   MeshObject "{5C46D45E03D7AD12}" {
    Object "{E47E4B3AC57B1B84}Assets/Weapons/Attachments/Muzzle/MP5K-PDW Thread_cap.xob"
   }
+  ActionsManagerComponent "{5284E0EFF569AD07}" {
+   ActionContexts {
+    UserActionContext "{5284E0EFF4E818E9}" {
+     UIInfo SCR_ActionContextUIInfo "{609EDE472834DE11}" {
+      Icon "{50040E8151F9D865}Prefabs/Weapons/Attachments/Muzzle/MP5K-PDW Thread_cap_icon.edds"
+     }
+    }
+   }
+  }
  }
+ coords 0 0 0
+ angles 0 33.282 0
 }
