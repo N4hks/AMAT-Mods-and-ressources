@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{4D389D181C0692D2}Assets/Weapons/Attachments/Muzzle/9mm_supressor_03/Data/Material03.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,9 @@
+MatPBRBasic {
+ Color 0.89 0.804 0.746 1
+ SpecularMul 0.75
+ RoughnessScale 0.75
+ MetalnessScale 1.5
+ BCRMap "{42DC3EE7F6832CED}Assets/Weapons/Attachments/Muzzle/9mm_supressor_03/Silencer03_BCR.edds"
+ NMOMap "{7A0485752FF47E73}Assets/Weapons/Attachments/Muzzle/9mm_supressor_03/Silencer03_NMO.edds"
+ HeightMap "{EB61695A21348549}Assets/Weapons/Attachments/Muzzle/9mm_supressor_03/Silencer03_H.edds"
+}
