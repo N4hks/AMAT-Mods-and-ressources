@@ -1,0 +1,8 @@
+GameProject {
+ ID "RadioLesCiresJaunes"
+ GUID "69C8B53172851162"
+ TITLE "Radio - Les Cires Jaunes"
+ Dependencies {
+  "62E354B50264C08F" "621D3771875C1D3D" "58D0FB3206B6F859"
+ }
+}
