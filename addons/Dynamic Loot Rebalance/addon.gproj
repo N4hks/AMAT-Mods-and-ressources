@@ -1,0 +1,8 @@
+GameProject {
+ ID "DynamicLootRebalance"
+ GUID "69F0B66FB6F89052"
+ TITLE "Dynamic Loot Rebalance"
+ Dependencies {
+  "66B2F0B008DC590F" "58D0FB3206B6F859"
+ }
+}

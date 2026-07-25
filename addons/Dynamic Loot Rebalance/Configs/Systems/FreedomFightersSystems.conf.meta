@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{43AAE7631D5693F6}Configs/Systems/FreedomFightersSystems.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}
