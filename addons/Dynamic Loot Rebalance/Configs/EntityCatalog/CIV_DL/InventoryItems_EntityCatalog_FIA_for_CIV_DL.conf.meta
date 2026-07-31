@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{62526B4DA4BDA70E}Configs/Systems/DL_LootSystem.conf"
+ Name "{29F0A08191F5E067}Configs/EntityCatalog/FIA/InventoryItems_EntityCatalog_FIA.conf"
  Configurations {
   CONFResourceClass PC {
   }
@@ -12,8 +12,6 @@ MetaFileClass {
   CONFResourceClass PS5 : PC {
   }
   CONFResourceClass HEADLESS : PC {
-  }
-  CONFResourceClass Xbox : PC {
   }
  }
 }

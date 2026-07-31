@@ -1,7 +1,7 @@
 DL_LootSystem {
  factionBlacklist {
   "CIV"
-  "CIV_USSR"
+  "CIV_URSS"
  }
  enableLootSpawning 1
  maxLootItemsPerContainer 10
@@ -86,6 +86,13 @@ DL_LootSystem {
   "CIV_DL"
  }
  civilianGearTypes {
+  PISTOL
+  HEAL
+  NON_LETHAL_THROWABLE
+  SNIPER_RIFLE
+  RIFLE
+  EQUIPMENT
+  BACKPACK
  }
  policeItemTypes {
   RIFLE

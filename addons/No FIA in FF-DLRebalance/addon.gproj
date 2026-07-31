@@ -1,0 +1,22 @@
+GameProject {
+ ID "NoFIAinFF-DLRebalance"
+ GUID "69F53D6EB8760DEB"
+ TITLE "No FIA in FF-DLRebalance"
+ Dependencies {
+  "69F0B66FB6F89052" "58D0FB3206B6F859" "69F545B1AE6D7D6C"
+ }
+ Configurations {
+  GameProjectConfig PC {
+  }
+  GameProjectConfig XBOX_ONE {
+  }
+  GameProjectConfig XBOX_SERIES {
+  }
+  GameProjectConfig PS4 {
+  }
+  GameProjectConfig PS5 {
+  }
+  GameProjectConfig HEADLESS {
+  }
+ }
+}

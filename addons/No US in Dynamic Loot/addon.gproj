@@ -1,0 +1,8 @@
+GameProject {
+ ID "NoUSinDynamicLoot"
+ GUID "69F7235A9355E819"
+ TITLE "No US in Dynamic Loot"
+ Dependencies {
+  "66B2F0B008DC590F" "58D0FB3206B6F859"
+ }
+}

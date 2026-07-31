@@ -1,0 +1,8 @@
+GameProject {
+ ID "FF-DynamicLootRebalance"
+ GUID "69F545B1AE6D7D6C"
+ TITLE "FF-Dynamic Loot Rebalance"
+ Dependencies {
+  "69F0B66FB6F89052" "CAFEBEEFF0CACC1A" "58D0FB3206B6F859"
+ }
+}

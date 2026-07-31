@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{62526B4DA4BDA70E}Configs/Systems/DL_LootSystem.conf"
+ Name "{5EB46557DF2AA24F}Configs/Factions/US.conf"
  Configurations {
   CONFResourceClass PC {
   }
@@ -12,8 +12,6 @@ MetaFileClass {
   CONFResourceClass PS5 : PC {
   }
   CONFResourceClass HEADLESS : PC {
-  }
-  CONFResourceClass Xbox : PC {
   }
  }
 }

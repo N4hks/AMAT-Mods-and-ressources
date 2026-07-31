@@ -1,0 +1,22 @@
+GameProject {
+ ID "EmptyBritishFaction"
+ GUID "69F85DEDA460D7A2"
+ TITLE "Empty British Faction"
+ Dependencies {
+  "58D0FB3206B6F859" "5AE50EC5B8D6F4AE"
+ }
+ Configurations {
+  GameProjectConfig PC {
+  }
+  GameProjectConfig XBOX_ONE {
+  }
+  GameProjectConfig XBOX_SERIES {
+  }
+  GameProjectConfig PS4 {
+  }
+  GameProjectConfig PS5 {
+  }
+  GameProjectConfig HEADLESS {
+  }
+ }
+}

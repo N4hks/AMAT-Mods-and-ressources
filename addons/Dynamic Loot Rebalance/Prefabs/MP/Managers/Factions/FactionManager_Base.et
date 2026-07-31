@@ -1,0 +1,11 @@
+SCR_FactionManager {
+ ID "56B2B4776E6E4499"
+ Factions {
+  SCR_Faction "{69FE6377FBCF5DBC}" : "{004986AEAA551222}Configs/Factions/CIV_DL.conf" {
+   m_iOrder 0
+   m_bIsCommanderAvailable 0
+   m_bCanCaptureBases 0
+   m_bTasksEnabled 0
+  }
+ }
+}

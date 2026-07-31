@@ -1,0 +1,8 @@
+GameProject {
+ ID "EmptyUSSRFaction"
+ GUID "69F538DEB6ADD4D3"
+ TITLE "Empty USSR Faction"
+ Dependencies {
+  "58D0FB3206B6F859"
+ }
+}
