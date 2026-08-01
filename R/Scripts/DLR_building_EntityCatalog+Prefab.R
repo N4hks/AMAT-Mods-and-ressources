@@ -1,5 +1,5 @@
 # Loading Input files ####
-## Setting the Paths to the files in the R folder
+## Setting the Paths to the files in the R folder ####
 file.path(".",
           "R",
           "Inputs") %>%
@@ -31,6 +31,8 @@ Data[["InventoryItems_EntityCatalog"]][["references"]] %>%
         pivot_wider(names_from = property,
                     values_from = value,
                     values_fn = unique) %>%
+        mutate(Item_prefab = str_extract(string = m_sEntityPrefab,
+                                         pattern = '(?<=/)[A-Za-z0-9_]+(?=\\.et$)')) %>%
         dplyr::select(where(~ !all(is.na(.x))))) ->
   Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]]
 
@@ -39,48 +41,62 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
   discard_at(at = \(name) str_detect(string = name,
                                      pattern = "_CLA")) %>%
   map(function(item_property_df) item_property_df %>%
-  mutate(m_iSupplyCost = case_when(.default = m_iSupplyCost,
-                                   m_eItemType == "BACKPACK" &
-                                     str_detect(file_name,
-                                                pattern = "_CIV") ~ "3",
-                                   m_eItemType == "HANDWEAR" ~ "1",
-                                   m_eItemType == "HEADWEAR" & 
-                                     str_detect(m_sEntityPrefab,
-                                                pattern = "Helmet") ~ m_iSupplyCost,
-                                   m_eItemType == "HEADWEAR" ~ "1",
-                                   m_eItemType == "LEGS" ~ "1",
-                                   m_eItemType == "TORSO" ~ "1",
-                                   str_detect(string =  m_sEntityPrefab, 
-                                              pattern = paste(sep = "|",
-                                                              "Jerrycan",
-                                                              "RepairKit")) ~ "4",
-                                   str_detect(string =  m_sEntityPrefab, 
-                                              pattern = "PersonalBelongings_CIV") ~ m_iSupplyCost,
-                                   m_eItemType == "EQUIPMENT" ~ "2"),
-         m_bEnabled = if_else(condition = str_detect(string =  m_sEntityPrefab, 
-                                                     pattern = "PersonalBelongings_CIV") |
-                                m_eItemType %in% c("MORTARS",
-                                                   "HELICOPTER") |
-                                str_detect(string = m_sEntityPrefab,
-                                           pattern = paste("AK74",
-                                                           "UK59",
-                                                           "RPG",
-                                                           "PK",
-                                                           "NSV",
-                                                           "KPVT",
-                                                           sep = "|")) |
-                                (m_eItemType == "WEAPON_ATTACHMENT" &
-                                str_detect(string = m_sEntityPrefab,
-                                           negate = T,
-                                           pattern = paste(sep = "|",
-                                                           "Bayonet_6Kh4",
-                                                           "PSO1",
-                                                           "PBS4"))),
-                              true = "0",
-                              false = "1"))) ->
+        mutate(m_iSupplyCost = case_when(.default = m_iSupplyCost,
+                                         m_eItemType == "BACKPACK" &
+                                           str_detect(file_name,
+                                                      pattern = "_CIV") ~ "3",
+                                         m_eItemType == "HEADWEAR" & 
+                                           str_detect(m_sEntityPrefab,
+                                                      pattern = "Helmet") ~ m_iSupplyCost,
+                                         m_eItemType %in% c("HANDWEAR",
+                                                            "HEADWEAR",
+                                                            "LEGS",
+                                                            "TORSO") &   
+                                           str_detect(file_name,
+                                                      pattern = "_CIV") ~ "1",
+                                         str_detect(string =  m_sEntityPrefab, 
+                                                    pattern = paste(sep = "|",
+                                                                    "Jerrycan",
+                                                                    "RepairKit")) ~ "4",
+                                         str_detect(string =  m_sEntityPrefab, 
+                                                    pattern = "PersonalBelongings_CIV") ~ m_iSupplyCost,
+                                         m_eItemType == "EQUIPMENT" ~ "2"),
+               m_bEnabled = case_when(.default = "1",
+                                      m_eItemType %in% c("MORTARS",
+                                                         "HELICOPTER",
+                                                         "ROCKET_LAUNCHER",
+                                                         "LETHAL_THROWABLE") ~ 
+                                        "0",
+                                      str_detect(string = m_sEntityPrefab,
+                                                 pattern = paste("AK74",
+                                                                 "UK59",
+                                                                 "RPG",
+                                                                 "PK",
+                                                                 "NSV",
+                                                                 "KPVT",
+                                                                 "Mortars",
+                                                                 "M70",
+                                                                 "VOG25",
+                                                                 "PersonalBelongings",
+                                                                 "Mine",
+                                                                 "RearmingKit",
+                                                                 sep = "|")) ~ "0",
+                                      str_detect(string = file_name,
+                                                 pattern = "USSR") & 
+                                        str_detect(string = m_sEntityPrefab,
+                                                   pattern = "/Radios/") ~ 
+                                        "1",
+                                      m_eItemType == "WEAPON_ATTACHMENT" &
+                                        str_detect(string = m_sEntityPrefab,
+                                                   negate = T,
+                                                   pattern = paste(sep = "|",
+                                                                   "Bayonet_6Kh4",
+                                                                   "PSO1",
+                                                                   "PBS4")) ~ 
+                                        "0"))) ->
   Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["modified"]]
-  
-  
-### To check the result ####  
+
+
+## To check the result ####  
 View(Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["modified"]] %>%
-  list_rbind())
+       list_rbind())
