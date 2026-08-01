@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{FB56821F740B9CB9}Configs/EntityCatalog/US/InventoryItems_EntityCatalog_US-ARY-1911.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

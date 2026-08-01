@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{EBD57AD98FC107E3}Configs/EntityCatalog/FIA/InventoryItems_EntityCatalog_FIA-MM-T33.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{5EE29519F8E9A9C7}Configs/EntityCatalog/US/InventoryItems_EntityCatalog_US-MM-T33.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

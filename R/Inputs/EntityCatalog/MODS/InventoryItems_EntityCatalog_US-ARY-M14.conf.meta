@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{78556548BC141B6C}Configs/EntityCatalog/US/InventoryItems_EntityCatalog_US-ARY-M14.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

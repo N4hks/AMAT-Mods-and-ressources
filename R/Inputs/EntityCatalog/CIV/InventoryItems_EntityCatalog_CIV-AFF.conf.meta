@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{EAD49ED6C36A4EF3}Configs/Modded/EntityCatalog/CIV/InventoryItems_EntityCatalog_CIV-AFF.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+  CONFResourceClass Xbox : PC {
+  }
+ }
+}

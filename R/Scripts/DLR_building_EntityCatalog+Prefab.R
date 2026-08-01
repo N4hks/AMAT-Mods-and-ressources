@@ -5,7 +5,7 @@ file.path(".",
           "Inputs") %>%
   list.files(full.names = T,
              recursive = T,
-             pattern = "InventoryItems_EntityCatalog.+\\.conf$") %>%
+             pattern = "Inventory.+\\.conf$") %>%
   set_names(nm = basename(.) %>%
               str_remove("\\..+$")) ->
   Paths[["Inputs"]][["InventoryItems_EntityCatalog"]]
@@ -19,6 +19,12 @@ Paths[["Inputs"]][["InventoryItems_EntityCatalog"]] %>%
 # Modifying Entity Catalogs
 ## Preparing Item properties dataframes ####
 Data[["InventoryItems_EntityCatalog"]][["references"]] %>%
+  keep(.p =  \(object) any(str_detect(colnames(object),
+                                  pattern = "context"))) %>%
+  keep(.p =  \(object) any(str_detect(colnames(object),
+                                      pattern = "property"))) %>%
+  keep(.p =  \(object) any(str_detect(object$property,
+                                      pattern = "m_sEntityPrefab"))) %>%
   map(function(conf_df) conf_df %>%
         distinct() %>%
         mutate(Item_GUID =  str_extract(string = context,
@@ -38,8 +44,15 @@ Data[["InventoryItems_EntityCatalog"]][["references"]] %>%
 
 ## Adjusting values ####
 Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
-  discard_at(at = \(name) str_detect(string = name,
-                                     pattern = "_CLA")) %>%
+  keep_at(at = \(name) str_detect(string = name,
+                                     pattern = paste("CIV",
+                                                     "FIA",
+                                                     "USSR",
+                                                     sep = "|"))) %>%
+  keep(.p =  \(object) any(str_detect(colnames(object),
+                                      pattern = "m_iSupplyCost"))) %>%
+  keep(.p =  \(object) any(str_detect(colnames(object),
+                                      pattern = "m_eItemType"))) %>%
   map(function(item_property_df) item_property_df %>%
         mutate(m_iSupplyCost = case_when(.default = m_iSupplyCost,
                                          m_eItemType == "BACKPACK" &

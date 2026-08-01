@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{B224208A4D52F9A7}Configs/EntityCatalog/FIA/InventoryItems_EntityCatalog_FIA-ARY-M16.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

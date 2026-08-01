@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{C1CECEC7943C4268}Configs/EntityCatalog/CIV/Characters_EntityCatalog_CIV.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}
