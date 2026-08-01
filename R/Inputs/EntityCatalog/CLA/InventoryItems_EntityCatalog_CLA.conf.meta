@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{7EE55A4BDB2EF256}Configs/EntityCatalog/CLA/InventoryItems_EntityCatalog_CLA.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+  CONFResourceClass Xbox : PC {
+  }
+ }
+}

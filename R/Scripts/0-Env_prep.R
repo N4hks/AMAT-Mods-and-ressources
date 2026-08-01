@@ -1,6 +1,7 @@
 # -- Setting Function(s) --  ####
 ## -- For Install + load packages -- ####
-c("tidyverse", "jsonlite") |>
+c("tidyverse",
+  "jsonlite") |>
   lapply(  FUN = \(packagename) {
     if(! require(packagename,
                  character.only = TRUE)) {
