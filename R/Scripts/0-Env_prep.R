@@ -1,32 +1,17 @@
-# Install + load packages ####
-lapply(X = c("tidyverse", "jsonlite"),
-       FUN = \(packagename) {
-         if(! require(packagename,
-                      character.only = TRUE)) {
-           install.packages(pkgs = packagename,
-                            ask = FALSE)
-         }
-         library(packagename,
-                 character.only = TRUE)
-       })
+# -- Setting Function(s) --  ####
+## -- For Install + load packages -- ####
+c("tidyverse", "jsonlite") |>
+  lapply(  FUN = \(packagename) {
+    if(! require(packagename,
+                 character.only = TRUE)) {
+      install.packages(pkgs = packagename,
+                       ask = FALSE)
+    }
+    library(packagename,
+            character.only = TRUE)
+  })
 
-
-# Pre-allocate list to receive data ####
-list() ->
-  Data
-
-list() ->
-  Paths
-
-
-# Setting usefull Paths ####
-file.path(".",
-          "R",
-          "Inputs") ->
-Paths[["Inputs"]]$path
-
-# Setting Function(s) ####
-## For reading Enfusion Conf files
+## -- For reading Enfusion Conf files -- ####
 parse_enfusion_conf <- function(file_path) {
   # Read lines and strip leading/trailing whitespace
   lines <- readLines(file_path, warn = FALSE) %>% str_trim()
@@ -73,3 +58,27 @@ parse_enfusion_conf <- function(file_path) {
   
   bind_rows(records)
 }
+
+# -- Pre-allocate list to receive data -- ####
+c("Data",
+  "Paths") %>%
+  walk(~ if (!exists(.x,
+                     envir = .GlobalEnv)) {
+    assign(.x, list(),
+           envir = .GlobalEnv)
+  })
+
+# -- Setting usefull Paths -- ####
+file.path(".",
+          "R",
+          "Inputs") ->
+  Paths[["Inputs"]]$path
+
+
+
+
+# -- Seting sourcing of the code at project startup -- ####
+readLines("./.Rprofile") %>%
+  append("source(\"R/Scripts/0-Env_prep.R\")") %>%
+  unique() %>%
+  writeLines("./.Rprofile")
