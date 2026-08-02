@@ -276,11 +276,24 @@ for (grp in Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Chan
        "w") ->
     con
   
-  # Get all unique contexts and sort them to maintain structural/hierarchical order
+  # Get all unique contexts in their original top-to-bottom file order
+  Data[["InventoryItems_EntityCatalog"]][["references"]] %>%
+    bind_rows() %>%
+    mutate(group_name = str_extract(string = file_name,
+                                    pattern = "InventoryItems_EntityCatalog_[A-Z]+")) %>%
+    dplyr::filter(group_name == grp) %>%
+    pull(var = context) %>%
+    unique() ->
+    original_ordered_contexts
+  
   grp_data %>%
     pull(var = context) %>%
-    unique() %>%
-    sort() ->
+    unique() ->
+    changed_contexts
+  
+  # Intersect to keep original order, appending any brand-new additions to the bottom
+  c(original_ordered_contexts[original_ordered_contexts %in% changed_contexts],
+    changed_contexts[! changed_contexts %in% original_ordered_contexts]) ->
     contexts
   
   character(0) ->
