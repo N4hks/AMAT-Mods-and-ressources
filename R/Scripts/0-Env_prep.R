@@ -75,7 +75,10 @@ file.path(".",
           "Inputs") ->
   Paths[["Inputs"]]$path
 
-
+file.path(".",
+          "R",
+          "Outputs") ->
+  Paths[["Outputs"]]$path
 
 
 # -- Seting sourcing of the code at project startup -- ####
