@@ -1,108 +1,185 @@
-[WorkbenchPluginAttribute(name: "Copy All Entity Catalogs", description: "Duplicates item catalogs to the active addon", wbModules: {"ResourceManager", "ScriptEditor"})]
+[WorkbenchPluginAttribute(name: "Copy All Entity Catalogs", description: "Duplicates item catalogs from all mods and base game into separate mod folders", wbModules: {"ResourceManager", "ScriptEditor"})]
 class CopyAllEntityCatalogsPlugin : WorkbenchPlugin
 {
     // =========================================================================
-    // IMPORTANT: Change this to your exact Addon Project Name (the prefix)
+    // CONFIGURATION
     // =========================================================================
     const string MY_ADDON_NAME = "DynamicLootRebalance"; 
+    
+    // Set to true to store base game (ArmaReforger) files directly in Copy/
+    // Set to false to store them inside Copy/ArmaReforger/
+    const bool SKIP_BASE_GAME_FOLDER = true; 
+
+    ref array<string> m_aCatalogPaths = {};
 
     override void Run()
     {
         Print("Starting Entity Catalog duplication...", LogLevel.NORMAL);
         
-        // Define the known base game item catalogs with your valid GUIDs
-        array<string> catalogPaths = {
-            "{9D7E5804BB2E9B28}Configs/EntityCatalog/CIV/InventoryItems_EntityCatalog_CIV.conf",
-            "{BB12292052E2F5B8}Configs/EntityCatalog/FactionLess/InventoryItems_EntityCatalog_Factionless.conf",
-            "{E908001749419691}Configs/EntityCatalog/FIA/InventoryItems_EntityCatalog_FIA.conf",
-            "{5F7EC52FC40A03E2}Configs/EntityCatalog/US/InventoryItems_EntityCatalog_US.conf",
-            "{C53421647C3D0D2E}Configs/EntityCatalog/USSR/InventoryItems_EntityCatalog_USSR.conf"
-        };
+        m_aCatalogPaths.Clear();
+
+        // Search for all .conf files across loaded mods and base game
+        SearchResourcesFilter filter = new SearchResourcesFilter();
+        filter.fileExtensions = {"conf"};
+        ResourceDatabase.SearchResources(filter, OnResourceFound);
+
+        Print(string.Format("Found %1 entity catalog files across loaded mods.", m_aCatalogPaths.Count()), LogLevel.NORMAL);
 
         int successCount = 0;
-
-        foreach (string sourcePath : catalogPaths)
+        foreach (string exactPath : m_aCatalogPaths)
         {
-            if (ProcessAndSaveCatalog(sourcePath))
+            if (ProcessAndCopyCatalog(exactPath))
             {
                 successCount++;
             }
         }
 
-        Print("Finished processing catalogs. Successfully copied: " + successCount, LogLevel.NORMAL);
+        Print(string.Format("Finished! Successfully saved %1 / %2 catalog files.", successCount, m_aCatalogPaths.Count()), LogLevel.NORMAL);
     }
 
-    bool ProcessAndSaveCatalog(string sourcePath)
+    void OnResourceFound(ResourceName resourceName, string exactPath)
     {
-        // 1. Load the file as a Resource object first
-        Resource resource = Resource.Load(sourcePath);
-        if (!resource.IsValid())
+        string pathLower = exactPath;
+        pathLower.ToLower();
+
+        if (pathLower.Contains("entitycatalog") && pathLower.EndsWith(".conf"))
         {
-            Print("WARNING: Could not find or load resource: " + sourcePath, LogLevel.WARNING);
-            return false;
-        }
-
-        // 2. Extract the BaseContainer from the resource safely
-        BaseContainer catalogContainer = resource.GetResource().ToBaseContainer();
-        if (!catalogContainer)
-        {
-            Print("WARNING: Could not extract BaseContainer from: " + sourcePath, LogLevel.WARNING);
-            return false;
-        }
-
-        // Extract the raw file name (e.g., "InventoryItems_EntityCatalog_CIV.conf")
-        int lastSlash = sourcePath.LastIndexOf("/");
-        string fileName = sourcePath.Substring(lastSlash + 1, sourcePath.Length() - lastSlash - 1);
-
-        // 3. Build the virtual file path
-        string virtualFilePath = "$" + MY_ADDON_NAME + ":Configs/EntityCatalog/Copy/" + fileName;
-        string absoluteTargetPath = string.Empty;
-        
-        // 4. Translate virtual path to absolute physical path using Workbench API
-        Workbench.GetAbsolutePath(virtualFilePath, absoluteTargetPath);
-Print("A :" + absoluteTargetPath);
-        // If the file/folder doesn't exist yet, Workbench.GetAbsolutePath might fail on the file itself.
-        // Fallback: Translate just the addon root folder virtual path if needed, or create directories first.
-        if (absoluteTargetPath == string.Empty)
-        {
-            // Fallback translation using the addon root virtual path
-            string virtualRootPath = "$" + MY_ADDON_NAME + ":";
-            string absoluteRootPath = string.Empty;
-            Workbench.GetAbsolutePath(virtualRootPath, absoluteRootPath);
-Print("B :" + absoluteRootPath);
-
-            if (absoluteRootPath != string.Empty)
+            if (m_aCatalogPaths.Find(exactPath) == -1)
             {
-                absoluteRootPath.Replace("\\", "/");
-                absoluteTargetPath = absoluteRootPath + "Configs/EntityCatalog/Copy/" + fileName;
+                m_aCatalogPaths.Insert(exactPath);
             }
-			Print("B :" + absoluteTargetPath);
-
-
         }
+    }
 
-        if (absoluteTargetPath == string.Empty)
+    bool ProcessAndCopyCatalog(string exactPath)
+    {
+        // 1. Load Resource handle
+        Resource resource = BaseContainerTools.LoadContainer(exactPath);
+        if (!resource || !resource.IsValid())
         {
-            Print("ERROR: Could not resolve absolute path for: " + virtualFilePath, LogLevel.ERROR);
+            Print("ERROR: Could not load resource from path: " + exactPath, LogLevel.ERROR);
             return false;
         }
 
-        // Create the directory structure on the hard drive if it doesn't exist yet
-        int lastSlashTarget = absoluteTargetPath.LastIndexOf("/");
-        string targetDir = absoluteTargetPath.Substring(0, lastSlashTarget);
-		Print(targetDir);
-        FileIO.MakeDirectory(targetDir);
+        // 2. Extract BaseContainer from Resource
+        BaseContainer container = resource.GetResource().ToBaseContainer();
+        if (!container)
+        {
+            Print("ERROR: Could not extract BaseContainer from path: " + exactPath, LogLevel.ERROR);
+            return false;
+        }
 
-        // Save the duplicated container
-        bool success = BaseContainerTools.SaveContainer(catalogContainer, ResourceName.Empty, absoluteTargetPath);
-        
+        string modName = GetModNameFromPath(exactPath);
+        string relativePath = GetRelativeCatalogPath(exactPath);
+
+        // Determine destination subfolder
+        string modFolder = "";
+        if (!SKIP_BASE_GAME_FOLDER || modName != "ArmaReforger")
+        {
+            modFolder = modName + "/";
+        }
+
+        // Resolve active addon root path
+        string virtualRootPath = "$" + MY_ADDON_NAME + ":";
+        string absoluteRootPath = string.Empty;
+        Workbench.GetAbsolutePath(virtualRootPath, absoluteRootPath);
+
+        if (absoluteRootPath.IsEmpty())
+        {
+            Print("ERROR: Could not resolve project root path for $" + MY_ADDON_NAME + ":", LogLevel.ERROR);
+            return false;
+        }
+
+        absoluteRootPath.Replace("\\", "/");
+        if (!absoluteRootPath.EndsWith("/"))
+            absoluteRootPath += "/";
+
+        // Build output path: <AddonRoot>/Configs/EntityCatalog/Copy/[ModName/]<RelativePath>
+        string absoluteTargetPath = absoluteRootPath + "Configs/EntityCatalog/Copy/" + modFolder + relativePath;
+
+        // Create target directory structure
+        int lastSlash = absoluteTargetPath.LastIndexOf("/");
+        if (lastSlash != -1)
+        {
+            string targetDir = absoluteTargetPath.Substring(0, lastSlash);
+            FileIO.MakeDirectory(targetDir);
+        }
+
+        // Save container copy
+        bool success = BaseContainerTools.SaveContainer(container, ResourceName.Empty, absoluteTargetPath);
         if (success)
         {
-            Print("SUCCESS! Saved: " + absoluteTargetPath, LogLevel.NORMAL);
+            Print(string.Format("SUCCESS [%1]: Saved to %2", modName, absoluteTargetPath), LogLevel.NORMAL);
             return true;
         }
-        
-        Print("ERROR: Failed to save catalog to: " + absoluteTargetPath, LogLevel.ERROR);
+
+        Print("ERROR: Failed to save catalog container to: " + absoluteTargetPath, LogLevel.ERROR);
         return false;
+    }
+
+    string GetModNameFromPath(string path)
+    {
+        path.Replace("\\", "/");
+
+        // Format 1: Virtual path "$ModName:Configs/..."
+        if (path.StartsWith("$"))
+        {
+            int colonIdx = path.IndexOf(":");
+            if (colonIdx > 1)
+            {
+                return path.Substring(1, colonIdx - 1);
+            }
+        }
+
+        // Format 2: Physical disk path ".../ModName/Configs/..."
+        string lowerPath = path;
+        lowerPath.ToLower();
+        int configsIdx = lowerPath.IndexOf("/configs/");
+        if (configsIdx != -1)
+        {
+            string sub = path.Substring(0, configsIdx);
+            int lastSlash = sub.LastIndexOf("/");
+            if (lastSlash != -1)
+            {
+                return sub.Substring(lastSlash + 1, sub.Length() - lastSlash - 1);
+            }
+            return sub;
+        }
+
+        return "ArmaReforger";
+    }
+
+    string GetRelativeCatalogPath(string path)
+    {
+        path.Replace("\\", "/");
+
+        // Strip $ModName: prefix
+        if (path.StartsWith("$"))
+        {
+            int colonIdx = path.IndexOf(":");
+            if (colonIdx != -1)
+                path = path.Substring(colonIdx + 1, path.Length() - colonIdx - 1);
+        }
+
+        string lowerPath = path;
+        lowerPath.ToLower();
+
+        int catalogIdx = lowerPath.IndexOf("configs/entitycatalog/");
+        if (catalogIdx != -1)
+        {
+            return path.Substring(catalogIdx + 22, path.Length() - (catalogIdx + 22));
+        }
+
+        int configsIdx = lowerPath.IndexOf("configs/");
+        if (configsIdx != -1)
+        {
+            return path.Substring(configsIdx + 8, path.Length() - (configsIdx + 8));
+        }
+
+        int lastSlash = path.LastIndexOf("/");
+        if (lastSlash != -1)
+            return path.Substring(lastSlash + 1, path.Length() - lastSlash - 1);
+
+        return path;
     }
 }
