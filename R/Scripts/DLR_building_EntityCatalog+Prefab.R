@@ -5,20 +5,45 @@ file.path(".",
           "Inputs") %>%
   list.files(full.names = T,
              recursive = T,
-             pattern = "Inventory.+\\.conf$") %>%
-  set_names(nm = basename(.) %>%
-              str_remove("\\..+$")) ->
+             pattern = paste0("(",
+                              paste("Inventory",
+                                    "Ammunition",
+                                    "Attachment",
+                                    "Backpack",
+                                    "Clothing",
+                                    "Deployable",
+                                    "Equipment",
+                                    "Explosive",
+                                    "Shops",
+                                    "Vest",
+                                    "Weapons",
+                                    sep = "|"),
+                              ").*\\.conf$")) %>%
+  str_subset(pattern = paste("CIV",
+                             "USSR",
+                             "FIA",
+                             sep = "|")) %>%
+  # 1. Convert the vector to a dataframe for easier manipulation
+  tibble(full_path = .) %>%
+  # 2. Extract the Level 1 and Level 2 names
+  mutate(level_1_folder = str_extract(string = full_path,
+                                      pattern = "(?<=/Copy/)[^/]+"),
+         level_2_file = basename(path = full_path)) %>%
+  # 3. Split the dataframe by the Level 1 folder (creates a list of dataframes)
+  split(f = .$level_1_folder) %>%
+  # 4. Map over each dataframe to create the second nested level
+  map(.f = \(df) {
+    df %>%
+      pull(var = full_path) %>%
+      as.list() %>%
+      set_names(nm = df$level_2_file)}) ->
   Paths[["Inputs"]][["InventoryItems_EntityCatalog"]]
 
 
 ## Loading .conf files ####
 Paths[["Inputs"]][["InventoryItems_EntityCatalog"]] %>%
-  map(.f = parse_enfusion_conf) %>%
-  keep_at(~ str_detect(string = .x,
-                     pattern = paste("CIV",
-                                     "USSR",
-                                     "FIA",
-                                     sep = "|")))->
+  map(.f =  ~.x %>%
+        map(.f = parse_enfusion_conf)) ->
   Data[["InventoryItems_EntityCatalog"]][["references"]]
 
 
@@ -26,6 +51,7 @@ Paths[["Inputs"]][["InventoryItems_EntityCatalog"]] %>%
 # -- 2. Preparing Data -- ####
 ## Preparing Item properties dataframes ####
 Data[["InventoryItems_EntityCatalog"]][["references"]] %>%
+  map(~ .x %>%
   keep(.p =  \(object) any(str_detect(colnames(object),
                                       pattern = "context"))) %>%
   keep(.p =  \(object) any(str_detect(colnames(object),
@@ -46,14 +72,15 @@ Data[["InventoryItems_EntityCatalog"]][["references"]] %>%
                     values_fn = unique) %>%
         mutate(Item_prefab = str_extract(string = m_sEntityPrefab,
                                          pattern = '(?<=/)[A-Za-z0-9_\\-]+(?=\\.et$)')) %>%
-        dplyr::select(where(~ !all(is.na(.x))))) ->
+        dplyr::select(where(~ !all(is.na(.x)))))) ->
   Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]]
 
 
 # -- 3. Adjusting values -- ####
 ## Preparing modified properties dataframes ####
 Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
-  keep_at(at = \(name) str_detect(string = name,
+  map(~ .x %>%
+        keep_at(at = \(name) str_detect(string = name,
                                   pattern = paste("CIV",
                                                   "FIA",
                                                   "USSR",
@@ -163,7 +190,7 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
                                                                  sep = "|")) ~ 
                                       "0",
                                     .default = m_bEnabled))
-  }) ->
+  })) ->
   Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["modified"]]
 
 ## Creating the Output Directory ####
@@ -185,18 +212,21 @@ list("CIV" = "{9D7E5804BB2E9B28}Configs/EntityCatalog/CIV/InventoryItems_EntityC
      "FIA" = "{E908001749419691}Configs/EntityCatalog/FIA/InventoryItems_EntityCatalog_FIA.conf",
      "USSR" = "{C53421647C3D0D2E}Configs/EntityCatalog/USSR/InventoryItems_EntityCatalog_USSR.conf",
      "US" = "{5F7EC52FC40A03E2}Configs/EntityCatalog/US/InventoryItems_EntityCatalog_US.conf") ->
-  Data[["InventoryItems_EntityCatalog"]][["Vanilla_Overrides"]]
+  Data[["InventoryItems_EntityCatalog"]][["Vanilla_inherits"]]
 
 
 ## Re-linking Context and Finding Changed Values -- ####
-
-# 1. Map every existing property to its context, grouped by base faction
+### 1. Map every existing property to its context, grouped by base faction ####
 Data[["InventoryItems_EntityCatalog"]][["references"]] %>%
-  bind_rows() %>%
+  map(~ .x %>%
+        list_rbind()) %>%
+  list_rbind(names_to = "folder_name") %>%
   mutate(Item_GUID = str_extract(string = context,
                                  pattern = '(?<=SCR_EntityCatalogInventoryItem "\\{)[A-Z0-9]+(?=\\}")'),
-         is_base_file = str_detect(string = file_name,
-                                   pattern = "InventoryItems_EntityCatalog_[A-Z]{2,4}\\.conf$")) %>% {
+         is_base_file = str_detect(string = folder_name,
+                                   pattern = "^CIV|FIA|US|USSR$") &
+           str_detect(string = file_name,
+                                   pattern = "InventoryItems_EntityCatalog_(CIV|FIA|US|USSR)\\.conf$")) %>% {
   # dplyr::filter(!is.na(Item_GUID)) %>% {
     . -> data 
     
@@ -216,7 +246,7 @@ Data[["InventoryItems_EntityCatalog"]][["references"]] %>%
   mutate(vanilla_order = row_number()) ->
   Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]]
 
-# Canonical exact context map: first occurrence across files under each group_name
+### Canonical exact context map: first occurrence across files under each group_name ####
 Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
   dplyr::filter(!is.na(property)) %>%
   group_by(group_name,
@@ -232,7 +262,7 @@ Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
   Data[["InventoryItems_EntityCatalog"]][["Canonical_Exact_Context_Map"]]
 
 
-# 2. Canonical base block context map for each Item (fallback for brand-new properties)
+# 2. Canonical base block context map for each Item (fallback for brand-new properties) ####
 Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
   group_by(group_name,
            Item_GUID) %>%
@@ -248,31 +278,42 @@ Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
   Data[["InventoryItems_EntityCatalog"]][["Canonical_Base_Context_Map"]]
 
 
-# 3. Compare raw and modified dataframes using LEFT JOIN to catch modified/added values
-map2_dfr(.x = Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
-           keep_at(names(Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["modified"]])),
-         .y = Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["modified"]],
-         .f = \(raw_df, mod_df) {
-           
-           raw_df %>%
-             pivot_longer(cols = -c(file_name, Item_GUID, m_sEntityPrefab, Item_prefab),
-                          names_to = "property", values_to = "raw_value") -> raw_long
-           
-           mod_df %>%
-             pivot_longer(cols = -c(file_name, Item_GUID, m_sEntityPrefab, Item_prefab),
-                          names_to = "property", values_to = "mod_value") -> mod_long
-           
-           mod_long %>%
-             left_join(x = ., y = raw_long, 
-                       by = c("file_name", "Item_GUID", "m_sEntityPrefab", "Item_prefab", "property")) %>%
-             # Keep ONLY non-NA values that have actually changed from raw_value
-             dplyr::filter(!is.na(mod_value) & mod_value != "NA" & (is.na(raw_value) | raw_value != mod_value)) %>%
-             dplyr::select(file_name, Item_GUID, property, mod_value)
-         }) -> 
+# 3. Compare raw and modified dataframes using LEFT JOIN to catch modified/added values ####
+## -- 1. Flatten the 'raw' nested list into a single long dataframe -- ####
+Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
+  # bind_rows handles the inner lists, map_dfr handles the outer list
+  purrr::map_dfr(.f = ~ dplyr::bind_rows(.x), .id = "folder_name") %>%
+  tidyr::pivot_longer(cols = -c(folder_name, file_name, Item_GUID, m_sEntityPrefab, Item_prefab),
+                      names_to = "property",
+                      values_to = "raw_value") -> 
+  Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw_long"]]
+
+
+## -- 2. Flatten the 'modified' nested list into a single long dataframe -- ####
+Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["modified"]] %>%
+  # CRITICAL: Drop the empty lists (e.g., ARMARYAK74) before binding to prevent errors
+  purrr::keep(.p = ~ length(.x) > 0) %>% 
+  purrr::map_dfr(.f = ~ dplyr::bind_rows(.x), .id = "folder_name") %>%
+  tidyr::pivot_longer(cols = -c(folder_name, file_name, Item_GUID, m_sEntityPrefab, Item_prefab),
+                      names_to = "property", 
+                      values_to = "mod_value") -> 
+  Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["mod_long"]]
+
+
+## -- 3. Join, Compare, and Extract Changed Values -- ####
+Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["mod_long"]] %>%
+  dplyr::left_join(y = Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw_long"]], 
+                   by = c("folder_name", "file_name", "Item_GUID", "m_sEntityPrefab", "Item_prefab", "property")) %>%
+  # Keep ONLY non-NA values that have actually changed from raw_value
+  dplyr::filter(!is.na(mod_value) & 
+                  mod_value != "NA" & 
+                  (is.na(raw_value) | raw_value != mod_value)) %>%
+  # Retaining 'folder_name' here is highly recommended to differentiate duplicate file names across mods
+  dplyr::select(folder_name, file_name, Item_GUID, property, mod_value) -> 
   Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]]
 
 
-# 4. Join context and deduplicate to guarantee 1 entry per property per group
+# 4. Join context and deduplicate to guarantee 1 entry per property per group ####
 Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]] %>%
   mutate(group_name = file_name %>%
            str_extract(pattern = paste0("(?<=^|_)",
@@ -398,68 +439,49 @@ write_tree <- function(env, indent_level, file_con, is_root = FALSE, override = 
 }
 
 
-### 4. Loop through files and generate outputs ####
-for (grp in Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]] %>%
-     pull(var = group_name) %>%
-     unique()) {
+### 4. Loop through files and generate MINIMAL override outputs ####
+for (grp in unique(Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]]$group_name)) {
+  
   if (is.na(grp)) next
   
+  # 1. Filter ONLY the properties that actually changed for this faction/group
+  grp_changes <- Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]] %>%
+    dplyr::filter(group_name == grp)
   
-  # CRITICAL FIX: Pull the complete original context mapping for this file group
-  # so that unchanged structural blocks and their vanilla GUIDs are fully preserved.
-  # Data[["InventoryItems_EntityCatalog"]][["Exact_Context_Map"]] %>%
-  #   dplyr::filter(str_detect(file_name,
-  #                            grp)) ->
-  #   grp_full_structure
-  
-  # Combine or override the structure with your modified values
-  # (or construct the tree using the full vanilla reference structure, injecting modified values where they match)
-  file(file.path(Paths[["Outputs"]][["CIV_DL EntityCatalog"]],
-                 paste0("InventoryItems_EntityCatalog_",
-                        grp, "_for_CIV_DL.conf")), "w") -> 
-    con
-  
-  # Option A: If you want to build from the full vanilla tree framework and overwrite changed values:
-  # Load all rows from the original reference file for this group, then overlay `grp_changes`
-  Data[["InventoryItems_EntityCatalog"]][["references"]][[paste0("InventoryItems_EntityCatalog_",
-                                                                 grp)]] %>% 
-    distinct() %>%
-    # Apply your modifications onto the vanilla dataframe values
-    left_join(# Get changed properties for this group
-      Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]] %>%
-        dplyr::filter(group_name == grp) 
-      %>% select(# file_name,
-                                     context,
-                                     property,
-                                     mod_value),
-              by = c(#"file_name",
-                     "context", "property")) %>%
-    mutate(final_val = coalesce(mod_value,
-                                value)) -> 
-    Data[["InventoryItems_EntityCatalog"]][["combined_tree_data"]][[grp]]
-  
-  new.env(parent = emptyenv()) -> 
-    Data[["InventoryItems_EntityCatalog"]][["tree_env"]][[grp]]
-  
-  # Populate the tree using the complete vanilla hierarchy with modified values injected
-  for (i in 1:nrow(Data[["InventoryItems_EntityCatalog"]][["combined_tree_data"]][[grp]])) {
-    
-    add_to_tree(env = Data[["InventoryItems_EntityCatalog"]][["tree_env"]][[grp]], 
-                path = str_split(Data[["InventoryItems_EntityCatalog"]][["combined_tree_data"]][[grp]]$context[i], " > ")[[1]], 
-                prop = Data[["InventoryItems_EntityCatalog"]][["combined_tree_data"]][[grp]]$property[i], 
-                val = Data[["InventoryItems_EntityCatalog"]][["combined_tree_data"]][[grp]]$final_val[i])
+  # Safety check: If nothing changed, skip file generation entirely
+  if (nrow(grp_changes) == 0) {
+    message(paste("No changes detected for:", grp, "- Skipping file generation."))
+    next
   }
-  rm(i)
+  
+  # 2. Initialize a fresh, empty environment for the minimal tree
+  Data[["InventoryItems_EntityCatalog"]][["tree_env"]][[grp]] <- new.env(parent = emptyenv())
+  
+  # 3. Populate the tree using ONLY the nodes that lead to modified values
+  for (i in 1:nrow(grp_changes)) {
+    # We use mod_value directly. We do not need the original vanilla values.
+    # The 'context' path contains the necessary multi-list GUIDs for the engine to match.
+    add_to_tree(env = Data[["InventoryItems_EntityCatalog"]][["tree_env"]][[grp]], 
+                path = str_split(grp_changes$context[i], " > ")[[1]], 
+                prop = grp_changes$property[i], 
+                val = grp_changes$mod_value[i])
+  }
+  
+  # 4. Open connection to save the file
+  file_out <- file.path(Paths[["Outputs"]][["CIV_DL EntityCatalog"]],
+                        paste0("InventoryItems_EntityCatalog_", grp, "_for_CIV_DL.conf"))
+  con <- file(file_out, "w")
+  
+  # 5. Fetch the dynamic inheritance header from our mapping
+  override_header <- Data[["InventoryItems_EntityCatalog"]][["Vanilla_inherits"]][[grp]]
   
   # 6. Serialize and write the file recursively
   write_tree(env = Data[["InventoryItems_EntityCatalog"]][["tree_env"]][[grp]], 
              indent_level = "", 
              file_con = con, 
              is_root = TRUE, 
-             override = Data[["InventoryItems_EntityCatalog"]][["Vanilla_Overrides"]][[grp]])
+             override = override_header)
   
   close(con)
-  message(paste("Saved Arma Reforger override for:",
-                grp))
+  message(paste("Saved Arma Reforger MINIMAL override for:", grp))
 }
-
