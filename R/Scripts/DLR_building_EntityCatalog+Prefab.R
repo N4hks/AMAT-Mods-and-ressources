@@ -216,7 +216,7 @@ list("CIV" = "{9D7E5804BB2E9B28}Configs/EntityCatalog/CIV/InventoryItems_EntityC
 
 
 ## Re-linking Context and Finding Changed Values -- ####
-### 1. Map every existing property to its context, grouped by base faction ####
+### Map every existing property to its context, grouped by base faction ####
 Data[["InventoryItems_EntityCatalog"]][["references"]] %>%
   map(~ .x %>%
         list_rbind()) %>%
@@ -262,7 +262,7 @@ Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
   Data[["InventoryItems_EntityCatalog"]][["Canonical_Exact_Context_Map"]]
 
 
-# 2. Canonical base block context map for each Item (fallback for brand-new properties) ####
+### Canonical base block context map for each Item (fallback for brand-new properties) ####
 Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
   group_by(group_name,
            Item_GUID) %>%
@@ -278,8 +278,8 @@ Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
   Data[["InventoryItems_EntityCatalog"]][["Canonical_Base_Context_Map"]]
 
 
-# 3. Compare raw and modified dataframes using LEFT JOIN to catch modified/added values ####
-## -- 1. Flatten the 'raw' nested list into a single long dataframe -- ####
+### Compare raw and modified dataframes using LEFT JOIN to catch modified/added values ####
+## Flatten the 'raw' nested list into a single long dataframe -- ####
 Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
   # bind_rows handles the inner lists, map_dfr handles the outer list
   purrr::map_dfr(.f = ~ dplyr::bind_rows(.x), .id = "folder_name") %>%
@@ -289,7 +289,7 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
   Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw_long"]]
 
 
-## -- 2. Flatten the 'modified' nested list into a single long dataframe -- ####
+## Flatten the 'modified' nested list into a single long dataframe -- ####
 Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["modified"]] %>%
   # CRITICAL: Drop the empty lists (e.g., ARMARYAK74) before binding to prevent errors
   purrr::keep(.p = ~ length(.x) > 0) %>% 
@@ -300,7 +300,7 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["modified"]] %>%
   Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["mod_long"]]
 
 
-## -- 3. Join, Compare, and Extract Changed Values -- ####
+## Join, Compare, and Extract Changed Values -- ####
 Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["mod_long"]] %>%
   dplyr::left_join(y = Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw_long"]], 
                    by = c("folder_name", "file_name", "Item_GUID", "m_sEntityPrefab", "Item_prefab", "property")) %>%
@@ -313,7 +313,7 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["mod_long"]] %>%
   Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]]
 
 
-# 4. Join context and deduplicate to guarantee 1 entry per property per group ####
+# Join context and deduplicate to guarantee 1 entry per property per group ####
 Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]] %>%
   mutate(group_name = file_name %>%
            str_extract(pattern = paste0("(?<=^|_)",
@@ -342,43 +342,15 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properti
   mutate(entry_order = min(vanilla_order, na.rm = TRUE)) %>%
   ungroup() %>%
   arrange(entry_order,
-          vanilla_order) ->
+          vanilla_order) %>%
+  dplyr::select(! c(folder_name,
+                    file_name)) %>% 
+  distinct() ->
   Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]]
 
 
 ## Generating and Saving the .conf Override Files -- ####
-
-### 1. Define recursive function to build tree environment (updates existing properties to prevent duplicates) ####
-add_to_tree <- function(env, path, prop, val) {
-  if (length(path) == 0) {
-    if (!exists(".props", envir = env)) {
-      list() -> env$.props
-    }
-    prop_names <- sapply(env$.props, function(x) x$prop)
-    if (prop %in% prop_names) {
-      idx <- which(prop_names == prop)
-      env$.props[[idx]]$val <- val
-    } else {
-      append(env$.props, list(list(prop = prop, val = val))) -> env$.props
-    }
-    return()
-  }
-  
-  path[1] -> node
-  
-  if (!exists(node, envir = env)) {
-    new.env(parent = emptyenv()) -> env[[node]]
-    if (!exists(".keys", envir = env)) {
-      character(0) -> env$.keys
-    }
-    c(env$.keys, node) -> env$.keys
-  }
-  
-  add_to_tree(env = env[[node]], path = path[-1], prop = prop, val = val)
-}
-
-
-### 2. Create the Exact Context Map ####
+### Create the Exact Context Map ####
 Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
   dplyr::filter(!is.na(property)) %>%
   dplyr::select(file_name,
@@ -389,64 +361,15 @@ Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
   distinct() ->
   Data[["InventoryItems_EntityCatalog"]][["Exact_Context_Map"]]
 
-### 3. Define recursive function to write out the tree structure ####
-write_tree <- function(env, indent_level, file_con, is_root = FALSE, override = NULL) {
-  
-  # Write node properties first
-  if (exists(".props", envir = env)) {
-    
-    # Sort properties to place m_sEntityPrefab at the top if present
-    env$.props[order(sapply(env$.props, function(x) {
-      if (x$prop == "m_sEntityPrefab") return(1)
-      if (startsWith(x$prop, "m_e")) return(2)
-      if (startsWith(x$prop, "m_i")) return(3)
-      if (startsWith(x$prop, "m_b")) return(4)
-      return(5)
-    }))] -> env$.props
-    
-    for (p in env$.props) {
-      p$prop -> prop
-      p$val -> val
-      
-      if (is.na(val) || val == "NA") next
-      
-      if (str_starts(prop, "m_s")) {
-        paste0('"', val, '"') -> val
-      }
-      writeLines(paste0(indent_level, "  ", prop, " ", val), file_con)
-    }
-  }
-  
-  # Write nested children blocks
-  if (exists(".keys", envir = env)) {
-    for (k in env$.keys) {
-      child_env <- env[[k]]
-      has_props <- exists(".props", envir = child_env) && length(child_env$.props) > 0
-      has_keys <- exists(".keys", envir = child_env) && length(child_env$.keys) > 0
-      if (!has_props && !has_keys) next
-      
-      k -> header
-      
-      if (is_root && !is.null(override)) {
-        paste0(header, " : \"", override, "\"") -> header
-      }
-      
-      writeLines(paste0(indent_level, header, " {"), file_con)
-      write_tree(env = child_env, indent_level = paste0(indent_level, "  "), file_con = file_con, is_root = FALSE, override = NULL)
-      writeLines(paste0(indent_level, "}"), file_con)
-    }
-  }
-}
-
-
-### 4. Loop through files and generate MINIMAL override outputs ####
+### Loop through files and generate MINIMAL override outputs ####
 for (grp in unique(Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]]$group_name)) {
   
   if (is.na(grp)) next
   
-  # 1. Filter ONLY the properties that actually changed for this faction/group
-  grp_changes <- Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]] %>%
-    dplyr::filter(group_name == grp)
+  #### 1. Filter ONLY the properties that actually changed for this faction/group ####
+  Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]] %>%
+    dplyr::filter(group_name == grp) ->
+    grp_changes
   
   # Safety check: If nothing changed, skip file generation entirely
   if (nrow(grp_changes) == 0) {
@@ -454,7 +377,7 @@ for (grp in unique(Data[["InventoryItems_EntityCatalog"]][["Items property df"]]
     next
   }
   
-  # 2. Initialize a fresh, empty environment for the minimal tree
+  #### 2. Initialize a fresh, empty environment for the minimal tree ####
   Data[["InventoryItems_EntityCatalog"]][["tree_env"]][[grp]] <- new.env(parent = emptyenv())
   
   # 3. Populate the tree using ONLY the nodes that lead to modified values
@@ -466,22 +389,26 @@ for (grp in unique(Data[["InventoryItems_EntityCatalog"]][["Items property df"]]
                 prop = grp_changes$property[i], 
                 val = grp_changes$mod_value[i])
   }
+  rm(i)
   
-  # 4. Open connection to save the file
+  #### 4. Open connection to save the file ####
   file_out <- file.path(Paths[["Outputs"]][["CIV_DL EntityCatalog"]],
                         paste0("InventoryItems_EntityCatalog_", grp, "_for_CIV_DL.conf"))
   con <- file(file_out, "w")
   
-  # 5. Fetch the dynamic inheritance header from our mapping
-  override_header <- Data[["InventoryItems_EntityCatalog"]][["Vanilla_inherits"]][[grp]]
   
-  # 6. Serialize and write the file recursively
+  #### 6. Serialize and write the file recursively ####
   write_tree(env = Data[["InventoryItems_EntityCatalog"]][["tree_env"]][[grp]], 
              indent_level = "", 
              file_con = con, 
              is_root = TRUE, 
-             override = override_header)
+             # Fetch the dynamic inheritance header from our mapping
+             override = Data[["InventoryItems_EntityCatalog"]][["Vanilla_inherits"]][[grp]])
   
   close(con)
   message(paste("Saved Arma Reforger MINIMAL override for:", grp))
+  rm(con,
+     file_out,
+     grp_changes)
 }
+rm(grp)
