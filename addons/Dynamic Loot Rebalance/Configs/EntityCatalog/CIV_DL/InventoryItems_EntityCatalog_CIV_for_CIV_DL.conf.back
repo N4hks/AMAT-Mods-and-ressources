@@ -1,0 +1,134 @@
+SCR_EntityCatalogMultiList : "{9D7E5804BB2E9B28}Configs/EntityCatalog/CIV/InventoryItems_EntityCatalog_CIV.conf" {
+ m_aMultiLists {
+  SCR_EntityCatalogMultiListEntry "{60E6ED13E10B72D7}" {
+   m_aEntities {
+    SCR_EntityCatalogInventoryItem "{60E6ED10C7C59E3A}" {
+     m_sEntityPrefab "{262B95830FF2EA24}Prefabs/Items/Equipment/Maps/Map_Paper_01/PaperMap_01_folded_CIV.et"
+     m_aEntityDataList {
+      SCR_ArsenalItem "{60E6F99A418A2F02}" {
+       m_iSupplyCost 2
+      }
+     }
+    }
+    SCR_EntityCatalogInventoryItem "{60E6ED132CA5505E}" {
+     m_sEntityPrefab "{FC43C5338668B74F}Prefabs/Items/Equipment/Compass/Compass_Adrianov_CIV.et"
+     m_aEntityDataList {
+      SCR_ArsenalItem "{60E6F99A5B3182E9}" {
+       m_iSupplyCost 2
+      }
+     }
+    }
+    SCR_EntityCatalogInventoryItem "{60E6ED132C6893D6}" {
+     m_sEntityPrefab "{E8E8B62A34B01BC0}Prefabs/Items/Equipment/Watches/Watch_Orlik38/Watch_Orlik38_CIV.et"
+     m_aEntityDataList {
+      SCR_ArsenalItem "{60E6F99AA4E85A7C}" {
+       m_iSupplyCost 2
+      }
+     }
+    }
+    SCR_EntityCatalogInventoryItem "{60E6ED10D3662C19}" {
+     m_sEntityPrefab "{E86ED2B004C65293}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item_CIV.et"
+     m_aEntityDataList {
+      SCR_ArsenalItem "{60E6F99AB9D92C70}" {
+       m_iSupplyCost 4
+      }
+     }
+    }
+    SCR_EntityCatalogInventoryItem "{60E6ED10D2CAEFAE}" {
+     m_sEntityPrefab "{8A4CA2B4185D1376}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench_CIV.et"
+     m_aEntityDataList {
+      SCR_ArsenalItem "{60E6F99A8D548A02}" {
+       m_iSupplyCost 3
+      }
+     }
+    }
+    SCR_EntityCatalogInventoryItem "{685CF10D14980674}" {
+     m_aEntityDataList {
+      SCR_ArsenalItem "{685CF10C4C0C1032}" {
+       m_iSupplyCost 2
+      }
+     }
+    }
+    SCR_EntityCatalogInventoryItem "{685CF10D15C913E4}" {
+     m_aEntityDataList {
+      SCR_ArsenalItem "{685CF10C6D17C602}" {
+       m_iSupplyCost 2
+      }
+     }
+    }
+   }
+  }
+  SCR_EntityCatalogMultiListEntry "{608E9718ED2AE365}" {
+   m_aEntities {
+    SCR_EntityCatalogInventoryItem "{608E971837A749B9}" {
+     m_sEntityPrefab "{73F37403B91750D7}Prefabs/Items/Equipment/Backpacks/Backpack_Medical_Soviet_NoCross_01_CIV.et"
+     m_aEntityDataList {
+      SCR_ArsenalItem "{608E97187AE6D7B6}" {
+       m_iSupplyCost 3
+      }
+     }
+    }
+    SCR_EntityCatalogInventoryItem "{608E97180C77E3EF}" {
+     m_aEntityDataList {
+      SCR_ArsenalItem "{608E971862322AC4}" {
+       m_iSupplyCost 3
+      }
+     }
+    }
+    SCR_EntityCatalogInventoryItem "{6929484336ACFA22}" {
+     m_bEnabled 0
+    }
+   }
+  }
+  SCR_EntityCatalogMultiListEntry "{608E9718DDEA6045}" {
+   m_aEntities {
+    SCR_EntityCatalogInventoryItem "{60E6F4A5ED4F5832}" {
+     m_aEntityDataList {
+      SCR_ArsenalItem "{60E6F4A58230D2F2}" {
+       m_iSupplyCost 1
+      }
+     }
+    }
+    SCR_EntityCatalogInventoryItem "{60E6F4A5E93ECB75}" {
+     m_aEntityDataList {
+      SCR_ArsenalItem "{60E6F4A588994FFA}" {
+       m_iSupplyCost 1
+      }
+     }
+    }
+    SCR_EntityCatalogInventoryItem "{60E6F4A5EBF08B0C}" {
+     m_aEntityDataList {
+      SCR_ArsenalItem "{60E6F4A5B2D1FAB2}" {
+       m_iSupplyCost 1
+      }
+     }
+    }
+   }
+  }
+  SCR_EntityCatalogMultiListEntry "{6134C335BE3AA574}" {
+   m_aEntities {
+    SCR_EntityCatalogInventoryItem "{6134C335A2B92D94}" {
+     m_bEnabled 0
+    }
+   }
+  }
+  SCR_EntityCatalogMultiListEntry "{69844B9388583419}" {
+   m_aEntities {
+    SCR_EntityCatalogInventoryItem "{69844B938A33C8B3}" {
+     m_aEntityDataList {
+      SCR_ArsenalItem "{69844B939DBEC30A}" {
+       m_iSupplyCost 6
+      }
+     }
+    }
+    SCR_EntityCatalogInventoryItem "{69844B938649D9E9}" {
+     m_aEntityDataList {
+      SCR_ArsenalItem "{69844B9382F40CAC}" {
+       m_iSupplyCost 2
+      }
+     }
+    }
+   }
+  }
+ }
+}
