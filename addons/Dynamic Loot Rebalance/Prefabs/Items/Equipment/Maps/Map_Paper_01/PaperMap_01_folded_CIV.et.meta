@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{262B95830FF2EA24}Prefabs/Items/Equipment/Maps/Map_Paper_01/PaperMap_01_folded_CIV.et"
+ Name "{9C48C1DC08BC29BE}Prefabs/Items/Equipment/Maps/Map_Paper_01/PaperMap_01_folded_CIV2.et"
  Configurations {
   EntityTemplateResourceClass PC {
   }
@@ -12,6 +12,8 @@ MetaFileClass {
   EntityTemplateResourceClass PS5 : PC {
   }
   EntityTemplateResourceClass HEADLESS : PC {
+  }
+  EntityTemplateResourceClass Xbox : PC {
   }
  }
 }

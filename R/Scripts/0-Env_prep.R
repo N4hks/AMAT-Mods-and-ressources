@@ -1,3 +1,4 @@
+# --------------------------------------- ####
 # -- Setting Function(s) --  ####
 ## -- For Install + load packages -- ####
 c( # "jsonlite",
@@ -137,9 +138,12 @@ write_tree <- function(env, indent_level, file_con, is_root = FALSE, override = 
     }
   }
 }
+## -- Function to generate 16-character Enfusion GUIDs & IDs -- ####
+generate_enfusion_guid <- function() {
+  paste0(sample(c(0:9, LETTERS[1:6]), 16, replace = TRUE), collapse = "")
+}
 
-
-
+# --------------------------------------- ####
 # -- Pre-allocate list to receive data -- ####
 c("Data",
   "Paths") %>%

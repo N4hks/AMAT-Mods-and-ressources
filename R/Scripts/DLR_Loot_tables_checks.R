@@ -8,7 +8,7 @@ file.path(Paths$Inputs$path,
            into = c("Empty",
                     "Source_faction",
                     "unidentified",
-                    "Loot_category",
+                    "Loot_categories",
                     "Prefab_path",
                     "Weight")) %>%
   dplyr::select(! Empty) %>%
@@ -66,17 +66,34 @@ file.path(Paths$Inputs$path,
                                 } %>%
   distinct() %>%
   dplyr::relocate(Item_subtype,
-                  .after = everything()) ->
-  Data[["DL_LootSytem"]][["Loot tables"]][["2026.08.05-10.01.53"]]  
+                  .after = everything()) %>%
+  pivot_longer(cols = Loot_categories,
+               values_transform = ~ .x %>% str_split(pattern = ","),
+               values_to = "Loot_category") %>%
+  unnest(Loot_category) %>%
+  arrange(Item_type,
+          Item_subtype) %>%
+  mutate(active = T) %>%
+  pivot_wider(names_from = Loot_category,
+              values_from = active,
+              values_fill  = F) ->
+  Data[["DL_LootSytem"]][["Loot tables"]][["2026.08.05-10.01.53"]][["full"]]
 
 
 # View(Data[["DL_LootSytem"]][["Loot tables"]][["2026.08.05-10.01.53"]])
 
-Data[["DL_LootSytem"]][["Loot tables"]][["2026.08.05-10.01.53"]]   %>% 
-  ggplot()+
-  geom_histogram(aes(x = Weight))+
-  # geom_density(aes(x = Weight))+
-  # geom_boxplot(aes(y = Item_subtype,
-  #              x = Weight))+
-  facet_wrap(facets = vars(Item_type,
-                           Item_subtype))
+# Data[["DL_LootSytem"]][["Loot tables"]][["2026.08.05-10.01.53"]]   %>% 
+#   ggplot()+
+#   geom_histogram(aes(x = Weight))+
+#   # geom_density(aes(x = Weight))+
+#   # geom_boxplot(aes(y = Item_subtype,
+#   #              x = Weight))+
+#   facet_wrap(facets = vars(Item_type,
+#                            Item_subtype))
+
+
+  
+
+
+
+        
