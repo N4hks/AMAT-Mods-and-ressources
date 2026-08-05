@@ -2,7 +2,9 @@
 ## Setting the Paths to the files in the R folder ####
 file.path(".",
           "R",
-          "Inputs") %>%
+          "Inputs",
+          "Configs",
+          "EntityCatalog") %>%
   list.files(full.names = T,
              recursive = T,
              pattern = paste0("(",
@@ -174,6 +176,8 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
                                                                "_AK74",
                                                                "VG40",
                                                                "_V[Zz]58",
+                                                               "STG77_SD",
+                                                               "Suppressor_T4AUG",
                                                                sep = "|")) ~ "0",
                                     str_detect(string = file_name,
                                                pattern = "USSR") & 
@@ -308,8 +312,8 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["mod_long"]] %>%
   dplyr::filter(!is.na(mod_value) & 
                   mod_value != "NA" & 
                   (is.na(raw_value) | raw_value != mod_value)) %>%
-  # Retaining 'folder_name' here is highly recommended to differentiate duplicate file names across mods
-  dplyr::select(folder_name, file_name, Item_GUID, property, mod_value) -> 
+  # FIX 1: Add m_sEntityPrefab here so we can deduplicate by it in the next step
+  dplyr::select(folder_name, file_name, Item_GUID, m_sEntityPrefab, property, mod_value) -> 
   Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]]
 
 
@@ -321,10 +325,23 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properti
                                         unique(Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
                                                  dplyr::filter(is_base_file) %>%
                                                  pull(var = group_name))))) %>%
+  
+  # FIX 2: Bring in the 'is_base_file' flag from our references
+  left_join(x = .,
+            y = Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
+              dplyr::select(Item_GUID, is_base_file) %>%
+              distinct(),
+            by = "Item_GUID") %>%
+  
+  # FIX 3: Sort so TRUE base files are at the top. This guarantees we grab the pure Vanilla GUID!
+  arrange(desc(is_base_file)) %>%
+  
+  # FIX 4: Deduplicate by PREFAB, not GUID. This strips out the third-party mod duplicates.
   distinct(group_name,
-           Item_GUID,
+           m_sEntityPrefab, 
            property,
            .keep_all = TRUE) %>%
+  
   left_join(x = .,
             y = Data[["InventoryItems_EntityCatalog"]][["Canonical_Exact_Context_Map"]],
             by = c("group_name",
@@ -343,8 +360,12 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properti
   ungroup() %>%
   arrange(entry_order,
           vanilla_order) %>%
+  
+  # Clean up our temporary columns so the rest of your script runs perfectly
   dplyr::select(! c(folder_name,
-                    file_name)) %>% 
+                    file_name,
+                    is_base_file,
+                    m_sEntityPrefab)) %>% 
   distinct() ->
   Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]]
 

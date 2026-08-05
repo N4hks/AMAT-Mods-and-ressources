@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{C0618B00D5234FA5}Configs/EntityCatalog/FIA/InventoryItems_EntityCatalog_FIA_for_CIV_DL.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+  CONFResourceClass Xbox : PC {
+  }
+ }
+}

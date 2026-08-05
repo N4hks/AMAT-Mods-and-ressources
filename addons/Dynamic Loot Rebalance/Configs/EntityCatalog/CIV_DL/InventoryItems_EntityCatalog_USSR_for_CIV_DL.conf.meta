@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{9FBB7825B48918B7}Configs/EntityCatalog/USSR/InventoryItems_EntityCatalog_USSR_for_CIV_DL.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+  CONFResourceClass Xbox : PC {
+  }
+ }
+}

@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{59F014829BF2DC41}Configs/EntityCatalog/CIV/InventoryItems_EntityCatalog_CIV_forçCIV_DL.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+  CONFResourceClass Xbox : PC {
+  }
+ }
+}
