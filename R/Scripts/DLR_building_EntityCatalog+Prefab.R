@@ -166,6 +166,8 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
                                                                "Rocket",
                                                                "Bandit",
                                                                "_Trench",
+                                                               "M433",
+                                                               "M406",
                                                                "KLMK",
                                                                "SovietHarness",
                                                                "Type56",
@@ -181,9 +183,10 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
                                                                "Suppressor_T4AUG",
                                                                "_6B2",
                                                                "_6B3",
+                                                               "SPP",
                                                                "Hand_Bandage",
                                                                "M995",
-                                                               "Lifchik_GL",
+                                                               "Lifchik",
                                                                sep = "|")) ~ 
                                       "0",
                                     str_detect(string = file_name,
@@ -395,25 +398,6 @@ if(!dir.exists(Paths[["Outputs"]][["Prefabs_DL"]])) {
 
 ## 4.1 Filter and Prepare File Paths & GUIDs ####
 # Filter the items that should be civilian but aren't getting the right tags.
-Data[["DL_LootSytem"]][["Loot tables"]][["2026.08.05-10.01.53"]][["full"]] %>%
-  dplyr::filter( str_detect(string = Prefab_path,
-                            pattern = paste(Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["modified"]] %>%
-                                              keep_at(~ length(.x) > 0) %>%
-                                              map(~ .x %>% 
-                                                    list_rbind()) %>%
-                                              list_rbind() %>%
-                                              dplyr::filter(! is.na(m_sEntityPrefab) &
-                                                              (is.na(m_bEnabled ) |
-                                                                 m_bEnabled == "1")) %>%
-                                              pull(m_sEntityPrefab) %>%
-                                              unique() %>%
-                                              str_extract("(?<=/)[A-Za-z0-9_]+(?=\\.et$)"),
-                                            collapse = "|"))) ->
-  Data[["DL_LootSytem"]][["Loot tables"]][["2026.08.05-10.01.53"]][["should be civilian"]]
-
-
-# NOTE: Adjust the filter below depending on the exact names of your Urban/Rural columns 
-# generated from the DL loot tables pivot.
 Data[["DL_LootSytem"]][["Loot tables"]][["2026.08.05-10.01.53"]][["should be civilian"]] %>%
   # Example filter: Items that are missing both URBAN and RURAL categories
   dplyr::filter(URBAN == FALSE & RURAL == FALSE) %>% 
@@ -428,12 +412,12 @@ Data[["DL_LootSytem"]][["Loot tables"]][["2026.08.05-10.01.53"]][["should be civ
     new_guid = purrr::map_chr(.x = row_number(), .f = ~ generate_enfusion_guid()),
     inner_id = purrr::map_chr(.x = row_number(), .f = ~ generate_enfusion_guid()),
     
-    # Pre-format the string exactly as it will appear in the .conf file
-    new_prefab_string = paste0('"{', new_guid, '}', new_path, '"'),
-    orig_prefab_string = paste0('"{', orig_guid, '}', orig_path, '"')
+    # FIX: Remove the explicit string quotes so it matches the parsed Enfusion variables!
+    # write_tree() will automatically re-add the quotes because the property starts with "m_s"
+    new_prefab_string = paste0("{", new_guid, "}", new_path),
+    orig_prefab_string = paste0("{", orig_guid, "}", orig_path) 
   ) ->
   Data[["DL_LootSytem"]][["Prefabs_to_clone"]]
-
 
 ## 4.2 Generate and Save .et and .et.meta files ####
 Data[["DL_LootSytem"]][["Prefabs_to_clone"]] %>%
@@ -483,6 +467,7 @@ Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
   dplyr::filter(property == "m_sEntityPrefab") %>%
   # Join to our list of clones to get the new prefab strings
   dplyr::inner_join(y = Data[["DL_LootSytem"]][["Prefabs_to_clone"]],
+                    # FIX: Match on the unquoted string
                     by = join_by(value == orig_prefab_string)) %>%
   dplyr::select(group_name,
                 Item_GUID,
@@ -517,10 +502,6 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properti
           vanilla_order) ->
   Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]]
 
-# Clean up temporary tables
-rm(list = c("generate_enfusion_guid"))
-
-# ---> PROCEED WITH YOUR EXISTING 'for (grp in unique(...))' LOOP HERE <---
 ## Generating and Saving the .conf Override Files -- ####
 ### Create the Exact Context Map ####
 Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
