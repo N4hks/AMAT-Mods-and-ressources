@@ -1,7 +1,14 @@
 # /!\ Copy/paste the loot table from Dynamic Loot ran with all mods including Dynamic Loot Reblance ? /!\
 file.path(Paths$Inputs$path,
-          "DL_LootSystem",
-          "DL_LootSystem Loot table 2026.11.13-11.54-DLR.txt") %>%
+          "DL_LootSystem") %>%
+  list.files(full.names = T) %>%
+  file.info() %>% 
+  rownames_to_column(var = "filepath") %>%
+  dplyr::filter(str_detect(string = filepath,
+                           pattern = "DL_LootSystem Loot table ")) %>%
+  arrange(desc(mtime)) %>%
+  slice(1) %>%
+  pull(filepath) %>%
   read_lines() %>%
   tibble(line = .) %>%
   separate(col = line,
@@ -78,11 +85,11 @@ file.path(Paths$Inputs$path,
   pivot_wider(names_from = Loot_category,
               values_from = active,
               values_fill  = F) ->
-  Data[["DL_LootSytem"]][["Loot tables"]][["2026.11.13-11.54-DLR.txt"]][["full"]]
+  Data[["DL_LootSytem"]][["Loot tables"]][["lastest"]][["full"]]
 
 
 
-Data[["DL_LootSytem"]][["Loot tables"]][["2026.11.13-11.54-DLR.txt"]][["full"]] %>%
+Data[["DL_LootSytem"]][["Loot tables"]][["lastest"]][["full"]] %>%
   dplyr::filter(! (URBAN|RURAL)) %>%
   # mutate(no_ID_PrefabPath = str_extract(string = Prefab_path,
   #                                       pattern = "(?<=\\}).+")) %>%

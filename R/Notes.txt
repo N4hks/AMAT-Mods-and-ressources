@@ -4,7 +4,8 @@ Cigarette
 Pants_Cargo_Tan
 Tent_Deployable_FIA_Conflict
 
-Check for military :
+Check for not URBAN/RURAL :
+AK74U + Mags
 
 
 

@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{F0AF4FF6361C9FB7}Prefabs/Characters/Uniforms/Jacket_Bandit/Jacket_Bandit_white_CIV.et"
+ Name "{1EBE3AB241B786FF}Prefabs/Weapons/Attachments/Muzzle/Suppressor_APB/Suppressor_APB_base_CIV.et"
  Configurations {
   EntityTemplateResourceClass PC {
   }
@@ -17,4 +17,3 @@ MetaFileClass {
   }
  }
 }
-

@@ -145,7 +145,7 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
                                                "3",
                                              m_eItemType == "HEADWEAR" & 
                                                m_iSupplyCost != "0" &
-                                               str_detect(m_sEntityPrefab,
+                                               str_detect(Item_prefab,
                                                           pattern = "Helmet") ~ m_iSupplyCost,
                                              # str_detect(file_name,
                                              #           pattern = "_CIV")  &
@@ -155,26 +155,44 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
                                                                 "FOOTWEAR",
                                                                 "TORSO") ~
                                                "1",
-                                             str_detect(string =  m_sEntityPrefab, 
+                                             str_detect(string =  Item_prefab, 
                                                         pattern = paste("Jerrycan",
                                                                         "RepairKit",
                                                                         sep = "|")) ~
                                                "4",
-                                             str_detect(string =  m_sEntityPrefab, 
+                                             str_detect(string =  Item_prefab, 
                                                         pattern = "PersonalBelongings_CIV") ~
                                                m_iSupplyCost,
                                              m_eItemType == "EQUIPMENT" ~ "2"),
-                   m_bEnabled = case_when(str_detect(string = m_sEntityPrefab,
+                   m_bEnabled = case_when(str_detect(string = Item_prefab,
                                                      pattern = paste("Raincoat",
                                                                      "Fisherman",
                                                                      "Kolobok",
-                                                                     "_Trench",
                                                                      sep = "|")) ~ 
                                             "1",
                                           m_eItemType %in% c("MORTARS",
                                                              "HELICOPTER") ~ 
                                             "0",
-                                          str_detect(string = m_sEntityPrefab,
+                                          m_eItemType == "WEAPON_ATTACHMENT" &
+                                            str_detect(string = Item_prefab,
+                                                       negate = T,
+                                                       pattern = paste0("(",
+                                                                        paste("Bayonet(?!=_M7)",
+                                                                              "GP25",
+                                                                              "Mosin",
+                                                                              "PSO1",
+                                                                              "PBS4",
+                                                                              "_PU",
+                                                                              "APB",
+                                                                              "Stock_VZ61",
+                                                                              "Suppressor_VZ61",
+                                                                              "AUG",
+                                                                              "1P29",
+                                                                              "PGO7V3",
+                                                                              sep = ")|("),
+                                                                        ")")) ~ 
+                                            "0",
+                                          str_detect(string = Item_prefab,
                                                      pattern = paste0("(",
                                                                       paste("RP[GDK]",
                                                                             "M70",
@@ -185,11 +203,10 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
                                                                             "CacheNote",
                                                                             "PersonalBelongings",
                                                                             "Mine",
-                                                                            # "RearmingKit",
                                                                             "Mortars",
                                                                             "CombatBoots_US",
                                                                             "JungleBoots",
-                                                                            "PeakedCap_USSR",
+                                                                            "(Jacket|Pants)_M88",
                                                                             paste0("Helmet_",
                                                                                    c("M1",
                                                                                      "PASGT",
@@ -200,14 +217,12 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
                                                                                    collapse = "|"),
                                                                             "Hood",
                                                                             "KZS",
-                                                                            "M88",
                                                                             "Pilot",
                                                                             "TAZ83",
                                                                             "Tanker",
                                                                             "RGD5",
-                                                                            "VOG25",
                                                                             "NSV",
-                                                                            "M60",
+                                                                            "M6[09]",
                                                                             "UK59",
                                                                             "PK",
                                                                             "KPVT",
@@ -216,63 +231,55 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
                                                                             "Bandit",
                                                                             "_Trench",
                                                                             "M433",
-                                                                            "M406",
+                                                                            "DP_M406",
                                                                             "KLMK",
                                                                             "SovietHarness",
                                                                             "Type56",
                                                                             "_M16",
-                                                                            "_AKM",
                                                                             "_G3",
-                                                                            "_UZI",
-                                                                            "_AK47",
-                                                                            "_AK74",
+                                                                            "_U[Zz][Ii]",
+                                                                            "_AK(_)?(M|74|47)",
+                                                                            "39_AK_",
                                                                             "_M14",
                                                                             "_M3A1",
-                                                                            #"_MineSweeper"
-                                                                            #"VG40",
                                                                             "_V[Zz]58",
-                                                                            # "STG77_SD",
-                                                                            # "Suppressor_T4AUG",
-                                                                            "_6B2",
+                                                                            "_6B2[^_]",
                                                                             "_6B3",
-                                                                            "SPP",
-                                                                            # "Hand_Bandage",
+                                                                            "_SPP",
                                                                             "M995",
                                                                             "Lifchik",
                                                                             "Launcher_FGM148_Javelin",
                                                                             "ACE_FragBanana",
-                                                                            "MedicalKit_01_(FIA|US(SR)?)",
                                                                             "Radio_RF10",
                                                                             "IGLA",
-                                                                            "modern",
+                                                                            "[Mm][Oo][Dd][Ee][Rr][Nn]",
                                                                             "Kornet",
                                                                             "vz61_straight",
+                                                                            "2B14",
+                                                                            "6T5",
+                                                                            "ZU23",
+                                                                            "Khattabka",
                                                                             sep = ")|("),
                                                                       ")")) ~ 
                                             "0",
+                                          is.na(m_bEnabled) &
+                                            str_detect(string = Item_prefab,
+                                                     pattern = paste0("(",
+                                                                      paste("Beret",
+                                                                            "FlatCap",
+                                                                            "Turtleneck",
+                                                                            "Denim",
+                                                                            "Hood_",
+                                                                            sep = ")|("),
+                                                                      ")")) ~ 
+                                            "1",
                                           str_detect(string = file_name,
-                                                     pattern = "USSR") & 
-                                            str_detect(string = m_sEntityPrefab,
-                                                       pattern = "Radios") ~ 
+                                                     pattern = "US(SR)?") & 
+                                            str_detect(string = Item_prefab,
+                                                       pattern = "Radio") ~ 
                                             "0",
-                                          m_eItemType == "WEAPON_ATTACHMENT" &
-                                            str_detect(string = m_sEntityPrefab,
-                                                       negate = T,
-                                                       pattern = paste("Bayonet_6Kh4",
-                                                                       "Knife_Bayonet",
-                                                                       "GP25",
-                                                                       "Mosin",
-                                                                       "PSO1",
-                                                                       "PBS4",
-                                                                       "_PU",
-                                                                       "APB",
-                                                                       "Stock_VZ61",
-                                                                       "Suppressor_VZ61",
-                                                                       sep = "|")) ~ 
-                                            "0",
-                                          .default = m_bEnabled)) %>%
-            mutate(if )
-        })) %>%
+                                          .default = m_bEnabled))
+          })) %>%
   keep(~ length(.x) > 0) ->
   Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["modified"]]
 
@@ -352,6 +359,7 @@ Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
 Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
   group_by(group_name,
            Item_GUID) %>%
+  arrange(context) %>%
   slice(1) %>%
   ungroup() %>%
   mutate(base_context = str_extract(string = context,
@@ -426,7 +434,7 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properti
   left_join(x = .,
             y = Data[["InventoryItems_EntityCatalog"]][["Canonical_Base_Context_Map"]],
             by = c("group_name",
-                   "Item_GUID")) %>%
+                   "Item_GUID")) %>% 
   mutate(context = coalesce(context, base_context),
          vanilla_order = coalesce(vanilla_order, base_order + 0.1),
          parent_GUID = str_extract(string = context,

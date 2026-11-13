@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{510BCD6DB0D8017B}Prefabs/Items/Equipment/ARY_AmmoBox_ShotgunShells/ARY_AmmoBox_ShotgunShells_Buckshot_CIV.et"
+ Name "{0082C34E7DAC47C2}Prefabs/Items/Equipment/ARY_AmmoBox_ShotgunShells/ARY_AmmoBox_ShotgunShells_Buckshot_CIV.et"
  Configurations {
   EntityTemplateResourceClass PC {
   }
