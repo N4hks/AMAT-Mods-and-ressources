@@ -1,0 +1,20 @@
+MetaFileClass {
+ Name "{C51F9EDFCD9E3119}Prefabs/Weapons/Magazines/Buckshot 00/BC_Shell_12ga_Buckshot_00_CIV.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+  EntityTemplateResourceClass Xbox : PC {
+  }
+ }
+}
+

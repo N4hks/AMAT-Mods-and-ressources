@@ -1,0 +1,20 @@
+MetaFileClass {
+ Name "{7231E4E8A2264A44}Prefabs/Weapons/Rifles/ARY_HarrySingleShotgun/ARY_Shotgun_HarrySingleShot_Slug_Knife_CIV.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+  EntityTemplateResourceClass Xbox : PC {
+  }
+ }
+}
+

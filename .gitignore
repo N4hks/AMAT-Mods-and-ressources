@@ -24,3 +24,8 @@
 .RData
 .Rhistory
 /R/Inputs/EntityCatalog/.back
+/addons/CopyEntityCatalogPlugin/Configs
+*backup*
+*-back*
+*[Tt]est*
+/Picture/Exotic Thompsons

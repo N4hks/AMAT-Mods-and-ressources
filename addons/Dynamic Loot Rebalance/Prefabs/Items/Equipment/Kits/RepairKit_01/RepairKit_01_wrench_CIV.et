@@ -1,3 +1,4 @@
-GenericEntity : "{33B2DFDCD0EBA3DC}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench_base.et" {
- ID "508AB2013EEE1E00"
+GenericEntity : "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et" {
+ ID "88CFE294ADAA99A8"
 }
+

@@ -1,6 +1,7 @@
+# /!\ Copy/paste the loot table from Dynamic Loot ran with all mods including Dynamic Loot Reblance ? /!\
 file.path(Paths$Inputs$path,
           "DL_LootSystem",
-          "DL_LootSystem Loot table 2026.08.05-10.01.53.txt") %>%
+          "DL_LootSystem Loot table 2026.11.13-11.54-DLR.txt") %>%
   read_lines() %>%
   tibble(line = .) %>%
   separate(col = line,
@@ -77,9 +78,21 @@ file.path(Paths$Inputs$path,
   pivot_wider(names_from = Loot_category,
               values_from = active,
               values_fill  = F) ->
-  Data[["DL_LootSytem"]][["Loot tables"]][["2026.08.05-10.01.53"]][["full"]]
+  Data[["DL_LootSytem"]][["Loot tables"]][["2026.11.13-11.54-DLR.txt"]][["full"]]
 
 
+
+Data[["DL_LootSytem"]][["Loot tables"]][["2026.11.13-11.54-DLR.txt"]][["full"]] %>%
+  dplyr::filter(! (URBAN|RURAL)) %>%
+  # mutate(no_ID_PrefabPath = str_extract(string = Prefab_path,
+  #                                       pattern = "(?<=\\}).+")) %>%
+  dplyr::filter(str_detect(string = Prefab_path,
+                           pattern = paste(read_lines(file.path(Paths$Inputs$path,
+                                                     "DL_LootSystem",
+                                                     "Should_be_civilian_patterns_list.txt")),
+                                           collapse = "|"))) ->
+  Data[["DL_LootSytem"]][["Loot tables"]][["2026.11.13-11.54-DLR.txt"]][["should be civilian"]]
+  
 # View(Data[["DL_LootSytem"]][["Loot tables"]][["2026.08.05-10.01.53"]])
 
 # Data[["DL_LootSytem"]][["Loot tables"]][["2026.08.05-10.01.53"]]   %>% 

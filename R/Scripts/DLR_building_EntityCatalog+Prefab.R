@@ -52,160 +52,228 @@ Paths[["Inputs"]][["InventoryItems_EntityCatalog"]] %>%
 # Modifying Entity Catalogs
 # -- 2. Preparing Data -- ####
 ## Preparing Item properties dataframes ####
-Data[["InventoryItems_EntityCatalog"]][["references"]] %>%
-  map(~ .x %>%
-  keep(.p =  \(object) any(str_detect(colnames(object),
-                                      pattern = "context"))) %>%
-  keep(.p =  \(object) any(str_detect(colnames(object),
-                                      pattern = "property"))) %>%
-  keep(.p =  \(object) any(str_detect(object$property,
-                                      pattern = "m_sEntityPrefab"))) %>%
-  map(function(conf_df) conf_df %>%
-        distinct() %>%
-        mutate(Item_GUID =  str_extract(string = context,
-                                        pattern = '(?<=SCR_EntityCatalogInventoryItem "\\{)[A-Z0-9]+(?=\\}")')) %>%
-        dplyr::filter(! is.na(Item_GUID)) %>% 
-        dplyr::select(file_name,
-                      property,
-                      value,
-                      Item_GUID) %>%
-        pivot_wider(names_from = property,
-                    values_from = value,
-                    values_fn = unique) %>%
-        mutate(Item_prefab = str_extract(string = m_sEntityPrefab,
-                                         pattern = '(?<=/)[A-Za-z0-9_\\-]+(?=\\.et$)')) %>%
-        dplyr::select(where(~ !all(is.na(.x)))))) ->
-  Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]]
+c("660B0207E47CE37E",
+  "660B0207E47D2B31",
+  "660B0207E47D2B3B",
+  "69F8F1F97E225AF5",
+  "69F8F1F97E22B7E0",
+  "69F8F1F97E22B7B3",
+  "69F90928A825E896",
+  "69F8F1F97E2BE61D",
+  "6594FDF053BC96BC") ->
+  Data[["Problematic SCR_EntityCatalogMultiListEntry"]]
 
+Data[["InventoryItems_EntityCatalog"]][["references"]] %>% 
+  map(~ .x %>% 
+        keep(.p = \(object) any(str_detect(colnames(object), pattern = "context"))) %>% 
+        keep(.p = \(object) any(str_detect(colnames(object), pattern = "property"))) %>% 
+        keep(.p = \(object) any(str_detect(object$property, pattern = "m_aEntities|m_sEntityPrefab|m_sEntityID"))) %>% 
+        # Filtering others mods problematic references :
+        keep(.p = \(object) any(str_detect(object$context,
+                                           negate = T,
+                                           pattern = paste(collapse = "|",
+                                                           Data[["Problematic SCR_EntityCatalogMultiListEntry"]])))) %>% 
+        map(function(conf_df){ 
+          res <- conf_df %>% 
+            distinct() %>% 
+            # Generalized regex with capture group to avoid look-behind length limits & support custom Item classes
+            mutate(Item_GUID = str_match(string = context, 
+                                         pattern = '[A-Za-z0-9_]+Item "\\{([A-Z0-9]+)\\}\"')[, 2]) %>% 
+            dplyr::filter(!is.na(Item_GUID)) %>%  
+            dplyr::select(file_name, 
+                          property, 
+                          value, 
+                          Item_GUID) %>% 
+            pivot_wider(names_from = property, 
+                        values_from = value, 
+                        values_fn = unique)
+          
+          # Dynamically handle prefab vs ID extraction and unify into m_sEntityPrefab for downstream compatibility
+          if ("m_sEntityPrefab" %in% colnames(res)) {
+            res <- res %>% mutate(Item_prefab = str_extract(string = m_sEntityPrefab, pattern = '(?<=/)[A-Za-z0-9_\\-]+(?=\\.et$)'))
+          } else if ("m_sEntityID" %in% colnames(res)) {
+            res <- res %>% mutate(
+              m_sEntityPrefab = m_sEntityID,
+              Item_prefab = str_extract(string = m_sEntityID, pattern = '(?<=/)[A-Za-z0-9_\\-]+(?=\\.et$)')
+            )
+          } else {
+            res <- res %>% mutate(Item_prefab = NA_character_)
+          }
+          
+          res %>% dplyr::select(where(~ !all(is.na(.x))))
+        }) 
+  ) -> 
+  Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]]
 
 # -- 3. Adjusting values -- ####
 ## Preparing modified properties dataframes ####
 Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
   map(~ .x %>%
         keep_at(at = \(name) str_detect(string = name,
-                                  pattern = paste("CIV",
-                                                  "FIA",
-                                                  "USSR",
-                                                  sep = "|"))) %>%
-  keep(.p =  \(object) any(str_detect(colnames(object),
-                                      pattern = "m_iSupplyCost"))) %>%
-  keep(.p =  \(object) any(str_detect(colnames(object),
-                                      pattern = "m_eItemType"))) %>%
-  map(function(item_property_df) {
-    
-    # Safety check: Initialize m_bEnabled as NA if the raw file omitted it
-    if (!"m_bEnabled" %in% colnames(item_property_df)) {
-      mutate(.data = item_property_df,
-             m_bEnabled = NA_character_) ->
-        item_property_df
-    }
-    
-    item_property_df %>%
-      mutate(m_iSupplyCost = case_when(.default = m_iSupplyCost,
-                                       m_eItemType == "BACKPACK" &
-                                         str_detect(file_name,
-                                                    pattern = "_CIV") ~ "3",
-                                       m_eItemType == "HEADWEAR" & 
-                                         str_detect(m_sEntityPrefab,
-                                                    pattern = "Helmet") ~ m_iSupplyCost,
-                                       m_eItemType %in% c("HANDWEAR",
-                                                          "HEADWEAR",
-                                                          "LEGS",
-                                                          "TORSO") &   
-                                         str_detect(file_name,
-                                                    pattern = "_CIV") ~ "1",
-                                       str_detect(string =  m_sEntityPrefab, 
-                                                  pattern = paste("Jerrycan",
-                                                                  "RepairKit",
-                                                                  sep = "|")) ~ "4",
-                                       str_detect(string =  m_sEntityPrefab, 
-                                                  pattern = "PersonalBelongings_CIV") ~ m_iSupplyCost,
-                                       m_eItemType == "EQUIPMENT" ~ "2"),
-             m_bEnabled = case_when(m_eItemType %in% c("MORTARS",
-                                                       "HELICOPTER") ~ 
-                                      "0",
-                                    str_detect(string = m_sEntityPrefab,
-                                               pattern = paste("RPG",
-                                                               "M70",
-                                                               paste0("PaperMap_01_folded_",
-                                                                      c("FIA",
-                                                                        "USSR"),
-                                                                      collapse = "|"),
-                                                               "CacheNote",
-                                                               "PersonalBelongings",
-                                                               "Mine",
-                                                               "RearmingKit",
-                                                               "Mortars",
-                                                               "CombatBoots_US",
-                                                               "JungleBoots",
-                                                               "PeakedCap_USSR",
-                                                               paste0("Helmet_",
-                                                                      c("M1",
-                                                                        "PASGT",
-                                                                        "PASGT",
-                                                                        "SSh68_",
-                                                                        "TSh4",
-                                                                        "ZSh5"),
-                                                                      collapse = "|"),
-                                                               "Hood",
-                                                               "KZS",
-                                                               "M88",
-                                                               "Pilot",
-                                                               "TAZ83",
-                                                               "Tanker",
-                                                               "RGD5",
-                                                               "VOG25",
-                                                               "RPK",
-                                                               "RPD",
-                                                               "NSV",
-                                                               "M60",
-                                                               "UK59",
-                                                               "PK",
-                                                               "KPVT",
-                                                               "1911",
-                                                               "Rocket",
-                                                               "Bandit",
-                                                               "_Trench",
-                                                               "M433",
-                                                               "M406",
-                                                               "KLMK",
-                                                               "SovietHarness",
-                                                               "Type56",
-                                                               "_M16",
-                                                               "_AKM",
-                                                               "_G3",
-                                                               "_UZI",
-                                                               "_AK47",
-                                                               "_AK74",
-                                                               "VG40",
-                                                               "_V[Zz]58",
-                                                               "STG77_SD",
-                                                               "Suppressor_T4AUG",
-                                                               "_6B2",
-                                                               "_6B3",
-                                                               "SPP",
-                                                               "Hand_Bandage",
-                                                               "M995",
-                                                               "Lifchik",
-                                                               sep = "|")) ~ 
-                                      "0",
-                                    str_detect(string = file_name,
-                                               pattern = "USSR") & 
-                                      str_detect(string = m_sEntityPrefab,
-                                                 pattern = "Radios") ~ 
-                                      "0",
-                                    m_eItemType == "WEAPON_ATTACHMENT" &
-                                      str_detect(string = m_sEntityPrefab,
-                                                 negate = T,
-                                                 pattern = paste("Bayonet_6Kh4",
-                                                                 "Knife_Bayonet",
-                                                                 "PSO1",
-                                                                 "PBS4",
-                                                                 sep = "|")) ~ 
-                                      "0",
-                                    .default = m_bEnabled))
-  })) %>%
-  keep(~ length(.x) > 0)->
+                                        pattern = paste("CIV",
+                                                        "FIA",
+                                                        "USSR",
+                                                        sep = "|"))) %>%
+        # keep(.p =  \(object) any(str_detect(colnames(object),
+        #                                     pattern = "m_iSupplyCost"))) %>%
+        # keep(.p =  \(object) any(str_detect(colnames(object),
+        #                                     pattern = "m_eItemType"))) %>%
+        map(function(item_property_df) {
+          
+          # Safety check: Initialize m_bEnabled as NA if the raw file omitted it
+          if (!"m_bEnabled" %in% colnames(item_property_df)) {
+            mutate(.data = item_property_df,
+                   m_bEnabled = NA_character_) ->
+              item_property_df
+          }
+          if (!"m_iSupplyCost" %in% colnames(item_property_df)) {
+            mutate(.data = item_property_df,
+                   m_iSupplyCost = NA_character_) ->
+              item_property_df
+          }
+          if (!"m_eItemType" %in% colnames(item_property_df)) {
+            mutate(.data = item_property_df,
+                   m_eItemType = NA_character_) ->
+              item_property_df
+          }
+          
+          item_property_df %>%
+            mutate(m_iSupplyCost = case_when(.default = m_iSupplyCost,
+                                             m_eItemType == "BACKPACK" &
+                                               str_detect(file_name,
+                                                          pattern = "_CIV") ~ 
+                                               "3",
+                                             m_eItemType == "HEADWEAR" & 
+                                               m_iSupplyCost != "0" &
+                                               str_detect(m_sEntityPrefab,
+                                                          pattern = "Helmet") ~ m_iSupplyCost,
+                                             # str_detect(file_name,
+                                             #           pattern = "_CIV")  &
+                                             m_eItemType %in% c("HANDWEAR",
+                                                                "HEADWEAR",
+                                                                "LEGS",
+                                                                "FOOTWEAR",
+                                                                "TORSO") ~
+                                               "1",
+                                             str_detect(string =  m_sEntityPrefab, 
+                                                        pattern = paste("Jerrycan",
+                                                                        "RepairKit",
+                                                                        sep = "|")) ~
+                                               "4",
+                                             str_detect(string =  m_sEntityPrefab, 
+                                                        pattern = "PersonalBelongings_CIV") ~
+                                               m_iSupplyCost,
+                                             m_eItemType == "EQUIPMENT" ~ "2"),
+                   m_bEnabled = case_when(str_detect(string = m_sEntityPrefab,
+                                                     pattern = paste("Raincoat",
+                                                                     "Fisherman",
+                                                                     "Kolobok",
+                                                                     "_Trench",
+                                                                     sep = "|")) ~ 
+                                            "1",
+                                          m_eItemType %in% c("MORTARS",
+                                                             "HELICOPTER") ~ 
+                                            "0",
+                                          str_detect(string = m_sEntityPrefab,
+                                                     pattern = paste0("(",
+                                                                      paste("RP[GDK]",
+                                                                            "M70",
+                                                                            paste0("PaperMap_01_folded_",
+                                                                                   c("FIA",
+                                                                                     "USSR"),
+                                                                                   collapse = "|"),
+                                                                            "CacheNote",
+                                                                            "PersonalBelongings",
+                                                                            "Mine",
+                                                                            # "RearmingKit",
+                                                                            "Mortars",
+                                                                            "CombatBoots_US",
+                                                                            "JungleBoots",
+                                                                            "PeakedCap_USSR",
+                                                                            paste0("Helmet_",
+                                                                                   c("M1",
+                                                                                     "PASGT",
+                                                                                     "PASGT",
+                                                                                     "SSh68_",
+                                                                                     "TSh4",
+                                                                                     "ZSh5"),
+                                                                                   collapse = "|"),
+                                                                            "Hood",
+                                                                            "KZS",
+                                                                            "M88",
+                                                                            "Pilot",
+                                                                            "TAZ83",
+                                                                            "Tanker",
+                                                                            "RGD5",
+                                                                            "VOG25",
+                                                                            "NSV",
+                                                                            "M60",
+                                                                            "UK59",
+                                                                            "PK",
+                                                                            "KPVT",
+                                                                            "1911",
+                                                                            "Rocket",
+                                                                            "Bandit",
+                                                                            "_Trench",
+                                                                            "M433",
+                                                                            "M406",
+                                                                            "KLMK",
+                                                                            "SovietHarness",
+                                                                            "Type56",
+                                                                            "_M16",
+                                                                            "_AKM",
+                                                                            "_G3",
+                                                                            "_UZI",
+                                                                            "_AK47",
+                                                                            "_AK74",
+                                                                            "_M14",
+                                                                            "_M3A1",
+                                                                            #"_MineSweeper"
+                                                                            #"VG40",
+                                                                            "_V[Zz]58",
+                                                                            # "STG77_SD",
+                                                                            # "Suppressor_T4AUG",
+                                                                            "_6B2",
+                                                                            "_6B3",
+                                                                            "SPP",
+                                                                            # "Hand_Bandage",
+                                                                            "M995",
+                                                                            "Lifchik",
+                                                                            "Launcher_FGM148_Javelin",
+                                                                            "ACE_FragBanana",
+                                                                            "MedicalKit_01_(FIA|US(SR)?)",
+                                                                            "Radio_RF10",
+                                                                            "IGLA",
+                                                                            "modern",
+                                                                            "Kornet",
+                                                                            "vz61_straight",
+                                                                            sep = ")|("),
+                                                                      ")")) ~ 
+                                            "0",
+                                          str_detect(string = file_name,
+                                                     pattern = "USSR") & 
+                                            str_detect(string = m_sEntityPrefab,
+                                                       pattern = "Radios") ~ 
+                                            "0",
+                                          m_eItemType == "WEAPON_ATTACHMENT" &
+                                            str_detect(string = m_sEntityPrefab,
+                                                       negate = T,
+                                                       pattern = paste("Bayonet_6Kh4",
+                                                                       "Knife_Bayonet",
+                                                                       "GP25",
+                                                                       "Mosin",
+                                                                       "PSO1",
+                                                                       "PBS4",
+                                                                       "_PU",
+                                                                       "APB",
+                                                                       "Stock_VZ61",
+                                                                       "Suppressor_VZ61",
+                                                                       sep = "|")) ~ 
+                                            "0",
+                                          .default = m_bEnabled)) %>%
+            mutate(if )
+        })) %>%
+  keep(~ length(.x) > 0) ->
   Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["modified"]]
 
 ## Creating the Output Directory ####
@@ -236,25 +304,28 @@ Data[["InventoryItems_EntityCatalog"]][["references"]] %>%
   map(~ .x %>%
         list_rbind()) %>%
   list_rbind(names_to = "folder_name") %>%
-  mutate(Item_GUID = str_extract(string = context,
-                                 pattern = '(?<=SCR_EntityCatalogInventoryItem "\\{)[A-Z0-9]+(?=\\}")'),
+  dplyr::filter(str_detect(context,
+                           negate = T,
+                           pattern = paste(collapse = "|",
+                                           Data[["Problematic SCR_EntityCatalogMultiListEntry"]]))) %>%
+  mutate(Item_GUID = str_match(string = context, 
+                               pattern = '[A-Za-z0-9_]+Item "\\{([A-Z0-9]+)\\}\"')[, 2],
          is_base_file = str_detect(string = folder_name,
                                    pattern = "^CIV|FIA|US|USSR$") &
            str_detect(string = file_name,
-                                   pattern = "InventoryItems_EntityCatalog_(CIV|FIA|US|USSR)\\.conf$")) %>% {
-  # dplyr::filter(!is.na(Item_GUID)) %>% {
-    . -> data 
-    
-    data %>%
-      mutate(group_name = file_name %>%
-               str_extract(pattern = paste0("(?<=^|_)",
-                                            collapse = "|",
-                                            data %>%
-                                              dplyr::filter(is_base_file) %>%
-                                              pull(var = file_name) %>%
-                                              str_extract(pattern = "(?<=InventoryItems_EntityCatalog_)[A-Z]{2,4}(?=\\.conf$)") %>%
-                                              unique())))
-  } %>%
+                      pattern = "InventoryItems_EntityCatalog_(CIV|FIA|US|USSR)\\.conf$")) %>% {
+                        . -> data 
+                        
+                        data %>%
+                          mutate(group_name = file_name %>%
+                                   str_extract(pattern = paste0("(?<=^|_)",
+                                                                collapse = "|",
+                                                                data %>%
+                                                                  dplyr::filter(is_base_file) %>%
+                                                                  pull(var = file_name) %>%
+                                                                  str_extract(pattern = "(?<=InventoryItems_EntityCatalog_)[A-Z]{2,4}(?=\\.conf$)") %>%
+                                                                  unique())))
+                      } %>%
   arrange(group_name,
           desc(is_base_file),
           file_name) %>%
@@ -284,7 +355,7 @@ Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
   slice(1) %>%
   ungroup() %>%
   mutate(base_context = str_extract(string = context,
-                                    pattern = '.*SCR_EntityCatalogInventoryItem "\\{[A-Z0-9]+\\}"'),
+                                    pattern = '.*[A-Za-z0-9_]+Item "\\{[A-Z0-9]+\\}"'),
          base_order = vanilla_order) %>%
   dplyr::select(group_name,
                 Item_GUID,
@@ -296,7 +367,6 @@ Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
 ### Compare raw and modified dataframes using LEFT JOIN to catch modified/added values ####
 ## Flatten the 'raw' nested list into a single long dataframe -- ####
 Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
-  # bind_rows handles the inner lists, map_dfr handles the outer list
   purrr::map_dfr(.f = ~ dplyr::bind_rows(.x), .id = "folder_name") %>%
   tidyr::pivot_longer(cols = -c(folder_name, file_name, Item_GUID, m_sEntityPrefab, Item_prefab),
                       names_to = "property",
@@ -306,7 +376,6 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
 
 ## Flatten the 'modified' nested list into a single long dataframe -- ####
 Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["modified"]] %>%
-  # CRITICAL: Drop the empty lists (e.g., ARMARYAK74) before binding to prevent errors
   purrr::keep(.p = ~ length(.x) > 0) %>% 
   purrr::map_dfr(.f = ~ dplyr::bind_rows(.x), .id = "folder_name") %>%
   tidyr::pivot_longer(cols = -c(folder_name, file_name, Item_GUID, m_sEntityPrefab, Item_prefab),
@@ -323,7 +392,6 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["mod_long"]] %>%
   dplyr::filter(!is.na(mod_value) & 
                   mod_value != "NA" & 
                   (is.na(raw_value) | raw_value != mod_value)) %>%
-  # FIX 1: Add m_sEntityPrefab here so we can deduplicate by it in the next step
   dplyr::select(folder_name, file_name, Item_GUID, m_sEntityPrefab, property, mod_value) -> 
   Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]]
 
@@ -336,23 +404,20 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properti
                                         unique(Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
                                                  dplyr::filter(is_base_file) %>%
                                                  pull(var = group_name))))) %>%
-  
-  # FIX 2: Bring in the 'is_base_file' flag from our references
   left_join(x = .,
             y = Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
+              dplyr::filter(! is.na(Item_GUID)) %>%
               dplyr::select(Item_GUID, is_base_file) %>%
-              distinct(),
+              distinct() %>%
+              # adding step to make sure item flagged once as is_base_file are kept as such if another mod used the same Item_GUID
+              group_by(Item_GUID) %>% 
+              summarise(is_base_file = any(is_base_file)),
             by = "Item_GUID") %>%
-  
-  # FIX 3: Sort so TRUE base files are at the top. This guarantees we grab the pure Vanilla GUID!
   arrange(desc(is_base_file)) %>%
-  
-  # FIX 4: Deduplicate by PREFAB, not GUID. This strips out the third-party mod duplicates.
   distinct(group_name,
            m_sEntityPrefab, 
            property,
            .keep_all = TRUE) %>%
-  
   left_join(x = .,
             y = Data[["InventoryItems_EntityCatalog"]][["Canonical_Exact_Context_Map"]],
             by = c("group_name",
@@ -366,13 +431,13 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properti
          vanilla_order = coalesce(vanilla_order, base_order + 0.1),
          parent_GUID = str_extract(string = context,
                                    pattern = '(?<=SCR_EntityCatalogMultiListEntry "\\{)[A-Z0-9]+(?=\\}")')) %>%
+  dplyr::filter(! is.na(parent_GUID)) %>%
   group_by(parent_GUID) %>%
   mutate(entry_order = min(vanilla_order, na.rm = TRUE)) %>%
   ungroup() %>%
   arrange(entry_order,
           vanilla_order) %>%
   
-  # Clean up our temporary columns so the rest of your script runs perfectly
   dplyr::select(! c(folder_name,
                     file_name,
                     is_base_file,
@@ -381,39 +446,35 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properti
   Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]]
 
 # -- 4. Generating Custom _CIV Prefabs & Injecting into EntityCatalog -- ####
-
 ## 4.0 Setup: Hex Generator & Output Path ####
-
-# Creating the Output Directory for Prefabs
 file.path(Paths[["Outputs"]]$path,
-          "DynamicLootReblance",
-          "Prefabs") ->
-  Paths[["Outputs"]][["Prefabs_DL"]]
+          "DynamicLootReblance") ->
+  Paths[["Outputs"]][["DynamicLootReblance"]]
 
-if(!dir.exists(Paths[["Outputs"]][["Prefabs_DL"]])) {
-  dir.create(path = Paths[["Outputs"]][["Prefabs_DL"]],
+if(!dir.exists(Paths[["Outputs"]][["DynamicLootReblance"]])) {
+  dir.create(path = Paths[["Outputs"]][["DynamicLootReblance"]],
              recursive = TRUE,
              showWarnings = FALSE)
 }
 
 ## 4.1 Filter and Prepare File Paths & GUIDs ####
-# Filter the items that should be civilian but aren't getting the right tags.
-Data[["DL_LootSytem"]][["Loot tables"]][["2026.08.05-10.01.53"]][["should be civilian"]] %>%
-  # Example filter: Items that are missing both URBAN and RURAL categories
-  dplyr::filter(URBAN == FALSE & RURAL == FALSE) %>% 
-  distinct(Prefab_path) %>%
+Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
+  # Support both m_sEntityPrefab and m_sEntityID items (e.g. ProjectSonarRadio)
+  dplyr::filter(property %in% c("m_sEntityPrefab", "m_sEntityID")) %>%
+  distinct(value) %>%
+  dplyr::filter(str_detect(string = value,
+                           pattern = paste(read_lines(file.path(Paths$Inputs$path,
+                                                "DL_LootSystem",
+                                                "Should_be_civilian_patterns_list.txt")),
+                           collapse = "|"))) %>%
   mutate(
-    # Extract Original GUID and Path
-    orig_guid = str_extract(string = Prefab_path, pattern = "(?<=^\\{)[A-Z0-9]+(?=\\})"),
-    orig_path = str_remove(string = Prefab_path, pattern = "^\\{[A-Z0-9]+\\}"),
+    orig_guid = str_extract(string = value, pattern = "(?<=^\\{)[A-Z0-9]+(?=\\})"),
+    orig_path = str_remove(string = value, pattern = "^\\{[A-Z0-9]+\\}"),
     
-    # Generate New Path, New GUID, and Inner ID
     new_path = str_replace(string = orig_path, pattern = "\\.et$", replacement = "_CIV.et"),
     new_guid = purrr::map_chr(.x = row_number(), .f = ~ generate_enfusion_guid()),
     inner_id = purrr::map_chr(.x = row_number(), .f = ~ generate_enfusion_guid()),
     
-    # FIX: Remove the explicit string quotes so it matches the parsed Enfusion variables!
-    # write_tree() will automatically re-add the quotes because the property starts with "m_s"
     new_prefab_string = paste0("{", new_guid, "}", new_path),
     orig_prefab_string = paste0("{", orig_guid, "}", orig_path) 
   ) ->
@@ -423,15 +484,13 @@ Data[["DL_LootSytem"]][["Loot tables"]][["2026.08.05-10.01.53"]][["should be civ
 Data[["DL_LootSytem"]][["Prefabs_to_clone"]] %>%
   purrr::pwalk(.f = function(orig_guid, orig_path, new_path, new_guid, inner_id, ...) {
     
-    # Construct mirrored directory structure safely
     relative_dir <- dirname(str_remove(string = new_path, pattern = "^/"))
-    full_out_dir <- file.path(Paths[["Outputs"]][["Prefabs_DL"]], relative_dir)
+    full_out_dir <- file.path(Paths[["Outputs"]][["DynamicLootReblance"]], relative_dir)
     
     if(!dir.exists(full_out_dir)) {
-      dir.create(path = full_out_dir, recursive = TRUE, showWarnings = FALSE)
+      dir.create(path = full_out_dir, recursive = TRUE, showWarnings = F)
     }
     
-    # 1. Write the .et file
     et_file_path <- file.path(full_out_dir, basename(new_path))
     et_content <- paste0(
       'GenericEntity : "{', orig_guid, '}', orig_path, '" {\n',
@@ -440,7 +499,6 @@ Data[["DL_LootSytem"]][["Prefabs_to_clone"]] %>%
     )
     writeLines(text = et_content, con = et_file_path)
     
-    # 2. Write the .et.meta file
     meta_file_path <- paste0(et_file_path, ".meta")
     meta_content <- paste0(
       'MetaFileClass {\n',
@@ -461,13 +519,10 @@ Data[["DL_LootSytem"]][["Prefabs_to_clone"]] %>%
 
 
 ## 4.3 Inject New Prefabs into the Changed_Properties Dataframe ####
-# Map the newly created _CIV prefabs back to their contexts so the config writer picks them up
 Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
-  # Find where the original prefabs were defined
-  dplyr::filter(property == "m_sEntityPrefab") %>%
-  # Join to our list of clones to get the new prefab strings
+  # Support both m_sEntityPrefab and m_sEntityID items (e.g. ProjectSonarRadio)
+  dplyr::filter(property %in% c("m_sEntityPrefab", "m_sEntityID")) %>%
   dplyr::inner_join(y = Data[["DL_LootSytem"]][["Prefabs_to_clone"]],
-                    # FIX: Match on the unquoted string
                     by = join_by(value == orig_prefab_string)) %>%
   dplyr::select(group_name,
                 Item_GUID,
@@ -475,7 +530,6 @@ Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
                 mod_value = new_prefab_string,
                 context,
                 vanilla_order) %>%
-  # Re-calculate parent_GUID and entry_order to match Changed_Properties schema
   mutate(parent_GUID = str_extract(string = context,
                                    pattern = '(?<=SCR_EntityCatalogMultiListEntry "\\{)[A-Z0-9]+(?=\\}")')) %>%
   group_by(parent_GUID) %>%
@@ -492,11 +546,9 @@ Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
   distinct() ->
   Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Prefab_Overrides"]]
 
-# Bind our newly generated m_sEntityPrefab overrides into the master list of changes
 Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]] %>%
-  # Remove any old m_sEntityPrefab modifications that might conflict with our new ones
   dplyr::filter(! (Item_GUID %in% Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Prefab_Overrides"]]$Item_GUID & 
-                     property == "m_sEntityPrefab")) %>%
+                     property %in% c("m_sEntityPrefab", "m_sEntityID"))) %>%
   bind_rows(Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Prefab_Overrides"]]) %>%
   arrange(entry_order,
           vanilla_order) ->
@@ -516,27 +568,20 @@ Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
 
 ### Loop through files and generate MINIMAL override outputs ####
 for (grp in unique(Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]]$group_name)) {
-  
   if (is.na(grp)) next
   
-  #### 1. Filter ONLY the properties that actually changed for this faction/group ####
   Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["Changed_Properties"]] %>%
     dplyr::filter(group_name == grp) ->
     grp_changes
   
-  # Safety check: If nothing changed, skip file generation entirely
   if (nrow(grp_changes) == 0) {
     message(paste("No changes detected for:", grp, "- Skipping file generation."))
     next
   }
   
-  #### 2. Initialize a fresh, empty environment for the minimal tree ####
   Data[["InventoryItems_EntityCatalog"]][["tree_env"]][[grp]] <- new.env(parent = emptyenv())
   
-  # 3. Populate the tree using ONLY the nodes that lead to modified values
   for (i in 1:nrow(grp_changes)) {
-    # We use mod_value directly. We do not need the original vanilla values.
-    # The 'context' path contains the necessary multi-list GUIDs for the engine to match.
     add_to_tree(env = Data[["InventoryItems_EntityCatalog"]][["tree_env"]][[grp]], 
                 path = str_split(grp_changes$context[i], " > ")[[1]], 
                 prop = grp_changes$property[i], 
@@ -544,18 +589,14 @@ for (grp in unique(Data[["InventoryItems_EntityCatalog"]][["Items property df"]]
   }
   rm(i)
   
-  #### 4. Open connection to save the file ####
   file_out <- file.path(Paths[["Outputs"]][["CIV_DL EntityCatalog"]],
                         paste0("InventoryItems_EntityCatalog_", grp, "_for_CIV_DL.conf"))
   con <- file(file_out, "w")
   
-  
-  #### 6. Serialize and write the file recursively ####
   write_tree(env = Data[["InventoryItems_EntityCatalog"]][["tree_env"]][[grp]], 
              indent_level = "", 
              file_con = con, 
              is_root = TRUE, 
-             # Fetch the dynamic inheritance header from our mapping
              override = Data[["InventoryItems_EntityCatalog"]][["Vanilla_inherits"]][[grp]])
   
   close(con)

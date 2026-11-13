@@ -1,3 +1,4 @@
-GenericEntity : "{E7DF31108D38A8A8}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item_base.et" {
- ID "508AB2013EEE1E00"
+GenericEntity : "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et" {
+ ID "D95441F8952634C5"
 }
+

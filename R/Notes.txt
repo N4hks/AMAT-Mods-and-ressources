@@ -1,0 +1,20 @@
+Check for not Military :
+Backpack_IIFS_FieldPack_hiking
+Cigarette
+Pants_Cargo_Tan
+Tent_Deployable_FIA_Conflict
+
+Check for military :
+
+
+
+SCR_EntityCatalogInventoryItem to remove :
+685512FA5C5E5145
+685512FA45E161DD
+66FD3E333D9CEC95
+66FD3E3322AC0D22
+
+
+Check disabled :
+RPD
+RPG
