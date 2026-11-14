@@ -4,9 +4,13 @@ Cigarette
 Pants_Cargo_Tan
 Tent_Deployable_FIA_Conflict
 
-Check for not URBAN/RURAL :
+Check for not URBAN/RURAL(/COMMERCIAL?) :
 AK74U + Mags
-
+VOG25/40
+M406 + Launcher
+SVD + PSO
+VZ61
+Medical_kit
 
 
 SCR_EntityCatalogInventoryItem to remove :
