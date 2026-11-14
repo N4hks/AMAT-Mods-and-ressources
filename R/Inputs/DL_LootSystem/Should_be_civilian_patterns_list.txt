@@ -55,6 +55,7 @@ Flare_RSP30
 Smoke_RDG2
 Handgun_PM
 _Stechkin
+Suppressor_APB
 Launcher_M79_
 Launcher_M79_
 Magazine_545x39_AK_30rnd_
