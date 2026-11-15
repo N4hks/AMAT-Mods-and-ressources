@@ -1,8 +1,8 @@
 # /!\ Copy/paste the loot table from Dynamic Loot ran with all mods including Dynamic Loot Reblance ? /!\
 file.path(Paths$Inputs$path,
           "DL_LootSystem") %>%
-  list.files(full.names = T) %>%
-  file.info() %>% 
+  list.files(full.names = TRUE) %>%
+  file.info() %>%
   rownames_to_column(var = "filepath") %>%
   dplyr::filter(str_detect(string = filepath,
                            pattern = "DL_LootSystem Loot table ")) %>%
@@ -10,28 +10,46 @@ file.path(Paths$Inputs$path,
   slice(1) %>%
   pull(filepath) %>%
   read_lines() %>%
-  tibble(line = .) %>%
-  separate(col = line,
-           sep = "(  SCRIPT       : DL_LootSystem: \\[)|(\\]\\()|( \\{)|(\\}\\) Item )|( = )",
-           into = c("Empty",
-                    "Source_faction",
-                    "unidentified",
-                    "Loot_categories",
-                    "Prefab_path",
-                    "Weight")) %>%
-  dplyr::select(! Empty) %>%
-  mutate(Weight = str_remove(string = Weight,
-                             pattern = " weight$") %>%
-           as.numeric(),
+  str_subset("\\S") %>%
+  str_squish() %>%
+  tibble(raw_line = .) %>%
+  extract(col = raw_line,
+          into = c("Log_channel",
+                   "Loot_system",
+                   "Faction_key",
+                   "Object_ptr",
+                   "Loot_categories",
+                   "Entry_kind",
+                   "Prefab_path",
+                   "Weight"),
+          regex = paste0("^(\\S+)\\s*:\\s*(\\S+):\\s*([^\\]\\s]+)",
+                         "(?:\\]?\\(([^\\s\\)]+)\\)?)?",
+                         "\\s+(.+?)\\s+(\\S+)\\s+",
+                         "(\\{?[0-9A-Fa-f]+\\}?Prefabs/.+?\\.et)",
+                         "(?:\\s*=\\s*([0-9]+(?:\\.[0-9]+)?)\\s*weight)?$"),
+          remove = FALSE) %>%
+  mutate(Weight = as.numeric(Weight),
+         Faction_key = str_remove(string = Faction_key,
+                                  pattern = "^\\["),
          Item_mod = str_extract(string = Prefab_path,
-                                pattern = "(?<=^\\{).+(?=\\})"),
+                                pattern = "^\\{?([0-9A-Fa-f]+)\\}?") %>%
+           str_remove_all("[\\{\\}]"),
          Item_type = str_remove(string = Prefab_path,
-                      "^\\{.+\\}Prefabs(/(LCJ|Modded))?/") %>%
-           str_extract(pattern = "^[A-Za-z]+/[A-Za-z]+(?=/)")) %>%
+                                pattern = "^\\{?[0-9A-Fa-f]+\\}?Prefabs(?:/(?:LCJ|Modded))?/") %>%
+           str_extract(pattern = "^[^/]+/[^/]+"),
+         Prefab_file = basename(Prefab_path),
+         Prefab_name = str_remove(string = Prefab_file,
+                                  pattern = "(_CIV)?\\.et$"),
+         Loot_categories = Loot_categories %>%
+           str_remove_all("[\\{\\}\\[\\]\\(\\)]") %>%
+           str_squish(),
+         CIV_duplicate = str_detect(string = Prefab_file,
+                                    pattern = "_CIV.et")) %>%
   separate(col = Item_type,
            sep = "/",
            into = c("Item_type",
-                    "Item_subtype")) %>% # Extract the second column,
+                    "Item_subtype"),
+           fill = "right") %>%
   mutate(Item_subtype = if_else(condition = str_detect(string = Prefab_path,
                                                        pattern = "LCJ|T33"),
                                 true = case_when(str_detect(string = Prefab_path,
@@ -55,65 +73,58 @@ file.path(Paths$Inputs$path,
                                                  str_detect(string = Prefab_path,
                                                             pattern = "Binocular") ~ "Equipment",
                                                  Item_subtype == "Ammunitions" ~ "Magazines",
-                                                 .default = NA),
+                                                 .default = NA_character_),
                                 false = Item_subtype)) %>% {
-                                  . -> data
+                                  data <- .
+                                  
+                                  lookup_types <- data %>%
+                                    dplyr::filter(!is.na(Item_type),
+                                                  Item_type != "LCJ") %>%
+                                    dplyr::select(Item_type,
+                                                  Item_subtype) %>%
+                                    distinct()
                                   
                                   data %>%
-                                    dplyr::filter(Item_type != "LCJ") %>%
-                                    bind_rows(data %>% 
+                                    dplyr::filter(is.na(Item_type) | Item_type != "LCJ") %>%
+                                    bind_rows(data %>%
                                                 dplyr::filter(Item_type == "LCJ") %>%
-                                                dplyr::select(! Item_type) %>%
-                                                distinct() %>%
-                                                left_join(by = join_by(Item_subtype),
-                                                          y = data %>%
-                                                            dplyr::filter(Item_type != "LCJ") %>%
-                                                            dplyr::select(Item_type,
-                                                                          Item_subtype) %>%
-                                                            distinct()))
+                                                dplyr::select(-Item_type) %>%
+                                                left_join(lookup_types,
+                                                          by = join_by(Item_subtype)))
                                 } %>%
   distinct() %>%
-  dplyr::relocate(Item_subtype,
-                  .after = everything()) %>%
-  pivot_longer(cols = Loot_categories,
-               values_transform = ~ .x %>% str_split(pattern = ","),
-               values_to = "Loot_category") %>%
-  unnest(Loot_category) %>%
-  arrange(Item_type,
-          Item_subtype) %>%
-  mutate(active = T) %>%
+  separate_longer_delim(cols = Loot_categories,
+                        delim = ",") %>%
+  mutate(Loot_category = str_squish(Loot_categories)) %>%
+  dplyr::filter(!is.na(Loot_category),
+                Loot_category != "") %>%
+  # dplyr::select(-Loot_categories_clean) %>%
+  distinct() %>%
+  mutate(active = TRUE) %>%
   pivot_wider(names_from = Loot_category,
               values_from = active,
-              values_fill  = F) ->
+              values_fill = FALSE) %>%
+  dplyr::select(- c(raw_line,
+                    Log_channel,
+                    Loot_system,
+                    Object_ptr,
+                    Entry_kind,)) %>%
+  dplyr::relocate(c(Item_type,
+                  Item_subtype,
+                  Prefab_name,
+                  CIV_duplicate,
+                  Weight,
+                  Loot_categories),
+                  .before = everything()) %>%
+dplyr::relocate(Faction_key,
+                Item_mod,
+                Prefab_file,
+                Prefab_path,
+                .after = everything())->
   Data[["DL_LootSytem"]][["Loot tables"]][["lastest"]][["full"]]
 
-
-
 Data[["DL_LootSytem"]][["Loot tables"]][["lastest"]][["full"]] %>%
-  dplyr::filter(! (URBAN|RURAL)) %>%
-  # mutate(no_ID_PrefabPath = str_extract(string = Prefab_path,
-  #                                       pattern = "(?<=\\}).+")) %>%
-  dplyr::filter(str_detect(string = Prefab_path,
-                           pattern = paste(read_lines(file.path(Paths$Inputs$path,
-                                                     "DL_LootSystem",
-                                                     "Should_be_civilian_patterns_list.txt")),
-                                           collapse = "|"))) ->
-  Data[["DL_LootSytem"]][["Loot tables"]][["2026.11.13-11.54-DLR.txt"]][["should be civilian"]]
-  
-# View(Data[["DL_LootSytem"]][["Loot tables"]][["2026.08.05-10.01.53"]])
-
-# Data[["DL_LootSytem"]][["Loot tables"]][["2026.08.05-10.01.53"]]   %>% 
-#   ggplot()+
-#   geom_histogram(aes(x = Weight))+
-#   # geom_density(aes(x = Weight))+
-#   # geom_boxplot(aes(y = Item_subtype,
-#   #              x = Weight))+
-#   facet_wrap(facets = vars(Item_type,
-#                            Item_subtype))
+  write_tsv(file = file.path(Paths$Outputs$path,
+                             "DL_LootSytem_Loot_table-lastest.tsv"))
 
 
-  
-
-
-
-        
