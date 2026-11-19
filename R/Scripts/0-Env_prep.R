@@ -2,6 +2,7 @@
 # -- Setting Function(s) --  ####
 ## -- For Install + load packages -- ####
 c( # "jsonlite",
+  "fs",
   "tidyverse") |>
   lapply(  FUN = \(packagename) {
     if(! require(packagename,

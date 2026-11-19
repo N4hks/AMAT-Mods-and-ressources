@@ -98,7 +98,6 @@ file.path(Paths$Inputs$path,
   mutate(Loot_category = str_squish(Loot_categories)) %>%
   dplyr::filter(!is.na(Loot_category),
                 Loot_category != "") %>%
-  # dplyr::select(-Loot_categories_clean) %>%
   distinct() %>%
   mutate(active = TRUE) %>%
   pivot_wider(names_from = Loot_category,
@@ -110,18 +109,49 @@ file.path(Paths$Inputs$path,
                     Object_ptr,
                     Entry_kind,)) %>%
   dplyr::relocate(c(Item_type,
-                  Item_subtype,
-                  Prefab_name,
-                  CIV_duplicate,
-                  Weight,
-                  Loot_categories),
+                    Item_subtype,
+                    Prefab_name,
+                    CIV_duplicate,
+                    Weight,
+                    Loot_categories),
                   .before = everything()) %>%
-dplyr::relocate(Faction_key,
-                Item_mod,
-                Prefab_file,
-                Prefab_path,
-                .after = everything())->
+  dplyr::relocate(Faction_key,
+                  Item_mod,
+                  Prefab_file,
+                  Prefab_path,
+                  .after = everything()) %>%
+  group_by(Prefab_name) %>%
+  summarise(across(.cols = c(Item_type,
+                             Item_subtype,
+                             Weight,
+                             Faction_key,
+                             Loot_categories),
+                   .fns = function(variable) {
+                     paste(unique(variable),
+                           collapse = " ; ")
+                   }),
+            across(.cols = c(CIV_duplicate,
+                             URBAN,
+                             RURAL,
+                             MEDICAL,
+                             COMMERCIAL,
+                             INDUSTRIAL,
+                             POLICE,
+                             MILITARY),
+                   .fns = any)) %>%
+  arrange(MILITARY,
+          INDUSTRIAL,
+          POLICE,
+          COMMERCIAL,
+          MEDICAL,
+          RURAL,
+          URBAN,
+          Item_type,
+          Item_subtype,
+          Prefab_name)->
   Data[["DL_LootSytem"]][["Loot tables"]][["lastest"]][["full"]]
+
+Data[["DL_LootSytem"]][["Loot tables"]][["lastest"]][["full"]]
 
 Data[["DL_LootSytem"]][["Loot tables"]][["lastest"]][["full"]] %>%
   write_tsv(file = file.path(Paths$Outputs$path,

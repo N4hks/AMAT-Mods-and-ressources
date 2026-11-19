@@ -264,14 +264,14 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
                                             "0",
                                           is.na(m_bEnabled) &
                                             str_detect(string = Item_prefab,
-                                                     pattern = paste0("(",
-                                                                      paste("Beret",
-                                                                            "FlatCap",
-                                                                            "Turtleneck",
-                                                                            "Denim",
-                                                                            "Hood_",
-                                                                            sep = ")|("),
-                                                                      ")")) ~ 
+                                                       pattern = paste0("(",
+                                                                        paste("Beret",
+                                                                              "FlatCap",
+                                                                              "Turtleneck",
+                                                                              "Denim",
+                                                                              "Hood_",
+                                                                              sep = ")|("),
+                                                                        ")")) ~ 
                                             "1",
                                           str_detect(string = file_name,
                                                      pattern = "US(SR)?") & 
@@ -279,7 +279,7 @@ Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["raw"]] %>%
                                                        pattern = "Radio") ~ 
                                             "0",
                                           .default = m_bEnabled))
-          })) %>%
+        })) %>%
   keep(~ length(.x) > 0) ->
   Data[["InventoryItems_EntityCatalog"]][["Items property df"]][["modified"]]
 
@@ -472,9 +472,9 @@ Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
   distinct(value) %>%
   dplyr::filter(str_detect(string = value,
                            pattern = paste(read_lines(file.path(Paths$Inputs$path,
-                                                "DL_LootSystem",
-                                                "Should_be_civilian_patterns_list.txt")),
-                           collapse = "|"))) %>%
+                                                                "DL_LootSystem",
+                                                                "Should_be_civilian_patterns_list.txt")),
+                                           collapse = "|"))) %>%
   mutate(
     orig_guid = str_extract(string = value, pattern = "(?<=^\\{)[A-Z0-9]+(?=\\})"),
     orig_path = str_remove(string = value, pattern = "^\\{[A-Z0-9]+\\}"),
@@ -489,6 +489,13 @@ Data[["InventoryItems_EntityCatalog"]][["All_Item_References"]] %>%
   Data[["DL_LootSytem"]][["Prefabs_to_clone"]]
 
 ## 4.2 Generate and Save .et and .et.meta files ####
+# Remove all .et files (but the Faction Manager) :
+list.files(path = file.path(Paths[["Outputs"]][["DynamicLootReblance"]],
+                            "Prefabs"),
+           recursive = T) %>%
+  file.remove()
+
+# Saving new prefabs
 Data[["DL_LootSytem"]][["Prefabs_to_clone"]] %>%
   purrr::pwalk(.f = function(orig_guid, orig_path, new_path, new_guid, inner_id, ...) {
     
@@ -614,3 +621,47 @@ for (grp in unique(Data[["InventoryItems_EntityCatalog"]][["Items property df"]]
      grp_changes)
 }
 rm(grp)
+
+# -- 5. Updating the files in the mods -- ####
+list.files(path = file.path("C:",
+                            "Users",
+                            Sys.info()[["user"]],
+                            "Documents",
+                            "My Games",
+                            "ArmaReforgerWorkbench",
+                            "addons",
+                            "Dynamic Loot Rebalance",
+                            "Prefabs"),
+           recursive = T,
+           full.names = T) %>%
+  str_subset(pattern = "FactionManager_Base\\.et",
+             negate = T) %>%
+  file.remove()
+
+dir_copy(path = path(Paths[["Outputs"]][["DynamicLootReblance"]],
+                     "Prefabs"),
+         new_path = path("C:",
+                         "Users",
+                         Sys.info()[["user"]],
+                         "Documents",
+                         "My Games",
+                         "ArmaReforgerWorkbench",
+                         "addons",
+                         "Dynamic Loot Rebalance",
+                         "Prefabs"),
+         overwrite = TRUE)
+
+  dir_copy(path = path(Paths[["Outputs"]][["DynamicLootReblance"]],
+                       "Configs",
+                       "EntityCatalog"),
+           new_path = path("C:",
+                           "Users",
+                           Sys.info()[["user"]],
+                           "Documents",
+                           "My Games",
+                           "ArmaReforgerWorkbench",
+                           "addons",
+                           "Dynamic Loot Rebalance",
+                           "Configs",
+                           "EntityCatalog"),
+           overwrite = TRUE)

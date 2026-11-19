@@ -61,15 +61,15 @@ Launcher_M79_
 Magazine_545x39_AK_30rnd_
 _Mosin_Nagant
 _12[Gg]a_
-ARY_AmmoBox_ShotgunShells
+ShotgunShell
 _9x18_[A-Za-z0-9]+_[0-9]+rnd
 PPSH41
 STG44
 Rifle_AKS74U
 HarrySingleShot
 SVD
-Double Barrel
-Over Under
+Double_Barrel
+Over_Under
 M37
 Optic_PSO1
 BC_Optic_PU
