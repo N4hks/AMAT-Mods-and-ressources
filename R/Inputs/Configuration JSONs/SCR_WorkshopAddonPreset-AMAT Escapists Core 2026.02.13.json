@@ -1,0 +1,130 @@
+   }
+   SCR_WorkshopAddonPreset "{689B2A1BC0C08377}" {
+    m_sName "AMAT Escapists Core 2026.02.13"
+    m_aAddonsMeta {
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C08347}" {
+      m_sGuid "62F364B35E9B51B0"
+      m_sName "Wirecutters 2"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C08355}" {
+      m_sGuid "5964E0B3BB7410CE"
+      m_sName "Game Master Enhanced"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C084AB}" {
+      m_sGuid "60C53A9372ED3964"
+      m_sName "ACE Compass"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C084B9}" {
+      m_sGuid "62F802951CC8A37E"
+      m_sName "ACE Tactical Periscope"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C0848E}" {
+      m_sGuid "5DBD560C5148E1DA"
+      m_sName "ACE Carrying"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C0849C}" {
+      m_sGuid "60EAEA0389DB3CC2"
+      m_sName "ACE Trenches"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C08492}" {
+      m_sGuid "5EB744C5F42E0800"
+      m_sName "ACE Chopping"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C084E7}" {
+      m_sGuid "60C4CE4888FF4621"
+      m_sName "ACE Core"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C084F4}" {
+      m_sGuid "5EE2A316699473D1"
+      m_sName "Third Person Vehicle Only"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C084CA}" {
+      m_sGuid "611CB1D409001EB0"
+      m_sName "ACE Magazine Repack"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C084DF}" {
+      m_sGuid "6528C95796EBEDE0"
+      m_sName "Environmental Ambience Mod"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C0842D}" {
+      m_sGuid "64475DC102F2BDA4"
+      m_sName "ACE Radio"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C08422}" {
+      m_sGuid "5994AD5A9F33BE57"
+      m_sName "Game Master FX"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C08430}" {
+      m_sGuid "606C369BAC3F6CC3"
+      m_sName "ACE Finger"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C08406}" {
+      m_sGuid "66FC3E70881A5CD8"
+      m_sName "Escapists-DynamicLoot"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C08414}" {
+      m_sGuid "66AB2DDDC5F416ED"
+      m_sName "ARMA-RY FROCS"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C08469}" {
+      m_sGuid "62FCEB51DF8527B6"
+      m_sName "Improved Blood Effect"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C0847F}" {
+      m_sGuid "646D52AF8BB3FF15"
+      m_sName "ACE Captives"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C0844D}" {
+      m_sGuid "66AD0B6D6E7A6A97"
+      m_sName "ScrtSharedContent"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C08442}" {
+      m_sGuid "66BEE55DB60B943B"
+      m_sName "Vibrations Begone"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C08450}" {
+      m_sGuid "656AC01634459D8D"
+      m_sName "Map Drawing"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C085A5}" {
+      m_sGuid "60612C225328522E"
+      m_sName "No Weapon Drop Unconscious"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C085BB}" {
+      m_sGuid "60E573C9B04CC408"
+      m_sName "ACE Backblast"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C08588}" {
+      m_sGuid "621D3771875C1D3D"
+      m_sName "Car Radio 4 All"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C0859E}" {
+      m_sGuid "61226BB18D360BDD"
+      m_sName "ACE Tactical Ladder"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C08593}" {
+      m_sGuid "61B7763A8AEB53B7"
+      m_sName "ACE Explosives"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C085E1}" {
+      m_sGuid "66B2F0B008DC590F"
+      m_sName "DynamicLoot"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C085F6}" {
+      m_sGuid "5F16D7E4A1CBE075"
+      m_sName "Escapists"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C085C4}" {
+      m_sGuid "5B0D1E4380971EBD"
+      m_sName "COALITION Squad Interface"
+     }
+     SCR_WorkshopAddonPresetAddonMeta "{689B2A1BC0C085D9}" {
+      m_sGuid "66AAB0873717CEF0"
+      m_sName "ScrtCore"
+     }
+    }
+   }
+  }
+  m_sUsedPreset "AMAT Escapists Core 2026.02.13"
+ }
+ 

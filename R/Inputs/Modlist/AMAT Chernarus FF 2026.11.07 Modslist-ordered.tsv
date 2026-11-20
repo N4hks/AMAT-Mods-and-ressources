@@ -1,0 +1,145 @@
+Mod ID	Name	Version	Type	Workshop Link	Dependencies
+5D6EA74A94173EDF	Enfusion Database Framework		Frameworks	https://reforger.armaplatform.com/workshop/5D6EA74A94173EDF	None
+5D6EBC81EB1842EF	Enfusion Persistence Framework		Frameworks	https://reforger.armaplatform.com/workshop/5D6EBC81EB1842EF	5D6EA74A94173EDF
+6924E390927C4A08	Enfusion Persistence Crash Fix		Frameworks	https://reforger.armaplatform.com/workshop/6924E390927C4A08	5D6EBC81EB1842EF
+CAFEBEEFF0CACC1A	Freedom Fighters	0.70.1	Scenario / Gamemode	https://reforger.armaplatform.com/workshop/CAFEBEEFF0CACC1A	5D6EBC81EB1842EF
+32C5A359B406A788	BGC_Core - Battlegroup Command		Frameworks	https://reforger.armaplatform.com/workshop/32C5A359B406A788	None
+639964BE95CA3D50	Chernarus PVE		Scenario / Gamemode	https://reforger.armaplatform.com/workshop/639964BE95CA3D50	32C5A359B406A788
+65FB51CDA61F1071	ToH ReCharacters Greek		Assets	https://reforger.armaplatform.com/workshop/65FB51CDA61F1071	64C912EF952E1075
+65FB4A6CFFC4079C	ToH ReCharacters European		Assets	https://reforger.armaplatform.com/workshop/65FB4A6CFFC4079C	64C912EF952E1075
+64722DADC53CB75E	NV-System		Gameplay	https://reforger.armaplatform.com/workshop/64722DADC53CB75E	None
+699B752BA15F84F9	MP5K-PDW for British Forces		Assets	https://reforger.armaplatform.com/workshop/699B752BA15F84F9	5AE50EC5B8D6F4AE
+628933A0D3A0D700	WCS_Mi-24V		Assets	https://reforger.armaplatform.com/workshop/628933A0D3A0D700	629B2BA37EFFD577
+62B4A8E40D31F94B	WW2_Bicycle		Assets	https://reforger.armaplatform.com/workshop/62B4A8E40D31F94B	None
+66873087C05E787C	ARMA-RY M3A1 GREASE GUN		Assets	https://reforger.armaplatform.com/workshop/66873087C05E787C	6614B4EBC1A63458
+66D6340C1D565C98	Chungus Core		Frameworks	https://reforger.armaplatform.com/workshop/66D6340C1D565C98	None
+68E614128CB0E64E	Repair Vehicle Windows		Gameplay	https://reforger.armaplatform.com/workshop/68E614128CB0E64E	None
+65FB5184A09FE8A1	ToH ReCharacters Asian		Assets	https://reforger.armaplatform.com/workshop/65FB5184A09FE8A1	64C912EF952E1075
+6614B9D9C6D7D565	ARMA-RY G3 BATTLE RIFLES		Assets	https://reforger.armaplatform.com/workshop/6614B9D9C6D7D565	6614B4EBC1A63458
+665D1AA55B5D8076	Chernarus Minus	2.0.10	Map	https://reforger.armaplatform.com/workshop/665D1AA55B5D8076	672166DE5926F11F
+66AB2DDDC5F416ED	ARMA-RY FROCS		Assets	https://reforger.armaplatform.com/workshop/66AB2DDDC5F416ED	6614B4EBC1A63458
+69F53D6EB8760DEB	No FIA loot in DLRebalance		Gameplay	https://reforger.armaplatform.com/workshop/69F53D6EB8760DEB	69F0B66FB6F89052
+668F458EC133AE50	ARMA-RY UZI		Assets	https://reforger.armaplatform.com/workshop/668F458EC133AE50	6614B4EBC1A63458
+5964E0B3BB7410CE	Game Master Enhanced		QoL / Utilities	https://reforger.armaplatform.com/workshop/5964E0B3BB7410CE	None
+629B2BA37EFFD577	WCS_Armaments		Assets	https://reforger.armaplatform.com/workshop/629B2BA37EFFD577	None
+62CCD69DD17E4F2F	AKI_Core		Frameworks	https://reforger.armaplatform.com/workshop/62CCD69DD17E4F2F	None
+5F0D245931200FD1	Railway Generator		Assets	https://reforger.armaplatform.com/workshop/5F0D245931200FD1	5DE612963E4B005A
+67153CD5DC771D42	ARMA-RY SOVIET OPTICS		Assets	https://reforger.armaplatform.com/workshop/67153CD5DC771D42	6614B4EBC1A63458
+60C4C12DAE90727B	ACE Medical Core		Gameplay	https://reforger.armaplatform.com/workshop/60C4C12DAE90727B	60C4CE4888FF4621
+5C9AD9EF76F6B5EA	ZU-23		Assets	https://reforger.armaplatform.com/workshop/5C9AD9EF76F6B5EA	None
+69C8B53172851162	Radio - Les Cires Jaunes		Audio	https://reforger.armaplatform.com/workshop/69C8B53172851162	62E354B50264C08F
+60C53A9372ED3964	ACE Compass		Gameplay	https://reforger.armaplatform.com/workshop/60C53A9372ED3964	60C4CE4888FF4621
+62F802951CC8A37E	ACE Tactical Periscope		Assets	https://reforger.armaplatform.com/workshop/62F802951CC8A37E	60C4CE4888FF4621
+62FCEB51DF8527B6	Improved Blood Effect		Gameplay	https://reforger.armaplatform.com/workshop/62FCEB51DF8527B6	None
+633C83B70AEF1826	Realistic Fuel Consumption		Gameplay	https://reforger.armaplatform.com/workshop/633C83B70AEF1826	None
+61344BDC155A5A28	Chungus LMGs		Assets	https://reforger.armaplatform.com/workshop/61344BDC155A5A28	66D6340C1D565C98
+663525C5DFA68E7A	ARMA-RY M14 Battle Rifle		Assets	https://reforger.armaplatform.com/workshop/663525C5DFA68E7A	6614B4EBC1A63458
+69033CCD42032F1E	FF - Les Cires Jaunes		Gameplay	https://reforger.armaplatform.com/workshop/69033CCD42032F1E	CAFEBEEFF0CACC1A, 69C8B53172851162
+61BD6595183FCEBD	Chungus Bolt Guns		Assets	https://reforger.armaplatform.com/workshop/61BD6595183FCEBD	66D6340C1D565C98
+69F52C8F56380352	Remove US Faction		Gameplay	https://reforger.armaplatform.com/workshop/69F52C8F56380352	None
+5DBD560C5148E1DA	ACE Carrying		Gameplay	https://reforger.armaplatform.com/workshop/5DBD560C5148E1DA	60C4CE4888FF4621
+665AABC9776468B4	Groupless CSI		QoL / Utilities	https://reforger.armaplatform.com/workshop/665AABC9776468B4	5B0D1E4380971EBD
+60EAEA0389DB3CC2	ACE Trenches		Gameplay	https://reforger.armaplatform.com/workshop/60EAEA0389DB3CC2	60C4CE4888FF4621
+690AB2CB6B478153	Bandit Gear Extra Jackets		Assets	https://reforger.armaplatform.com/workshop/690AB2CB6B478153	66B523AD189F3233
+5EB744C5F42E0800	ACE Chopping		Gameplay	https://reforger.armaplatform.com/workshop/5EB744C5F42E0800	60C4CE4888FF4621
+673E808E019BFD2E	Sages PVS-7		Assets	https://reforger.armaplatform.com/workshop/673E808E019BFD2E	None
+69F0B66FB6F89052	Dynamic Loot Rebalance		Gameplay	https://reforger.armaplatform.com/workshop/69F0B66FB6F89052	66B2F0B008DC590F
+665B1AF5996EB7AA	ARMA-RY M1911A1 PISTOL		Assets	https://reforger.armaplatform.com/workshop/665B1AF5996EB7AA	6614B4EBC1A63458
+6996E41C06A9BE33	Mortar Calculator		QoL / Utilities	https://reforger.armaplatform.com/workshop/6996E41C06A9BE33	None
+60E6F54E174C53C5	Chungus SMGs		Assets	https://reforger.armaplatform.com/workshop/60E6F54E174C53C5	66D6340C1D565C98
+65BB2D0679BCA058	Skyhook		Gameplay	https://reforger.armaplatform.com/workshop/65BB2D0679BCA058	None
+68E17736EC8CFD27	FF Sonar Fix - Ternary		Gameplay	https://reforger.armaplatform.com/workshop/68E17736EC8CFD27	CAFEBEEFF0CACC1A, 665754CB5D6A728F
+6847295A719282CD	FF Washing Machine		Assets	https://reforger.armaplatform.com/workshop/6847295A719282CD	CAFEBEEFF0CACC1A
+69372D5C78C6F51D	MH-6J		Assets	https://reforger.armaplatform.com/workshop/69372D5C78C6F51D	None
+68EAA4976497C46A	ACE Facepaint		Assets	https://reforger.armaplatform.com/workshop/68EAA4976497C46A	60C4CE4888FF4621
+664928B1C3E554ED	ARMA-RY M1 HELMETS		Assets	https://reforger.armaplatform.com/workshop/664928B1C3E554ED	6614B4EBC1A63458
+68B77A281FA3123D	Nasty Stechkin		Assets	https://reforger.armaplatform.com/workshop/68B77A281FA3123D	None
+596330D9AF34AF38	ToH ReCharacters Man		Assets	https://reforger.armaplatform.com/workshop/596330D9AF34AF38	64C912EF952E1075
+69EB21817F1DB9D1	FF - LCJ - Black Market		Gameplay	https://reforger.armaplatform.com/workshop/69EB21817F1DB9D1	CAFEBEEFF0CACC1A, 69C8B53172851162
+6614BD0AC038E724	ARMA-RY G3 SPECIAL RIFLES		Assets	https://reforger.armaplatform.com/workshop/6614BD0AC038E724	6614B4EBC1A63458, 6614B9D9C6D7D565
+68CD26002DAAED01	FF Give Me Posters		Assets	https://reforger.armaplatform.com/workshop/68CD26002DAAED01	CAFEBEEFF0CACC1A
+60C4CE4888FF4621	ACE Core		Frameworks	https://reforger.armaplatform.com/workshop/60C4CE4888FF4621	None
+665754CB5D6A728F	Freedom Fighters - Sonar fix		Gameplay	https://reforger.armaplatform.com/workshop/665754CB5D6A728F	CAFEBEEFF0CACC1A, 62E354B50264C08F
+66BEE55DB60B943B	Vibrations Begone		Gameplay	https://reforger.armaplatform.com/workshop/66BEE55DB60B943B	None
+668A9D14EE624EED	ARMA-RY DELTA FORCE 1980		Assets	https://reforger.armaplatform.com/workshop/668A9D14EE624EED	6614B4EBC1A63458
+65FB50F7FA33DECA	ToH ReCharacters African		Assets	https://reforger.armaplatform.com/workshop/65FB50F7FA33DECA	64C912EF952E1075
+69835BB39580B1B7	MM TT-33		Assets	https://reforger.armaplatform.com/workshop/69835BB39580B1B7	None
+6910798D6DE6EA61	VZ61		Assets	https://reforger.armaplatform.com/workshop/6910798D6DE6EA61	None
+6614BD8AC622B696	ARMA-RY G3 MODERNISED		Assets	https://reforger.armaplatform.com/workshop/6614BD8AC622B696	6614B4EBC1A63458, 6614B9D9C6D7D565
+690F67E53E6EDB09	BFS - F.R.I.E.S Reforged		Gameplay	https://reforger.armaplatform.com/workshop/690F67E53E6EDB09	None
+663EEED7D9BCA814	ARMA-RY NIGHT VISION		Assets	https://reforger.armaplatform.com/workshop/663EEED7D9BCA814	6614B4EBC1A63458
+656AC01634459D8D	Map Drawing		QoL / Utilities	https://reforger.armaplatform.com/workshop/656AC01634459D8D	None
+5DE612963E4B005A	Rail Enfusion Redux		Frameworks	https://reforger.armaplatform.com/workshop/5DE612963E4B005A	None
+648CF0E219A513D9	Beretta M93R		Assets	https://reforger.armaplatform.com/workshop/648CF0E219A513D9	None
+665B3E73D7215B29	ARMA-RY DELTA 1911		Assets	https://reforger.armaplatform.com/workshop/665B3E73D7215B29	6614B4EBC1A63458, 665B1AF5996EB7AA
+666ADD0DDD59F6E7	ARMA-RY AK74 ASSAULT RIFLE		Assets	https://reforger.armaplatform.com/workshop/666ADD0DDD59F6E7	6614B4EBC1A63458
+6338D68D2B800800	FAMAS		Assets	https://reforger.armaplatform.com/workshop/6338D68D2B800800	None
+64C912EF952E1075	ToH ReCharacters Core		Frameworks	https://reforger.armaplatform.com/workshop/64C912EF952E1075	None
+611CB1D409001EB0	ACE Magazine Repack		Gameplay	https://reforger.armaplatform.com/workshop/611CB1D409001EB0	60C4CE4888FF4621
+669EFCE1C4C6C864	ARMA-RY AK47 ASSAULT RIFLE		Assets	https://reforger.armaplatform.com/workshop/669EFCE1C4C6C864	6614B4EBC1A63458
+69E4E0B84E0FD9ED	FF - Chernarus Liberation Army		Gameplay	https://reforger.armaplatform.com/workshop/69E4E0B84E0FD9ED	CAFEBEEFF0CACC1A
+69A47272BCF14AD5	FreedomFighters_Reoccupation	5.3.1	Gameplay	https://reforger.armaplatform.com/workshop/69A47272BCF14AD5	CAFEBEEFF0CACC1A
+64B063B94348F5C8	Beretta M9 SD		Assets	https://reforger.armaplatform.com/workshop/64B063B94348F5C8	None
+60612C225328522E	No Weapon Drop Unconscious		Gameplay	https://reforger.armaplatform.com/workshop/60612C225328522E	None
+69AA4AF22BF19E32	Vanilla Cargo Helicopters		Assets	https://reforger.armaplatform.com/workshop/69AA4AF22BF19E32	None
+69F545B1AE6D7D6C	FF-Dynamic Loot Rebalance		Gameplay	https://reforger.armaplatform.com/workshop/69F545B1AE6D7D6C	CAFEBEEFF0CACC1A, 69F0B66FB6F89052
+66C4D6C8EA530745	ARMA-RY RETRO ATTACHMENTS		Assets	https://reforger.armaplatform.com/workshop/66C4D6C8EA530745	6614B4EBC1A63458
+65FB52DAABB24B05	ToH ReCharacters Tanoan		Assets	https://reforger.armaplatform.com/workshop/65FB52DAABB24B05	64C912EF952E1075
+632759EBF041FA2D	CM-SquadRadioSound		Audio	https://reforger.armaplatform.com/workshop/632759EBF041FA2D	None
+6624F38C0DEC841A	FF - Building Extended		Gameplay	https://reforger.armaplatform.com/workshop/6624F38C0DEC841A	CAFEBEEFF0CACC1A
+67269AA718F11901	Freedom Fighters Logistic		Gameplay	https://reforger.armaplatform.com/workshop/67269AA718F11901	CAFEBEEFF0CACC1A
+60E573C9B04CC408	ACE Backblast		Gameplay	https://reforger.armaplatform.com/workshop/60E573C9B04CC408	60C4CE4888FF4621
+687CD82F6E41D627	Attachment Framework-Core		Frameworks	https://reforger.armaplatform.com/workshop/687CD82F6E41D627	None
+6614BC5EC4E1675B	ARMA-RY CLAW MOUNT		Assets	https://reforger.armaplatform.com/workshop/6614BC5EC4E1675B	6614B4EBC1A63458
+68770D078A1E9C0F	FF - Patrol Supplies		Gameplay	https://reforger.armaplatform.com/workshop/68770D078A1E9C0F	CAFEBEEFF0CACC1A
+621D3771875C1D3D	Car Radio4All - PARTLY BROKEN		Audio	https://reforger.armaplatform.com/workshop/621D3771875C1D3D	None
+64CB39E57377C861	WCS_AH-1S		Assets	https://reforger.armaplatform.com/workshop/64CB39E57377C861	629B2BA37EFFD577
+61226BB18D360BDD	ACE Tactical Ladder		Gameplay	https://reforger.armaplatform.com/workshop/61226BB18D360BDD	60C4CE4888FF4621
+61F0D506562D9BC9	Outside Terrain Core		Frameworks	https://reforger.armaplatform.com/workshop/61F0D506562D9BC9	None
+6858FBEB47CA5901	British Forces Arma-Ry Compat		Gameplay	https://reforger.armaplatform.com/workshop/6858FBEB47CA5901	5AE50EC5B8D6F4AE, 6614B4EBC1A63458
+66B4F053889F613B	FF - Repair Station Tweaks		Gameplay	https://reforger.armaplatform.com/workshop/66B4F053889F613B	CAFEBEEFF0CACC1A
+5C9758250C8C56F1	Bon Action Animations		Gameplay	https://reforger.armaplatform.com/workshop/5C9758250C8C56F1	None
+62E354B50264C08F	Project Sonar - Radio Stations		Audio	https://reforger.armaplatform.com/workshop/62E354B50264C08F	None
+61B7763A8AEB53B7	ACE Explosives		Gameplay	https://reforger.armaplatform.com/workshop/61B7763A8AEB53B7	60C4CE4888FF4621
+695802AE56C1A698	Northcom AUG		Assets	https://reforger.armaplatform.com/workshop/695802AE56C1A698	None
+66B2F0B008DC590F	DynamicLoot		Gameplay	https://reforger.armaplatform.com/workshop/66B2F0B008DC590F	None
+64475DC102F2BDA4	ACE Radio		Audio	https://reforger.armaplatform.com/workshop/64475DC102F2BDA4	60C4CE4888FF4621
+620E584B1D2C96A4	Chungus Shotguns		Assets	https://reforger.armaplatform.com/workshop/620E584B1D2C96A4	66D6340C1D565C98
+6052A9DD45564825	You can sit		Gameplay	https://reforger.armaplatform.com/workshop/6052A9DD45564825	None
+64C4C737F0774668	CM-SquadRadioSound-Addon		Audio	https://reforger.armaplatform.com/workshop/64C4C737F0774668	632759EBF041FA2D
+69156B5B321244C9	Physics Rope		Gameplay	https://reforger.armaplatform.com/workshop/69156B5B321244C9	None
+694F4DD56358846B	MH-6J F.R.I.E.S Reforged Patch		Gameplay	https://reforger.armaplatform.com/workshop/694F4DD56358846B	69372D5C78C6F51D, 690F67E53E6EDB09
+66DE15760F187E40	FF-WhereIsTheBattle		Gameplay	https://reforger.armaplatform.com/workshop/66DE15760F187E40	CAFEBEEFF0CACC1A
+69F538DEB6ADD4D3	Empty USSR Faction		Gameplay	https://reforger.armaplatform.com/workshop/69F538DEB6ADD4D3	None
+697CAA15FA9B7BF0	YouCanSitFix		Gameplay	https://reforger.armaplatform.com/workshop/697CAA15FA9B7BF0	6052A9DD45564825
+69F85DEDA460D7A2	Empty British Faction		Gameplay	https://reforger.armaplatform.com/workshop/69F85DEDA460D7A2	5AE50EC5B8D6F4AE
+69697B4F0D746D8E	Freedom Fighters - Chernarus		Scenario / Gamemode	https://reforger.armaplatform.com/workshop/69697B4F0D746D8E	CAFEBEEFF0CACC1A, 665D1AA55B5D8076
+65F93D3655B7D63C	Northcom - Retro Night Vision		Assets	https://reforger.armaplatform.com/workshop/65F93D3655B7D63C	None
+665AC4328A9856F3	Loot Transfer System		Gameplay	https://reforger.armaplatform.com/workshop/665AC4328A9856F3	None
+65FB5265B4F72F4B	ToH ReCharacters Russian		Assets	https://reforger.armaplatform.com/workshop/65FB5265B4F72F4B	64C912EF952E1075
+65FB762EB503CCF9	ToH ReCharacters Persian		Assets	https://reforger.armaplatform.com/workshop/65FB762EB503CCF9	64C912EF952E1075
+667338D2FBBCE7AB	ARMA-RY SINGLE-SHOT SHOTGUN		Assets	https://reforger.armaplatform.com/workshop/667338D2FBBCE7AB	6614B4EBC1A63458
+66393237EC3C6FDB	ARMA-RY M16 EARLY RIFLES		Assets	https://reforger.armaplatform.com/workshop/66393237EC3C6FDB	6614B4EBC1A63458
+671F3CDAC20CDDC1	ARMA-RY SOVIET EQUIPMENT		Assets	https://reforger.armaplatform.com/workshop/671F3CDAC20CDDC1	6614B4EBC1A63458
+66B523AD189F3233	Bandit Gear		Assets	https://reforger.armaplatform.com/workshop/66B523AD189F3233	None
+5994AD5A9F33BE57	Game Master FX		QoL / Utilities	https://reforger.armaplatform.com/workshop/5994AD5A9F33BE57	None
+6614B4EBC1A63458	ARMA-RY CORE		Frameworks	https://reforger.armaplatform.com/workshop/6614B4EBC1A63458	None
+606C369BAC3F6CC3	ACE Finger		Gameplay	https://reforger.armaplatform.com/workshop/606C369BAC3F6CC3	60C4CE4888FF4621
+698B2BDEB6268D21	SHS Fly_Drive-by -Dev		Gameplay	https://reforger.armaplatform.com/workshop/698B2BDEB6268D21	None
+5B0D1E4380971EBD	COALITION Squad Interface		QoL / Utilities	https://reforger.armaplatform.com/workshop/5B0D1E4380971EBD	None
+68E043F84809D387	MP5 A2 Accessories		Assets	https://reforger.armaplatform.com/workshop/68E043F84809D387	None
+66731579C7075EB3	ARMA-RY M79 GRENADE LAUNCHER		Assets	https://reforger.armaplatform.com/workshop/66731579C7075EB3	6614B4EBC1A63458
+5D0551624969C92E	Zeliks Character		Assets	https://reforger.armaplatform.com/workshop/5D0551624969C92E	None
+645F08FA9E7CDEDE	Attachment Framework		Frameworks	https://reforger.armaplatform.com/workshop/645F08FA9E7CDEDE	687CD82F6E41D627
+672166DE5926F11F	Minus Building Pack	1.0.66	Assets	https://reforger.armaplatform.com/workshop/672166DE5926F11F	None
+5AE50EC5B8D6F4AE	British Forces		Assets	https://reforger.armaplatform.com/workshop/5AE50EC5B8D6F4AE	None
+65FB5234B4A8E20B	ToH ReCharacters Livonian		Assets	https://reforger.armaplatform.com/workshop/65FB5234B4A8E20B	64C912EF952E1075
+6992C9FB3D50619F	FN FNC		Assets	https://reforger.armaplatform.com/workshop/6992C9FB3D50619F	None
+68C707113F3F5021	FF_Logistics_LTS_Compat		Gameplay	https://reforger.armaplatform.com/workshop/68C707113F3F5021	67269AA718F11901, 665AC4328A9856F3
+66D97E047E2C8CC0	FF-BuildableFactionAntenna		Gameplay	https://reforger.armaplatform.com/workshop/66D97E047E2C8CC0	CAFEBEEFF0CACC1A
+6A3929F89CD2FE9B	FF - Construction Expansion		Gameplay	https://reforger.armaplatform.com/workshop/6A3929F89CD2FE9B	CAFEBEEFF0CACC1A
+68D4E574018D87C2	FF-SellforSupplies		Gameplay	https://reforger.armaplatform.com/workshop/68D4E574018D87C2	CAFEBEEFF0CACC1A
+60085331FE49E3D7	MCW Reoccupation Air Assault		AI Behavior	https://reforger.armaplatform.com/workshop/60085331FE49E3D7	None
+CC4BE63ECC8DEB97	MCW UAZ-452 Seat Fix		Gameplay	https://reforger.armaplatform.com/workshop/CC4BE63ECC8DEB97	None
+A81D8BF8D285124E	MCW Rigid Tow Bar		Gameplay	https://reforger.armaplatform.com/workshop/A81D8BF8D285124E	None
+6A5D2DE1B3F96D7F	REAPER_ImprovedAI		AI Behavior	https://reforger.armaplatform.com/workshop/6A5D2DE1B3F96D7F	None

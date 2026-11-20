@@ -1,0 +1,381 @@
+{
+  "bindPort": 39423,
+  "publicPort": 39423,
+  "region": "EU-FFM",
+  "dedicatedServerId": "AMAT 2 Arma Reforger server",
+
+  "game": {
+    "name": "[FR] AMAT 2 | COE2 | Anizay",
+    "password": "bidou",
+    "passwordAdmin": "1234",
+    "scenarioId": "{C36DE963B8856E2B}Missions/COE2_Anizay.conf",
+    "visible": true,
+    "admins": [
+      "76561197999531764",
+      "76561197983294071",
+      "76561197978594110",
+      "76561198052829982"
+    ],
+    "crossPlatform": false,
+    "supportedPlatforms": [
+      "PLATFORM_PC"
+    ],
+
+    "gameProperties": {
+      "VONCanTransmitCrossFaction": false,
+      "VONDisableDirectSpeechUI": false,
+      "VONDisableUI": false,
+      "battlEye": true,
+      "disableThirdPerson": false,
+
+      "missionHeader": {
+        "m_ACE_Settings": {
+          "m_ACE_Finger_Settings": {
+            "m_fMaxPointingDistanceM": 1000,
+            "m_bCanPingAttach": 1,
+            "m_fPingRangeM": 20,
+            "m_fMapPointingRangeM": 20
+          },
+          "m_ACE_Medical_Core": {
+            "m_fDefaultResilienceRegenScale": 0.3,
+            "m_fResilienceDamageScale": 1.0,
+            "m_fMinHealthScaledForEpinephrine": 0.10,
+            "m_bPlayerCannotDie": 0,
+            "m_bBleedOutForPlayersEnabled": 1,
+            "m_fBleedingRateScale": 1,
+            "m_fMaxTotalBleedingRate": -1.0,
+            "m_fBloodRegenScale": 1.0,
+            "m_fMedicalKitMaxHealScaled": 1.0,
+            "m_fMedicalKitHealingPerExecution": 20.0,
+            "m_ePainScreenEffectType": 1,
+            "m_fSecondChanceResilienceRegenScale": 0.3,
+            "m_fDefaultSecondChance": 1.0,
+            "m_fSecondChanceOnHead": 1.0,
+            "m_fSecondChanceOnChest": 1.0,
+            "m_fSecondChanceOnAbdomen": 1.0,
+            "m_bSecondChanceForFallDamageEnabled": 1.0,
+            "m_bSecondChanceForAIEnabled": 0
+          }
+        }
+      },
+
+      "networkViewDistance": 2000,
+      "serverMaxViewDistance": 4000,
+      "serverMinGrassDistance": 100
+    },
+
+    "maxPlayers": 12,
+
+    "mods": [
+        {
+            "modId": "60926835F4A7B0CA",
+            "name": "COE2",
+            "version": "2.3.1"
+        },
+        {
+            "modId": "65AD7BCC9F6B3B4E",
+            "name": "ACE Chopping Dev",
+            "version": "1.5.12"
+        },
+        {
+            "modId": "66910C06C167A95C",
+            "name": "ARMA-RY UZI ARMED FIA",
+            "version": "1.0.1"
+        },
+        {
+            "modId": "667B230F9505C8BA",
+            "name": "ACE Weather Dev",
+            "version": "1.5.12"
+        },
+        {
+            "modId": "672735737D6B90E9",
+            "name": "ARMA-RY FACTIONS USSR 83",
+            "version": "1.0.0"
+        },
+        {
+            "modId": "66873087C05E787C",
+            "name": "ARMA-RY M3A1 GREASE GUN",
+            "version": "1.0.5"
+        },
+        {
+            "modId": "65AD7C379CBD394D",
+            "name": "ACE Carrying Dev",
+            "version": "1.5.12"
+        },
+        {
+            "modId": "65AD7CB89F219E38",
+            "name": "ACE Tactical Ladder Dev",
+            "version": "1.5.13"
+        },
+        {
+            "modId": "6614B9D9C6D7D565",
+            "name": "ARMA-RY G3 BATTLE RIFLES",
+            "version": "1.0.26"
+        },
+        {
+            "modId": "6666E6694B0CD5D5",
+            "name": "ARMA-RY M1911A1 ARMED FIA",
+            "version": "1.0.2"
+        },
+        {
+            "modId": "65AD7D2E9866FA6E",
+            "name": "ACE Finger Dev",
+            "version": "1.5.12"
+        },
+        {
+            "modId": "668F458EC133AE50",
+            "name": "ARMA-RY UZI",
+            "version": "1.0.6"
+        },
+        {
+            "modId": "5964E0B3BB7410CE",
+            "name": "Game Master Enhanced",
+            "version": "1.3.5"
+        },
+        {
+            "modId": "65AD7D4099944EBD",
+            "name": "ACE Magazine Repack Dev",
+            "version": "1.5.12"
+        },
+        {
+            "modId": "67153CD5DC771D42",
+            "name": "ARMA-RY SOVIET OPTICS",
+            "version": "1.0.4"
+        },
+        {
+            "modId": "664EC373DAC3C4E5",
+            "name": "ARMA-RY FIA USE M1 HELMETS",
+            "version": "1.0.0"
+        },
+        {
+            "modId": "62FCEB51DF8527B6",
+            "name": "Improved Blood Effect",
+            "version": "1.5.6"
+        },
+        {
+            "modId": "663525C5DFA68E7A",
+            "name": "ARMA-RY M14 Battle Rifle",
+            "version": "1.0.6"
+        },
+        {
+            "modId": "6266DCA9193C705E",
+            "name": "Anizay",
+            "version": "1.0.10"
+        },
+        {
+            "modId": "6663232200F67E9F",
+            "name": "ARMA-RY FACTIONS - US 83",
+            "version": "1.0.11"
+        },
+        {
+            "modId": "65AD7C75826B46C6",
+            "name": "ACE Radio Dev",
+            "version": "1.5.12"
+        },
+        {
+            "modId": "665B1AF5996EB7AA",
+            "name": "ARMA-RY M1911A1 PISTOL",
+            "version": "1.0.2"
+        },
+        {
+            "modId": "65AD7CF69FAF1FDD",
+            "name": "ACE Compass Dev",
+            "version": "1.5.12"
+        },
+        {
+            "modId": "664928B1C3E554ED",
+            "name": "ARMA-RY M1 HELMETS",
+            "version": "1.0.4"
+        },
+        {
+            "modId": "6614BD0AC038E724",
+            "name": "ARMA-RY G3 SPECIAL RIFLES",
+            "version": "1.0.15"
+        },
+        {
+            "modId": "65AD7C139EB4C1A1",
+            "name": "ACE Backblast Dev",
+            "version": "1.5.12"
+        },
+        {
+            "modId": "5ED61DC0AFE17E8E",
+            "name": "Kex Scenario Core",
+            "version": "0.4.27"
+        },
+        {
+            "modId": "66BEE55DB60B943B",
+            "name": "Vibrations Begone",
+            "version": "0.9.0"
+        },
+        {
+            "modId": "5EE2A316699473D1",
+            "name": "Third Person Vehicle Only",
+            "version": "1.0.1"
+        },
+        {
+            "modId": "6614BD8AC622B696",
+            "name": "ARMA-RY G3 MODERNISED",
+            "version": "1.0.16"
+        },
+        {
+            "modId": "65AD7D0D9941A380",
+            "name": "ACE Core Dev",
+            "version": "1.5.13"
+        },
+        {
+            "modId": "5F268647F8A1A1F4",
+            "name": "CRX Enfusion A.I.",
+            "version": "1.3.59"
+        },
+        {
+            "modId": "656AC01634459D8D",
+            "name": "Map Drawing",
+            "version": "1.1.0"
+        },
+        {
+            "modId": "665B3E73D7215B29",
+            "name": "ARMA-RY DELTA 1911",
+            "version": "1.0.2"
+        },
+        {
+            "modId": "65B8EA178A3E94E3",
+            "name": "ACE Overheating Dev",
+            "version": "1.5.12"
+        },
+        {
+            "modId": "666ADD0DDD59F6E7",
+            "name": "ARMA-RY AK74 ASSAULT RIFLE",
+            "version": "1.0.2"
+        },
+        {
+            "modId": "669EFCE1C4C6C864",
+            "name": "ARMA-RY AK47 ASSAULT RIFLE",
+            "version": "1.0.9"
+        },
+        {
+            "modId": "65AD7D1E9EEAFA53",
+            "name": "ACE Explosives Dev",
+            "version": "1.5.12"
+        },
+        {
+            "modId": "60612C225328522E",
+            "name": "No Weapon Drop Unconscious",
+            "version": "1.0.6"
+        },
+        {
+            "modId": "6528C95796EBEDE0",
+            "name": "Environmental Ambience Mod",
+            "version": "1.0.10"
+        },
+        {
+            "modId": "66C4D6C8EA530745",
+            "name": "ARMA-RY RETRO OPTICS",
+            "version": "1.0.5"
+        },
+        {
+            "modId": "6614BE0BD96CF817",
+            "name": "ARMA-RY G3 ARMED FIA",
+            "version": "1.0.8"
+        },
+        {
+            "modId": "6614BC5EC4E1675B",
+            "name": "ARMA-RY CLAW MOUNT",
+            "version": "1.0.9"
+        },
+        {
+            "modId": "664AFDC993C9CE1A",
+            "name": "ACE Cook-Off Dev",
+            "version": "1.5.12"
+        },
+        {
+            "modId": "66D74CE7E94C5D05",
+            "name": "British Forces - Truck Utility",
+            "version": "1.0.2"
+        },
+        {
+            "modId": "668D0009D90B25E7",
+            "name": "ARMA-RY M3A1 ARMED FIA",
+            "version": "1.0.1"
+        },
+        {
+            "modId": "661C43ABD9F97106",
+            "name": "No Speaking when unconscious",
+            "version": "0.0.1"
+        },
+        {
+            "modId": "65AD7CD09CAEC4E2",
+            "name": "ACE Tactical Periscope Dev",
+            "version": "1.5.12"
+        },
+        {
+            "modId": "65734D75BC584950",
+            "name": "COE2 Anizay",
+            "version": "2.0.2"
+        },
+        {
+            "modId": "66393237EC3C6FDB",
+            "name": "ARMA-RY M16 EARLY RIFLES",
+            "version": "1.0.5"
+        },
+        {
+            "modId": "671F3CDAC20CDDC1",
+            "name": "ARMA-RY SOVIET EQUIPMENT",
+            "version": "1.0.0"
+        },
+        {
+            "modId": "5994AD5A9F33BE57",
+            "name": "Game Master FX",
+            "version": "1.6.2"
+        },
+        {
+            "modId": "6614B4EBC1A63458",
+            "name": "ARMA-RY CORE",
+            "version": "1.0.25"
+        },
+        {
+            "modId": "664EED09C0709110",
+            "name": "ARMA-RY M14 ARMED FIA",
+            "version": "1.0.2"
+        },
+        {
+            "modId": "6586079789278413",
+            "name": "ACE Medical Core Dev",
+            "version": "1.5.12"
+        },
+        {
+            "modId": "5B0D1E4380971EBD",
+            "name": "COALITION Squad Interface",
+            "version": "1.7.19"
+        },
+        {
+            "modId": "65AD7CE59E8DB349",
+            "name": "ACE Trenches Dev",
+            "version": "1.5.12"
+        },
+        {
+            "modId": "66731579C7075EB3",
+            "name": "ARMA-RY M79 GRENADE LAUNCHER",
+            "version": "1.0.5"
+        },
+        {
+            "modId": "664EC775DD06828D",
+            "name": "ARMA-RY M16 ARMED FIA",
+            "version": "1.0.1"
+        },
+        {
+            "modId": "5AE50EC5B8D6F4AE",
+            "name": "British Forces",
+            "version": "1.0.63"
+        }
+    ]
+
+  },
+
+  "operating": {
+    "aiLimit": -1,
+    "disableAI": false,
+    "disableCrashReporter": false,
+    "lobbyPlayerSynchronise": true,
+    "slotReservationTimeout": 60
+  }
+}

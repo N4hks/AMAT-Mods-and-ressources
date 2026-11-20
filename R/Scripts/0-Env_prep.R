@@ -3,6 +3,7 @@
 ## -- For Install + load packages -- ####
 c( # "jsonlite",
   "fs",
+  "jsonlite",
   "tidyverse") |>
   lapply(  FUN = \(packagename) {
     if(! require(packagename,
@@ -15,51 +16,58 @@ c( # "jsonlite",
   })
 
 ## -- For reading Enfusion Conf files -- ####
+# Same output as before (file_name, context, block, property, value) but built
+# from pre-allocated vectors and ONE tibble per file instead of one tibble per
+# property line (much faster on the ~300 catalog files).
 parse_enfusion_conf <- function(file_path) {
-  # Read lines and strip leading/trailing whitespace
-  lines <- readLines(file_path, warn = FALSE) %>% str_trim()
+  lines <- str_trim(readLines(file_path, warn = FALSE))
+  n     <- length(lines)
   
+  keep     <- logical(n)
+  context  <- character(n)
+  block    <- character(n)
+  property <- character(n)
+  value    <- character(n)
   block_stack <- character()
-  records <- list()
   
-  for (line in lines) {
-    # Skip empty lines and comments
-    if (line == "" || str_starts(line, "//") || str_starts(line, "/\\*")) next
+  for (i in seq_len(n)) {
+    line <- lines[i]
     
-    # Case 1: Opening block (e.g., SCR_EntityCatalogEntry "{5D53...}" { )
-    if (str_detect(line, "\\{\\s*$")) {
-      header <- str_remove(line, "\\s*\\{\\s*$") %>% str_squish()
-      block_stack <- c(block_stack, header)
-    } 
-    # Case 2: Closing block ( } )
-    else if (str_detect(line, "^\\}")) {
-      if (length(block_stack) > 0) {
-        block_stack <- block_stack[-length(block_stack)]
+    # Skip empty lines and comments
+    if (line == "" || startsWith(line, "//") || startsWith(line, "/*")) next
+    
+    if (grepl("\\{\\s*$", line)) {
+      # Case 1: opening block, e.g. SCR_EntityCatalogEntry "{5D53...}" {
+      block_stack <- c(block_stack,
+                       str_squish(sub("\\s*\\{\\s*$", "", line)))
+      
+    } else if (startsWith(line, "}")) {
+      # Case 2: closing block
+      if (length(block_stack) > 0) block_stack <- block_stack[-length(block_stack)]
+      
+    } else if (startsWith(line, "m_")) {
+      # Case 3: property line, e.g. m_sEntityPrefab "{ABC...}Prefab.et" or m_iID 10
+      sp <- regexpr("\\s+", line)
+      if (sp > 0) {
+        prop_name <- substr(line, 1, sp - 1)
+        prop_val  <- substring(line, sp + attr(sp, "match.length"))
+      } else {
+        prop_name <- line
+        prop_val  <- ""
       }
-    } 
-    # Case 3: Property line (e.g., m_sEntity "{ABC...}Prefab.et" or m_iID 10)
-    else if (str_detect(line, "^m_")) {
-      parts <- str_split_fixed(line, "\\s+", 2)
-      prop_name <- parts[1, 1]
-      prop_val <- parts[1, 2] %>% 
-        str_remove_all('^"|"$') %>% # Remove outer quotes
-        str_trim()
-      
-      # Build hierarchical context string
-      context_path <- paste(block_stack, collapse = " > ")
-      current_block <- ifelse(length(block_stack) > 0, tail(block_stack, 1), "Root")
-      
-      records[[length(records) + 1]] <- tibble(
-        file_name = basename(file_path),
-        context = context_path,
-        block = current_block,
-        property = prop_name,
-        value = prop_val
-      )
+      keep[i]     <- TRUE
+      context[i]  <- paste(block_stack, collapse = " > ")
+      block[i]    <- if (length(block_stack) > 0) block_stack[length(block_stack)] else "Root"
+      property[i] <- prop_name
+      value[i]    <- str_trim(str_remove_all(prop_val, '^"|"$'))
     }
   }
   
-  bind_rows(records)
+  tibble(file_name = rep(basename(file_path), sum(keep)),
+         context   = context[keep],
+         block     = block[keep],
+         property  = property[keep],
+         value     = value[keep])
 }
 
 ## -- Recursive function to build tree environment (updates existing properties to prevent duplicates) -- ####
@@ -167,6 +175,7 @@ file.path(".",
 
 
 # -- Seting sourcing of the code at project startup -- ####
+if (!file.exists("./.Rprofile")) file.create("./.Rprofile")
 readLines("./.Rprofile") %>%
   append("source(\"R/Scripts/0-Env_prep.R\")") %>%
   unique() %>%

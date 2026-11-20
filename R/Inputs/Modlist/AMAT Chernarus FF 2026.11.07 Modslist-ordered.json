@@ -1,0 +1,580 @@
+{
+    "modId": "5D6EA74A94173EDF",
+    "name": "Enfusion Database Framework"
+},
+{
+    "modId": "5D6EBC81EB1842EF",
+    "name": "Enfusion Persistence Framework"
+},
+{
+    "modId": "6924E390927C4A08",
+    "name": "Enfusion Persistence Crash Fix"
+},
+{
+    "modId": "CAFEBEEFF0CACC1A",
+    "name": "Freedom Fighters",
+    "version": "0.70.1"
+},
+{
+    "modId": "32C5A359B406A788",
+    "name": "BGC_Core - Battlegroup Command"
+},
+{
+    "modId": "639964BE95CA3D50",
+    "name": "Chernarus PVE"
+},
+{
+    "modId": "65FB51CDA61F1071",
+    "name": "ToH ReCharacters Greek"
+},
+{
+    "modId": "65FB4A6CFFC4079C",
+    "name": "ToH ReCharacters European"
+},
+{
+    "modId": "64722DADC53CB75E",
+    "name": "NV-System"
+},
+{
+    "modId": "699B752BA15F84F9",
+    "name": "MP5K-PDW for British Forces"
+},
+{
+    "modId": "628933A0D3A0D700",
+    "name": "WCS_Mi-24V"
+},
+{
+    "modId": "62B4A8E40D31F94B",
+    "name": "WW2_Bicycle"
+},
+{
+    "modId": "66873087C05E787C",
+    "name": "ARMA-RY M3A1 GREASE GUN"
+},
+{
+    "modId": "66D6340C1D565C98",
+    "name": "Chungus Core"
+},
+{
+    "modId": "68E614128CB0E64E",
+    "name": "Repair Vehicle Windows"
+},
+{
+    "modId": "65FB5184A09FE8A1",
+    "name": "ToH ReCharacters Asian"
+},
+{
+    "modId": "6614B9D9C6D7D565",
+    "name": "ARMA-RY G3 BATTLE RIFLES"
+},
+{
+    "modId": "665D1AA55B5D8076",
+    "name": "Chernarus Minus",
+    "version": "2.0.10"
+},
+{
+    "modId": "66AB2DDDC5F416ED",
+    "name": "ARMA-RY FROCS"
+},
+{
+    "modId": "69F53D6EB8760DEB",
+    "name": "No FIA loot in DLRebalance"
+},
+{
+    "modId": "668F458EC133AE50",
+    "name": "ARMA-RY UZI"
+},
+{
+    "modId": "5964E0B3BB7410CE",
+    "name": "Game Master Enhanced"
+},
+{
+    "modId": "629B2BA37EFFD577",
+    "name": "WCS_Armaments"
+},
+{
+    "modId": "62CCD69DD17E4F2F",
+    "name": "AKI_Core"
+},
+{
+    "modId": "5F0D245931200FD1",
+    "name": "Railway Generator"
+},
+{
+    "modId": "67153CD5DC771D42",
+    "name": "ARMA-RY SOVIET OPTICS"
+},
+{
+    "modId": "60C4C12DAE90727B",
+    "name": "ACE Medical Core"
+},
+{
+    "modId": "5C9AD9EF76F6B5EA",
+    "name": "ZU-23"
+},
+{
+    "modId": "69C8B53172851162",
+    "name": "Radio - Les Cires Jaunes"
+},
+{
+    "modId": "60C53A9372ED3964",
+    "name": "ACE Compass"
+},
+{
+    "modId": "62F802951CC8A37E",
+    "name": "ACE Tactical Periscope"
+},
+{
+    "modId": "62FCEB51DF8527B6",
+    "name": "Improved Blood Effect"
+},
+{
+    "modId": "633C83B70AEF1826",
+    "name": "Realistic Fuel Consumption"
+},
+{
+    "modId": "61344BDC155A5A28",
+    "name": "Chungus LMGs"
+},
+{
+    "modId": "663525C5DFA68E7A",
+    "name": "ARMA-RY M14 Battle Rifle"
+},
+{
+    "modId": "69033CCD42032F1E",
+    "name": "FF - Les Cires Jaunes"
+},
+{
+    "modId": "61BD6595183FCEBD",
+    "name": "Chungus Bolt Guns"
+},
+{
+    "modId": "69F52C8F56380352",
+    "name": "Remove US Faction"
+},
+{
+    "modId": "5DBD560C5148E1DA",
+    "name": "ACE Carrying"
+},
+{
+    "modId": "665AABC9776468B4",
+    "name": "Groupless CSI"
+},
+{
+    "modId": "60EAEA0389DB3CC2",
+    "name": "ACE Trenches"
+},
+{
+    "modId": "690AB2CB6B478153",
+    "name": "Bandit Gear Extra Jackets"
+},
+{
+    "modId": "5EB744C5F42E0800",
+    "name": "ACE Chopping"
+},
+{
+    "modId": "673E808E019BFD2E",
+    "name": "Sages PVS-7"
+},
+{
+    "modId": "69F0B66FB6F89052",
+    "name": "Dynamic Loot Rebalance"
+},
+{
+    "modId": "665B1AF5996EB7AA",
+    "name": "ARMA-RY M1911A1 PISTOL"
+},
+{
+    "modId": "6996E41C06A9BE33",
+    "name": "Mortar Calculator"
+},
+{
+    "modId": "60E6F54E174C53C5",
+    "name": "Chungus SMGs"
+},
+{
+    "modId": "65BB2D0679BCA058",
+    "name": "Skyhook"
+},
+{
+    "modId": "68E17736EC8CFD27",
+    "name": "FF Sonar Fix - Ternary"
+},
+{
+    "modId": "6847295A719282CD",
+    "name": "FF Washing Machine"
+},
+{
+    "modId": "69372D5C78C6F51D",
+    "name": "MH-6J"
+},
+{
+    "modId": "68EAA4976497C46A",
+    "name": "ACE Facepaint"
+},
+{
+    "modId": "664928B1C3E554ED",
+    "name": "ARMA-RY M1 HELMETS"
+},
+{
+    "modId": "68B77A281FA3123D",
+    "name": "Nasty Stechkin"
+},
+{
+    "modId": "596330D9AF34AF38",
+    "name": "ToH ReCharacters Man"
+},
+{
+    "modId": "69EB21817F1DB9D1",
+    "name": "FF - LCJ - Black Market"
+},
+{
+    "modId": "6614BD0AC038E724",
+    "name": "ARMA-RY G3 SPECIAL RIFLES"
+},
+{
+    "modId": "68CD26002DAAED01",
+    "name": "FF Give Me Posters"
+},
+{
+    "modId": "60C4CE4888FF4621",
+    "name": "ACE Core"
+},
+{
+    "modId": "665754CB5D6A728F",
+    "name": "Freedom Fighters - Sonar fix"
+},
+{
+    "modId": "66BEE55DB60B943B",
+    "name": "Vibrations Begone"
+},
+{
+    "modId": "668A9D14EE624EED",
+    "name": "ARMA-RY DELTA FORCE 1980"
+},
+{
+    "modId": "65FB50F7FA33DECA",
+    "name": "ToH ReCharacters African"
+},
+{
+    "modId": "69835BB39580B1B7",
+    "name": "MM TT-33"
+},
+{
+    "modId": "6910798D6DE6EA61",
+    "name": "VZ61"
+},
+{
+    "modId": "6614BD8AC622B696",
+    "name": "ARMA-RY G3 MODERNISED"
+},
+{
+    "modId": "690F67E53E6EDB09",
+    "name": "BFS - F.R.I.E.S Reforged"
+},
+{
+    "modId": "663EEED7D9BCA814",
+    "name": "ARMA-RY NIGHT VISION"
+},
+{
+    "modId": "656AC01634459D8D",
+    "name": "Map Drawing"
+},
+{
+    "modId": "5DE612963E4B005A",
+    "name": "Rail Enfusion Redux"
+},
+{
+    "modId": "648CF0E219A513D9",
+    "name": "Beretta M93R"
+},
+{
+    "modId": "665B3E73D7215B29",
+    "name": "ARMA-RY DELTA 1911"
+},
+{
+    "modId": "666ADD0DDD59F6E7",
+    "name": "ARMA-RY AK74 ASSAULT RIFLE"
+},
+{
+    "modId": "6338D68D2B800800",
+    "name": "FAMAS"
+},
+{
+    "modId": "64C912EF952E1075",
+    "name": "ToH ReCharacters Core"
+},
+{
+    "modId": "611CB1D409001EB0",
+    "name": "ACE Magazine Repack"
+},
+{
+    "modId": "669EFCE1C4C6C864",
+    "name": "ARMA-RY AK47 ASSAULT RIFLE"
+},
+{
+    "modId": "69E4E0B84E0FD9ED",
+    "name": "FF - Chernarus Liberation Army"
+},
+{
+    "modId": "69A47272BCF14AD5",
+    "name": "FreedomFighters_Reoccupation",
+    "version": "5.3.1"
+},
+{
+    "modId": "64B063B94348F5C8",
+    "name": "Beretta M9 SD"
+},
+{
+    "modId": "60612C225328522E",
+    "name": "No Weapon Drop Unconscious"
+},
+{
+    "modId": "69AA4AF22BF19E32",
+    "name": "Vanilla Cargo Helicopters"
+},
+{
+    "modId": "69F545B1AE6D7D6C",
+    "name": "FF-Dynamic Loot Rebalance"
+},
+{
+    "modId": "66C4D6C8EA530745",
+    "name": "ARMA-RY RETRO ATTACHMENTS"
+},
+{
+    "modId": "65FB52DAABB24B05",
+    "name": "ToH ReCharacters Tanoan"
+},
+{
+    "modId": "632759EBF041FA2D",
+    "name": "CM-SquadRadioSound"
+},
+{
+    "modId": "6624F38C0DEC841A",
+    "name": "FF - Building Extended"
+},
+{
+    "modId": "67269AA718F11901",
+    "name": "Freedom Fighters Logistic"
+},
+{
+    "modId": "60E573C9B04CC408",
+    "name": "ACE Backblast"
+},
+{
+    "modId": "687CD82F6E41D627",
+    "name": "Attachment Framework-Core"
+},
+{
+    "modId": "6614BC5EC4E1675B",
+    "name": "ARMA-RY CLAW MOUNT"
+},
+{
+    "modId": "68770D078A1E9C0F",
+    "name": "FF - Patrol Supplies"
+},
+{
+    "modId": "621D3771875C1D3D",
+    "name": "Car Radio4All - PARTLY BROKEN"
+},
+{
+    "modId": "64CB39E57377C861",
+    "name": "WCS_AH-1S"
+},
+{
+    "modId": "61226BB18D360BDD",
+    "name": "ACE Tactical Ladder"
+},
+{
+    "modId": "61F0D506562D9BC9",
+    "name": "Outside Terrain Core"
+},
+{
+    "modId": "6858FBEB47CA5901",
+    "name": "British Forces Arma-Ry Compat"
+},
+{
+    "modId": "66B4F053889F613B",
+    "name": "FF - Repair Station Tweaks"
+},
+{
+    "modId": "5C9758250C8C56F1",
+    "name": "Bon Action Animations"
+},
+{
+    "modId": "62E354B50264C08F",
+    "name": "Project Sonar - Radio Stations"
+},
+{
+    "modId": "61B7763A8AEB53B7",
+    "name": "ACE Explosives"
+},
+{
+    "modId": "695802AE56C1A698",
+    "name": "Northcom AUG"
+},
+{
+    "modId": "66B2F0B008DC590F",
+    "name": "DynamicLoot"
+},
+{
+    "modId": "64475DC102F2BDA4",
+    "name": "ACE Radio"
+},
+{
+    "modId": "620E584B1D2C96A4",
+    "name": "Chungus Shotguns"
+},
+{
+    "modId": "6052A9DD45564825",
+    "name": "You can sit"
+},
+{
+    "modId": "64C4C737F0774668",
+    "name": "CM-SquadRadioSound-Addon"
+},
+{
+    "modId": "69156B5B321244C9",
+    "name": "Physics Rope"
+},
+{
+    "modId": "694F4DD56358846B",
+    "name": "MH-6J F.R.I.E.S Reforged Patch"
+},
+{
+    "modId": "66DE15760F187E40",
+    "name": "FF-WhereIsTheBattle"
+},
+{
+    "modId": "69F538DEB6ADD4D3",
+    "name": "Empty USSR Faction"
+},
+{
+    "modId": "697CAA15FA9B7BF0",
+    "name": "YouCanSitFix"
+},
+{
+    "modId": "69F85DEDA460D7A2",
+    "name": "Empty British Faction"
+},
+{
+    "modId": "69697B4F0D746D8E",
+    "name": "Freedom Fighters - Chernarus"
+},
+{
+    "modId": "65F93D3655B7D63C",
+    "name": "Northcom - Retro Night Vision"
+},
+{
+    "modId": "665AC4328A9856F3",
+    "name": "Loot Transfer System"
+},
+{
+    "modId": "65FB5265B4F72F4B",
+    "name": "ToH ReCharacters Russian"
+},
+{
+    "modId": "65FB762EB503CCF9",
+    "name": "ToH ReCharacters Persian"
+},
+{
+    "modId": "667338D2FBBCE7AB",
+    "name": "ARMA-RY SINGLE-SHOT SHOTGUN"
+},
+{
+    "modId": "66393237EC3C6FDB",
+    "name": "ARMA-RY M16 EARLY RIFLES"
+},
+{
+    "modId": "671F3CDAC20CDDC1",
+    "name": "ARMA-RY SOVIET EQUIPMENT"
+},
+{
+    "modId": "66B523AD189F3233",
+    "name": "Bandit Gear"
+},
+{
+    "modId": "5994AD5A9F33BE57",
+    "name": "Game Master FX"
+},
+{
+    "modId": "6614B4EBC1A63458",
+    "name": "ARMA-RY CORE"
+},
+{
+    "modId": "606C369BAC3F6CC3",
+    "name": "ACE Finger"
+},
+{
+    "modId": "698B2BDEB6268D21",
+    "name": "SHS Fly_Drive-by -Dev"
+},
+{
+    "modId": "5B0D1E4380971EBD",
+    "name": "COALITION Squad Interface"
+},
+{
+    "modId": "68E043F84809D387",
+    "name": "MP5 A2 Accessories"
+},
+{
+    "modId": "66731579C7075EB3",
+    "name": "ARMA-RY M79 GRENADE LAUNCHER"
+},
+{
+    "modId": "5D0551624969C92E",
+    "name": "Zeliks Character"
+},
+{
+    "modId": "645F08FA9E7CDEDE",
+    "name": "Attachment Framework"
+},
+{
+    "modId": "672166DE5926F11F",
+    "name": "Minus Building Pack",
+    "version": "1.0.66"
+},
+{
+    "modId": "5AE50EC5B8D6F4AE",
+    "name": "British Forces"
+},
+{
+    "modId": "65FB5234B4A8E20B",
+    "name": "ToH ReCharacters Livonian"
+},
+{
+    "modId": "6992C9FB3D50619F",
+    "name": "FN FNC"
+},
+{
+    "modId": "68C707113F3F5021",
+    "name": "FF_Logistics_LTS_Compat"
+},
+{
+    "modId": "66D97E047E2C8CC0",
+    "name": "FF-BuildableFactionAntenna"
+},
+{
+    "modId": "6A3929F89CD2FE9B",
+    "name": "FF - Construction Expansion"
+},
+{
+    "modId": "68D4E574018D87C2",
+    "name": "FF-SellforSupplies"
+},
+{
+    "modId": "60085331FE49E3D7",
+    "name": "MCW Reoccupation Air Assault"
+},
+{
+    "modId": "CC4BE63ECC8DEB97",
+    "name": "MCW UAZ-452 Seat Fix"
+},
+{
+    "modId": "A81D8BF8D285124E",
+    "name": "MCW Rigid Tow Bar"
+},
+{
+    "modId": "6A5D2DE1B3F96D7F",
+    "name": "REAPER_ImprovedAI"
+}

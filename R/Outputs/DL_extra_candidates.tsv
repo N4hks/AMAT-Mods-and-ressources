@@ -1,0 +1,760 @@
+prefab_path	Item_prefab	m_eItemType	m_iSupplyCost	catalogs	source_mods	include
+Prefabs/Items/Equipment/Backpacks/Backpack_ALICE_Medium_assembled.et	Backpack_ALICE_Medium_assembled	BACKPACK	5	US	ArmaReforger	
+Prefabs/Items/Equipment/Backpacks/Backpack_IIFS_FieldPack.et	Backpack_IIFS_FieldPack	BACKPACK	15	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ArmaReforger	
+Prefabs/Items/Equipment/Backpacks/Backpack_Medical_M5.et	Backpack_Medical_M5	BACKPACK	3	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ArmaReforger	
+Prefabs/Items/Equipment/Backpacks/Backpack_Para_Bergen.et	Backpack_Para_Bergen	BACKPACK	20	UK	BritishForces	
+Prefabs/Items/Equipment/Backpacks/Rucksack_GS_assembled.et	Rucksack_GS_assembled	BACKPACK	15	UK	BritishForces	
+Prefabs/Items/Equipment/Backpacks/Rucksack_P58_Large_Pack.et	Rucksack_P58_Large_Pack	BACKPACK	5	UK	BritishForces	
+Prefabs/Items/ACE_Facepaint_01_UK.et	ACE_Facepaint_01_UK	EQUIPMENT	0	UK	ACE_Facepaint	
+Prefabs/Items/ACE_Facepaint_01_US.et	ACE_Facepaint_01_US	EQUIPMENT	0	US	ACE_Facepaint	
+Prefabs/Items/Equipment/Canteens/BF_Canteen_UK_P58_01.et	BF_Canteen_UK_P58_01	EQUIPMENT	0	UK	BritishForces	
+Prefabs/Items/Equipment/Binoculars/Binoculars_B12/Binoculars_B12_base.et	Binoculars_B12_base	EQUIPMENT	20	AMAT-LesCiresJaunes/FIA	AMAT-LesCiresJaunes	
+Prefabs/Items/Equipment/Binoculars/Binoculars_L12A1_Avimo.et	Binoculars_L12A1_Avimo	EQUIPMENT	20	UK	BritishForces	
+Prefabs/Items/Equipment/Binoculars/Binoculars_M22/Binoculars_M22.et	Binoculars_M22	EQUIPMENT	10	AMAT-ChernarusLiberationArmy/CLA ; AMATLesCireesJaunesBM/BM ; US	AMAT-ChernarusLiberationArmy ; AMATLesCireesJaunesBM ; ArmaReforger	
+Prefabs/Items/Equipment/Detonators/BlastingMachine_M34/BlastingMachine_Shrike.et	BlastingMachine_Shrike	EQUIPMENT	20	UK	BritishForces	
+Prefabs/Items/Equipment/Canteens/Canteen_US_01.et	Canteen_US_01	EQUIPMENT	0	US	ArmaReforger	
+Prefabs/Items/Equipment/Compass/Compass_Baseplate.et	Compass_Baseplate	EQUIPMENT	0	UK	BritishForces	
+Prefabs/Items/Equipment/Compass/Compass_Prismatic_M88.et	Compass_Prismatic_M88	EQUIPMENT	NA	UK	BritishForces	
+Prefabs/Items/Equipment/Compass/Compass_SY183.et	Compass_SY183	EQUIPMENT	1	AMAT-LesCiresJaunes/FIA ; AMATLesCireesJaunesBM/BM ; US	AMAT-LesCiresJaunes ; AMATLesCireesJaunesBM ; ArmaReforger	
+Prefabs/Modded/Items/Equipment/Accessories/ETool_ALICE/ETool_ALICE_FreeRoamBuilding_Gadget.et	ETool_ALICE_FreeRoamBuilding_Gadget	EQUIPMENT	5	AMAT-LesCiresJaunes/FIA ; AMATLesCireesJaunesBM/BM ; US	AMAT-LesCiresJaunes ; AMATLesCireesJaunesBM ; ArmaReforger	
+Prefabs/Items/Equipment/Accessories/ETool_ALICE/ETool_ALICE_FreeRoamBuilding_Gadget_UK_OD.et	ETool_ALICE_FreeRoamBuilding_Gadget_UK_OD	EQUIPMENT	0	UK	BritishForces	
+Prefabs/Weapons/Flares/FlareStarParachute_M126A1_red.et	FlareStarParachute_M126A1_red	EQUIPMENT	2	US	ArmaReforger	
+Prefabs/Weapons/Flares/FlareStarParachute_M127A1_white.et	FlareStarParachute_M127A1_white	EQUIPMENT	2	AMATLesCireesJaunesBM/BM ; US	AMATLesCireesJaunesBM ; ArmaReforger	
+Prefabs/Weapons/Flares/FlareStarParachute_M195_green.et	FlareStarParachute_M195_green	EQUIPMENT	2	US	ArmaReforger	
+Prefabs/Items/Equipment/Flashlights/Flashlight_MX991/Flashlight_MX991.et	Flashlight_MX991	EQUIPMENT	1	AMAT-LesCiresJaunes/FIA ; AMATLesCireesJaunesBM/BM ; US	AMAT-LesCiresJaunes ; AMATLesCireesJaunesBM ; ArmaReforger	
+Prefabs/Items/Equipment/Flashlights/Flashlight_UK.et	Flashlight_UK	EQUIPMENT	0	UK	BritishForces	
+Prefabs/Items/Demining/MineFlags/MineFlag_UK.et	MineFlag_UK	EQUIPMENT	0	UK	BritishForces	
+Prefabs/Items/Demining/MineFlags/MineFlag_US.et	MineFlag_US	EQUIPMENT	0	US	ArmaReforger	
+Prefabs/Characters/Items/NVG/NVS_Headstrap.et	NVS_Headstrap	EQUIPMENT	100	AMATLesCireesJaunesBM/BM ; US	AMATLesCireesJaunesBM ; SagesPVS7	
+Prefabs/Characters/Items/NVG/PVS-7_GP_Slotted.et	PVS-7_GP_Slotted	EQUIPMENT	300	AMATLesCireesJaunesBM/BM ; US	AMATLesCireesJaunesBM ; SagesPVS7	
+Prefabs/Items/Equipment/Maps/PaperMap_01_folded_UK.et	PaperMap_01_folded_UK	EQUIPMENT	0	UK	BritishForces	
+Prefabs/Items/Equipment/Maps/Map_Paper_01/PaperMap_01_folded_US.et	PaperMap_01_folded_US	EQUIPMENT	1	AMAT-LesCiresJaunes/FIA ; AMATLesCireesJaunesBM/BM ; US	AMAT-LesCiresJaunes ; AMATLesCireesJaunesBM ; ArmaReforger	
+Prefabs/Items/Equipment/Tripods/BGM71_TOW/Part_BGM71_TOW_Tripod.et	Part_BGM71_TOW_Tripod	EQUIPMENT	75	US	WCS_Armaments	
+Prefabs/Items/Equipment/Mortars/M252/Part_L16_Barrel_UK.et	Part_L16_Barrel_UK	EQUIPMENT	90	UK	BritishForces	
+Prefabs/Items/Equipment/Mortars/M252/Part_L16_BasePlate_UK.et	Part_L16_BasePlate_UK	EQUIPMENT	90	UK	BritishForces	
+Prefabs/Items/Equipment/Mortars/M252/Part_L16_Bipod_UK.et	Part_L16_Bipod_UK	EQUIPMENT	90	UK	BritishForces	
+Prefabs/Items/Equipment/Mortars/M252/Part_M252_Barrel.et	Part_M252_Barrel	EQUIPMENT	90	US	ArmaReforger	
+Prefabs/Items/Equipment/Mortars/M252/Part_M252_BasePlate.et	Part_M252_BasePlate	EQUIPMENT	90	US	ArmaReforger	
+Prefabs/Items/Equipment/Mortars/M252/Part_M252_Bipod.et	Part_M252_Bipod	EQUIPMENT	90	US	ArmaReforger	
+Prefabs/Items/Equipment/Tripods/M2/Part_M2_Gun.et	Part_M2_Gun	EQUIPMENT	80	US	ArmaReforger	
+Prefabs/Items/Equipment/Tripods/M2/Part_M2_Gun_UK.et	Part_M2_Gun_UK	EQUIPMENT	80	UK	BritishForces	
+Prefabs/Items/Equipment/Tripods/M2/Part_M3_Tripod.et	Part_M3_Tripod	EQUIPMENT	40	US	ArmaReforger	
+Prefabs/Items/Equipment/Tripods/M2/Part_M3_Tripod_UK.et	Part_M3_Tripod_UK	EQUIPMENT	40	UK	BritishForces	
+Prefabs/Items/Misc/Sandbags/Part_Sandbag_Burlap_UK.et	Part_Sandbag_Burlap_UK	EQUIPMENT	2	UK	BritishForces	
+Prefabs/Items/Misc/Sandbags/Part_Sandbag_Plastic.et	Part_Sandbag_Plastic	EQUIPMENT	2	US	ArmaReforger	
+Prefabs/Items/Equipment/Tripods/M60/Part_Tripod_M122.et	Part_Tripod_M122	EQUIPMENT	30	US	ArmaReforger	
+Prefabs/Items/Equipment/Tripods/M60/Part_Tripod_M122_UK.et	Part_Tripod_M122_UK	EQUIPMENT	30	UK	BritishForces	
+Prefabs/Items/PersonalBelongings/PersonalBelongings_US.et	PersonalBelongings_US	EQUIPMENT	0	US	ArmaReforger	
+Prefabs/Weapons/Tripods/BGM71_TOW/Pod_BGM71_TOW.et	Pod_BGM71_TOW	EQUIPMENT	100	US	WCS_Armaments	
+Prefabs/Items/Equipment/Radios/Radio_ANPRC68.et	Radio_ANPRC68	EQUIPMENT	0	AMATLesCireesJaunesBM/BM ; US	AMATLesCireesJaunesBM ; ArmaReforger	
+Prefabs/Items/Equipment/Radios/Radio_PRC349.et	Radio_PRC349	EQUIPMENT	0	UK	BritishForces	
+Prefabs/Items/Equipment/Radios/Radio_R148_CLA.et	Radio_R148_CLA	EQUIPMENT	5	AMAT-ChernarusLiberationArmy/CLA	AMAT-ChernarusLiberationArmy	
+Prefabs/Items/Equipment/Kits/RearmingKit_01/RearmingKit_01_UK.et	RearmingKit_01_UK	EQUIPMENT	0	UK	BritishForces	
+Prefabs/Items/Equipment/Kits/RearmingKit_01/RearmingKit_01_US.et	RearmingKit_01_US	EQUIPMENT	50	US	ArmaReforger	
+Prefabs/Items/Equipment/Watches/Watch_SandY184A.et	Watch_SandY184A	EQUIPMENT	1	AMAT-LesCiresJaunes/FIA ; AMATLesCireesJaunesBM/BM ; US	AMAT-LesCiresJaunes ; AMATLesCireesJaunesBM ; ArmaReforger	
+Prefabs/Items/Equipment/Watches/Watch_SandY184A_UK.et	Watch_SandY184A_UK	EQUIPMENT	0	UK	BritishForces	
+Prefabs/Items/Equipment/Detonators/BlastingMachine_M34/BlastingMachine_M34.et	BlastingMachine_M34	EXPLOSIVES	15	US	ArmaReforger	
+Prefabs/Weapons/Explosives/DemoBlock_Hayrick/DemoBlock_Hayrick.et	DemoBlock_Hayrick	EXPLOSIVES	NA	UK	BritishForces	
+Prefabs/Weapons/Explosives/DemoBlock_M112/DemoBlock_M112.et	DemoBlock_M112	EXPLOSIVES	4	AMAT-ChernarusLiberationArmy/CLA ; AMAT-LesCiresJaunes/FIA ; US	AMAT-ChernarusLiberationArmy ; AMAT-LesCiresJaunes ; ArmaReforger	
+Prefabs/Weapons/Explosives/DemoBlock_PE4/DemoBlock_PE4.et	DemoBlock_PE4	EXPLOSIVES	4	UK	BritishForces	
+Prefabs/Weapons/Explosives/Mine_L9A1_Barmine/Mine_L9A1_Barmine.et	Mine_L9A1_Barmine	EXPLOSIVES	NA	UK	BritishForces	
+Prefabs/Weapons/Explosives/Mine_M14/Mine_M14.et	Mine_M14	EXPLOSIVES	10	AMAT-LesCiresJaunes/FIA ; US	AMAT-LesCiresJaunes ; ArmaReforger	
+Prefabs/Weapons/Explosives/Mine_M15AT/Mine_M15AT.et	Mine_M15AT	EXPLOSIVES	5	US	ArmaReforger	
+Prefabs/Weapons/Explosives/Mine_M15AT/Mine_M15AT_base.et	Mine_M15AT_base	EXPLOSIVES	10	AMAT-LesCiresJaunes/FIA	AMAT-LesCiresJaunes	
+Prefabs/Weapons/Explosives/Mine_Mk7/Mine_Mk7.et	Mine_Mk7	EXPLOSIVES	5	UK	BritishForces	
+Prefabs/Characters/Footwear/Boots_DMS_UK_01.et	Boots_DMS_UK_01	FOOTWEAR	0	UK	BritishForces	
+Prefabs/Characters/Footwear/TankerBoots_US_01/TankerBoots_US_01.et	TankerBoots_US_01	FOOTWEAR	0	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ArmaReforger	
+Prefabs/Characters/Handwear/Gloves_Leather_01/BC_Gloves_Leather_01.et	BC_Gloves_Leather_01	HANDWEAR	0	US	ChungusSMGs	
+Prefabs/Characters/Handwear/Gloves_Leather_01/Gloves_Leather_Black_01.et	Gloves_Leather_Black_01	HANDWEAR	5	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Characters/Handwear/Gloves_Pilot_US_01/Gloves_Pilot_UK_01.et	Gloves_Pilot_UK_01	HANDWEAR	0	UK	BritishForces	
+Prefabs/Characters/Handwear/Gloves_Pilot_US_01/Gloves_Pilot_US_01.et	Gloves_Pilot_US_01	HANDWEAR	0	US	ArmaReforger	
+Prefabs/Characters/Handwear/Gloves_Wool_01/Gloves_Wool_Black_01.et	Gloves_Wool_Black_01	HANDWEAR	0	UK	BritishForces	
+Prefabs/Characters/Handwear/Gloves_Wool_01/Gloves_Wool_Khaki_01.et	Gloves_Wool_Khaki_01	HANDWEAR	0	UK	BritishForces	
+Prefabs/Characters/HeadGear/ARY_Helmet_M1_01/ARY_Helmet_M1_01_Cover_NoChinCup_ERDL_RDF.et	ARY_Helmet_M1_01_Cover_NoChinCup_ERDL_RDF	HEADWEAR	2	US	ARMARYM1HELMETS	
+Prefabs/Characters/HeadGear/ARY_Helmet_M1_01/ARY_Helmet_M1_01_Cover_NoChinCup_Frogskin.et	ARY_Helmet_M1_01_Cover_NoChinCup_Frogskin	HEADWEAR	2	US	ARMARYM1HELMETS	
+Prefabs/Characters/HeadGear/ARY_Helmet_M1_01/ARY_Helmet_M1_01_Cover_NoChinCup_M81_Woodland.et	ARY_Helmet_M1_01_Cover_NoChinCup_M81_Woodland	HEADWEAR	2	US	ARMARYM1HELMETS	
+Prefabs/Characters/HeadGear/ARY_Helmet_M1_01/ARY_Helmet_M1_01_Cover_NoChinCup_Mitchell_Clouds.et	ARY_Helmet_M1_01_Cover_NoChinCup_Mitchell_Clouds	HEADWEAR	2	US	ARMARYM1HELMETS	
+Prefabs/Characters/HeadGear/ARY_Helmet_M1_01/ARY_Helmet_M1_01_Cover_NoChinCup_Mitchell_Leaf.et	ARY_Helmet_M1_01_Cover_NoChinCup_Mitchell_Leaf	HEADWEAR	2	US	ARMARYM1HELMETS	
+Prefabs/Characters/HeadGear/ARY_Helmet_M1_01/ARY_Helmet_M1_01_Cover_NoChinCup_TigerStripe.et	ARY_Helmet_M1_01_Cover_NoChinCup_TigerStripe	HEADWEAR	2	US	ARMARYM1HELMETS	
+Prefabs/Characters/HeadGear/ARY_Helmet_M1_01/ARY_Helmet_M1_01_Cover_NoChinCupi_LCJ.et	ARY_Helmet_M1_01_Cover_NoChinCupi_LCJ	HEADWEAR	5	AMAT-LesCiresJaunes/FIA	AMAT-LesCiresJaunes	
+Prefabs/Characters/HeadGear/ARY_Helmet_Skate_01/ARY_Helmet_Skate_01.et	ARY_Helmet_Skate_01	HEADWEAR	5	AMAT-ChernarusLiberationArmy/CLA ; AMATLesCireesJaunesBM/BM ; US	AMAT-ChernarusLiberationArmy ; AMATLesCireesJaunesBM ; ARMARYDELTAFORCE1980	
+Prefabs/Characters/HeadGear/Hat_Fedora/BC_fedora.et	BC_fedora	HEADWEAR	0	US	ChungusSMGs	
+Prefabs/Characters/HeadGear/Helmet_Mk6_01/BF89_Helmet_Mk6_Cover_01.et	BF89_Helmet_Mk6_Cover_01	HEADWEAR	3	UK	BritishForces	
+Prefabs/Characters/HeadGear/Helmet_Mk6_01/BF89_Helmet_Mk6_Cover_BrownStrap_01.et	BF89_Helmet_Mk6_Cover_BrownStrap_01	HEADWEAR	3	UK	BritishForces	
+Prefabs/Characters/HeadGear/Helmet_Mk6_01/BF89_Helmet_Mk6_Cover_Early_01.et	BF89_Helmet_Mk6_Cover_Early_01	HEADWEAR	3	UK	BritishForces	
+Prefabs/Characters/HeadGear/Helmet_Mk6_01/BF89_Helmet_Mk6_Scrim_01.et	BF89_Helmet_Mk6_Scrim_01	HEADWEAR	3	UK	BritishForces	
+Prefabs/Characters/HeadGear/Hat_Hard_01/BF_Hat_Headset_Crew.et	BF_Hat_Headset_Crew	HEADWEAR	1	UK	BritishForces	
+Prefabs/Characters/HeadGear/Hat_Knitted_01/Cap_Comforter_OD_01.et	Cap_Comforter_OD_01	HEADWEAR	0	UK	BritishForces	
+Prefabs/Characters/HeadGear/Hat_Knitted_01/Cap_Comforter_OD_02.et	Cap_Comforter_OD_02	HEADWEAR	0	UK	BritishForces	
+Prefabs/Characters/HeadGear/Hat_Beret_01/Hat_Beret_01_Marine.et	Hat_Beret_01_Marine	HEADWEAR	0	UK	BritishForces	
+Prefabs/Characters/HeadGear/Hat_Beret_01/Hat_Beret_01_Para.et	Hat_Beret_01_Para	HEADWEAR	0	UK	BritishForces	
+Prefabs/Characters/HeadGear/Hat_Beret_01/Hat_Beret_01_Rifles.et	Hat_Beret_01_Rifles	HEADWEAR	0	UK	BritishForces	
+Prefabs/Characters/HeadGear/Hat_Beret_01/Hat_Beret_01_base.et	Hat_Beret_01_base	HEADWEAR	0	AMAT-ChernarusLiberationArmy/CLA	AMAT-ChernarusLiberationArmy	
+Prefabs/Characters/HeadGear/Hat_Beret_01/Hat_Beret_01_black.et	Hat_Beret_01_black	HEADWEAR	0	AMAT-ChernarusLiberationArmy/CLA ; UK	AMAT-ChernarusLiberationArmy ; BritishForces	
+Prefabs/Characters/HeadGear/Hat_Beret_01/Hat_Beret_01_gs_blue.et	Hat_Beret_01_gs_blue	HEADWEAR	0	AMAT-ChernarusLiberationArmy/CLA ; UK	AMAT-ChernarusLiberationArmy ; BritishForces	
+Prefabs/Characters/HeadGear/Hat_Beret_01/Hat_Beret_01_khaki.et	Hat_Beret_01_khaki	HEADWEAR	0	UK	BritishForces	
+Prefabs/Characters/HeadGear/Hat_Boonie_US_01/Hat_Boonie_US_01.et	Hat_Boonie_US_01	HEADWEAR	0	US	ArmaReforger	
+Prefabs/Characters/HeadGear/Hat_Boonie_US_01/Hat_Boonie_US_DPM_01.et	Hat_Boonie_US_DPM_01	HEADWEAR	0	UK	BritishForces	
+Prefabs/Characters/HeadGear/Hat_Boonie_US_01/Hat_Boonie_US_LCJ.et	Hat_Boonie_US_LCJ	HEADWEAR	1	AMAT-LesCiresJaunes/FIA	AMAT-LesCiresJaunes	
+Prefabs/Characters/HeadGear/Hat_Boonie_US_01/Hat_Boonie_US_TigerStripe.et	Hat_Boonie_US_TigerStripe	HEADWEAR	0	US	ArmaReforger	
+Prefabs/Characters/HeadGear/Hat_Boonie_US_01/Hat_Boonie_US_olive.et	Hat_Boonie_US_olive	HEADWEAR	0	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ArmaReforger	
+Prefabs/Characters/HeadGear/Hat_ECW/Hat_ECW_EarsDown_DPM_01.et	Hat_ECW_EarsDown_DPM_01	HEADWEAR	0	UK	BritishForces	
+Prefabs/Characters/HeadGear/Hat_ECW/Hat_ECW_EarsUp_DPM_01.et	Hat_ECW_EarsUp_DPM_01	HEADWEAR	0	UK	BritishForces	
+Prefabs/Characters/HeadGear/Hat_M70_01/Hat_M70_DPM_01.et	Hat_M70_DPM_01	HEADWEAR	0	UK	BritishForces	
+Prefabs/Characters/HeadGear/Hat_Patrol_US_01/Hat_Patrol_US_01.et	Hat_Patrol_US_01	HEADWEAR	0	US	ArmaReforger	
+Prefabs/Characters/HeadGear/Hat_Patrol_US_01/Hat_Patrol_US_01_TigerStripe.et	Hat_Patrol_US_01_TigerStripe	HEADWEAR	0	US	ArmaReforger	
+Prefabs/Characters/HeadGear/Hat_Patrol_US_01/Hat_Patrol_US_02.et	Hat_Patrol_US_02	HEADWEAR	0	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ArmaReforger	
+Prefabs/Characters/HeadGear/Helmet_DH132_01/Helmet_DH132A_01.et	Helmet_DH132A_01	HEADWEAR	5	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ArmaReforger	
+Prefabs/Characters/HeadGear/Helmet_DH132_01/Helmet_DH132A_01_LCJ.et	Helmet_DH132A_01_LCJ	HEADWEAR	5	AMAT-LesCiresJaunes/FIA	AMAT-LesCiresJaunes	
+Prefabs/Characters/HeadGear/Helmet_DH132_01/Helmet_DH132A_01_UK.et	Helmet_DH132A_01_UK	HEADWEAR	1	UK	BritishForces	
+Prefabs/Characters/HeadGear/Helmet_Deathwish/Helmet_Deathwish_base.et	Helmet_Deathwish_base	HEADWEAR	0	US	AKI_Core	
+Prefabs/Characters/HeadGear/Helmet_HSAT_01/Helmet_HSAT_Cover_01.et	Helmet_HSAT_Cover_01	HEADWEAR	2	UK	BritishForces	
+Prefabs/Characters/HeadGear/Helmet_HSAT_01/Helmet_HSAT_Cover_Net_01.et	Helmet_HSAT_Cover_Net_01	HEADWEAR	2	UK	BritishForces	
+Prefabs/Characters/HeadGear/Helmet_HSAT_01/Helmet_HSAT_Cover_Net_Scrim_01.et	Helmet_HSAT_Cover_Net_Scrim_01	HEADWEAR	5	AMAT-ChernarusLiberationArmy/CLA ; UK	AMAT-ChernarusLiberationArmy ; BritishForces	
+Prefabs/Characters/HeadGear/Helmet_M1_01/Helmet_M1_01.et	Helmet_M1_01	HEADWEAR	1	US	ArmaReforger	
+Prefabs/Characters/HeadGear/Helmet_M1_01/Helmet_M1_01_Cover_ERDL.et	Helmet_M1_01_Cover_ERDL	HEADWEAR	2	US	ArmaReforger	
+Prefabs/Characters/HeadGear/Helmet_M1_01/Helmet_M1_01_Cover_Frogskin.et	Helmet_M1_01_Cover_Frogskin	HEADWEAR	2	US	ArmaReforger	
+Prefabs/Characters/HeadGear/Helmet_M1_01/Helmet_M1_01_Cover_Wineleaf.et	Helmet_M1_01_Cover_Wineleaf	HEADWEAR	2	US	ArmaReforger	
+Prefabs/Characters/HeadGear/Helmet_M1_01/Helmet_M1_01_Cover_Woodland.et	Helmet_M1_01_Cover_Woodland	HEADWEAR	2	US	ArmaReforger	
+Prefabs/Characters/HeadGear/Helmet_Mk5_01/Helmet_Mk5_01_base.et	Helmet_Mk5_01_base	HEADWEAR	1	UK	BritishForces	
+Prefabs/Characters/HeadGear/Helmet_Mk5_01/Helmet_Mk5_cover_01.et	Helmet_Mk5_cover_01	HEADWEAR	1	UK	BritishForces	
+Prefabs/Characters/HeadGear/Helmet_Mk5_01/Helmet_Mk5_cover_net_01.et	Helmet_Mk5_cover_net_01	HEADWEAR	1	UK	BritishForces	
+Prefabs/Characters/HeadGear/Helmet_Mk5_01/Helmet_Mk5_cover_scrim_01.et	Helmet_Mk5_cover_scrim_01	HEADWEAR	1	UK	BritishForces	
+Prefabs/Characters/HeadGear/Helmet_PASGT_01/Helmet_PASGT_01_cover.et	Helmet_PASGT_01_cover	HEADWEAR	2	US	ArmaReforger	
+Prefabs/Characters/HeadGear/Helmet_PASGT_01/Helmet_PASGT_01_cover_w_goggles.et	Helmet_PASGT_01_cover_w_goggles	HEADWEAR	5	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ArmaReforger	
+Prefabs/Characters/HeadGear/Helmet_PASGT_01/Helmet_PASGT_01_cover_w_scrim.et	Helmet_PASGT_01_cover_w_scrim	HEADWEAR	2	US	ArmaReforger	
+Prefabs/Characters/HeadGear/Helmet_SPH4_01/Helmet_SPH4_01.et	Helmet_SPH4_01	HEADWEAR	5	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ArmaReforger	
+Prefabs/Characters/HeadGear/Helmet_SPH4_01/Helmet_SPH4_01_UK.et	Helmet_SPH4_01_UK	HEADWEAR	1	UK	BritishForces	
+Prefabs/Characters/HeadGear/Helmet_SPH4_01/Helmet_SPH4_USFlag_01.et	Helmet_SPH4_USFlag_01	HEADWEAR	5	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ArmaReforger	
+Prefabs/Characters/HeadGear/Helmet_SSh68_01/Helmet_SSh68_01_cover.et	Helmet_SSh68_01_cover	HEADWEAR	5	AMAT-ChernarusLiberationArmy/CLA	AMAT-ChernarusLiberationArmy	
+Prefabs/Items/Medicine/FieldDressing_UK_01.et	FieldDressing_UK_01	HEAL	0	UK	BritishForces	
+Prefabs/Items/Medicine/FieldDressing_UK_Taped_01.et	FieldDressing_UK_Taped_01	HEAL	0	UK	BritishForces	
+Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et	FieldDressing_US_01	HEAL	2	AMAT-LesCiresJaunes/FIA ; AMATLesCireesJaunesBM/BM ; US	AMAT-LesCiresJaunes ; AMATLesCireesJaunesBM ; ArmaReforger	
+Prefabs/Items/Equipment/Kits/MedicalKit_01/MedicalKit_01_UK.et	MedicalKit_01_UK	HEAL	0	UK	BritishForces	
+Prefabs/Items/Equipment/Kits/MedicalKit_01/MedicalKit_01_US.et	MedicalKit_01_US	HEAL	2	AMATLesCireesJaunesBM/BM ; US	AMATLesCireesJaunesBM ; ArmaReforger	
+Prefabs/Items/Medicine/SalineBag_01/SalineBag_UK_01.et	SalineBag_UK_01	HEAL	3	UK	BritishForces	
+Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et	SalineBag_US_01	HEAL	10	AMAT-LesCiresJaunes/FIA ; US	AMAT-LesCiresJaunes ; ArmaReforger	
+Prefabs/Items/Medicine/Tourniquet_01/Tourniquet_UK_01.et	Tourniquet_UK_01	HEAL	0	UK	BritishForces	
+Prefabs/Items/Medicine/Tourniquet_01/Tourniquet_US_01.et	Tourniquet_US_01	HEAL	2	AMAT-LesCiresJaunes/FIA ; AMATLesCireesJaunesBM/BM ; US	AMAT-LesCiresJaunes ; AMATLesCireesJaunesBM ; ArmaReforger	
+Prefabs/Weapons/HeavyWeapons/AH6_M134.et	AH6_M134	HELICOPTER	250	US	MH6J	
+Prefabs/Weapons/Ammo/Ammo_Rocket_Hydra70_HEDP_M247.et	Ammo_Rocket_Hydra70_HEDP_M247	HELICOPTER	35	US	ArmaReforger	
+Prefabs/Weapons/Ammo/Ammo_Rocket_Hydra70_HE_M229.et	Ammo_Rocket_Hydra70_HE_M229	HELICOPTER	35	US	ArmaReforger	
+Prefabs/Weapons/HeavyWeapons/GAU-19.et	GAU-19	HELICOPTER	250	US	MH6J	
+Prefabs/Weapons/AircraftWeapons/RocketPods/Pod_M260.et	Pod_M260	HELICOPTER	250	US	ArmaReforger	
+Prefabs/Weapons/AircraftWeapons/RocketPods/Pod_M260_Loaded_HEDP_M247.et	Pod_M260_Loaded_HEDP_M247	HELICOPTER	250	US	ArmaReforger	
+Prefabs/Weapons/AircraftWeapons/RocketPods/Pod_M260_Loaded_HE_M229.et	Pod_M260_Loaded_HE_M229	HELICOPTER	250	US	ArmaReforger	
+Prefabs/Weapons/AircraftWeapons/T_Pod_M261_Base.et	T_Pod_M261_Base	HELICOPTER	500	US	MH6J	
+Prefabs/Weapons/AircraftWeapons/T_Pod_M261_Loaded_HEDP_M247.et	T_Pod_M261_Loaded_HEDP_M247	HELICOPTER	500	US	MH6J	
+Prefabs/Weapons/AircraftWeapons/T_Pod_M261_Loaded_HE_M229.et	T_Pod_M261_Loaded_HE_M229	HELICOPTER	500	US	MH6J	
+Prefabs/Characters/Uniforms/Pants_Suit_01/BC_Pants_Suit_01_black_V1.et	BC_Pants_Suit_01_black_V1	LEGS	0	US	ChungusSMGs	
+Prefabs/Characters/Uniforms/Pants_Fisherman_01/Pants_Fisherman_01_yellow_LCJ.et	Pants_Fisherman_01_yellow_LCJ	LEGS	5	AMAT-LesCiresJaunes/FIA ; AMATLesCireesJaunesBM/FIA	AMAT-LesCiresJaunes ; AMATLesCireesJaunesBM	
+Prefabs/Characters/Uniforms/Pants_US_BDU.et	Pants_US_BDU	LEGS	0	US	ArmaReforger	
+Prefabs/Characters/Uniforms/Pants_US_BDU_TigerStripe.et	Pants_US_BDU_TigerStripe	LEGS	0	US	ArmaReforger	
+Prefabs/Characters/Uniforms/Pants_US_M65.et	Pants_US_M65	LEGS	0	US	ArmaReforger	
+Prefabs/Characters/Uniforms/Trousers_Combat_68Pat_DPM_01.et	Trousers_Combat_68Pat_DPM_01	LEGS	0	UK	BritishForces	
+Prefabs/Characters/Uniforms/Trousers_Combat_68Pat_DPM_Tropical_01.et	Trousers_Combat_68Pat_DPM_Tropical_01	LEGS	0	UK	BritishForces	
+Prefabs/Characters/Uniforms/Trousers_Combat_84Pat_DPM_01.et	Trousers_Combat_84Pat_DPM_01	LEGS	0	UK	BritishForces	
+Prefabs/Characters/Uniforms/Trousers_Lightweight_OD_01.et	Trousers_Lightweight_OD_01	LEGS	0	UK	BritishForces	
+Prefabs/Weapons/Grenades/Grenade_L2A2.et	Grenade_L2A2	LETHAL_THROWABLE	3	UK	BritishForces	
+Prefabs/Weapons/Grenades/Grenade_M67.et	Grenade_M67	LETHAL_THROWABLE	5	AMAT-LesCiresJaunes/FIA ; US	AMAT-LesCiresJaunes ; ArmaReforger	
+Prefabs/Weapons/MachineGuns/BAR/BC_BAR_M1918A2.et	BC_BAR_M1918A2	MACHINE_GUN	0	US	BigChungusLMGs	
+Prefabs/Weapons/MachineGuns/BAR/BC_BAR_M1918A2_Lightweight.et	BC_BAR_M1918A2_Lightweight	MACHINE_GUN	0	US	BigChungusLMGs	
+Prefabs/Weapons/Magazines/BC_Drum_762x39_RPD_MACVSOG_125rnd_Mixed.et	BC_Drum_762x39_RPD_MACVSOG_125rnd_Mixed	MACHINE_GUN	0	US	BigChungusLMGs	
+Prefabs/Weapons/Magazines/BC_Drum_762x39_RPD_MACVSOG_125rnd_PS.et	BC_Drum_762x39_RPD_MACVSOG_125rnd_PS	MACHINE_GUN	0	US	BigChungusLMGs	
+Prefabs/Weapons/Magazines/BC_Magazine_30-06_BAR_20rnd_M2.et	BC_Magazine_30-06_BAR_20rnd_M2	MACHINE_GUN	0	US	BigChungusLMGs	
+Prefabs/Weapons/Magazines/BC_Magazine_30-06_BAR_20rnd_M2_4Ball_1Tracer.et	BC_Magazine_30-06_BAR_20rnd_M2_4Ball_1Tracer	MACHINE_GUN	0	US	BigChungusLMGs	
+Prefabs/Weapons/Magazines/BC_Magazine_30-06_BAR_20rnd_M2_AP.et	BC_Magazine_30-06_BAR_20rnd_M2_AP	MACHINE_GUN	0	US	BigChungusLMGs	
+Prefabs/Weapons/MachineGuns/RPD/BC_RPD_chopped.et	BC_RPD_chopped	MACHINE_GUN	50	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; BigChungusLMGs	
+Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4AP_1APIT.et	Box_127x99_M2_100rnd_4AP_1APIT	MACHINE_GUN	30	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4AP_1Tracer.et	Box_127x99_M2_100rnd_4AP_1Tracer	MACHINE_GUN	20	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4Ball_1Tracer.et	Box_127x99_M2_100rnd_4Ball_1Tracer	MACHINE_GUN	NA	UK ; US	ArmaReforger ; BritishForces	
+Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_AP.et	Box_127x99_M2_100rnd_AP	MACHINE_GUN	20	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_Ball.et	Box_127x99_M2_100rnd_Ball	MACHINE_GUN	NA	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_Tracer.et	Box_127x99_M2_100rnd_Tracer	MACHINE_GUN	NA	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_4Ball_1Tracer.et	Box_556x45_M249_200rnd_4Ball_1Tracer	MACHINE_GUN	20	AMATLesCireesJaunesBM/BM ; UK ; US	AMATLesCireesJaunesBM ; ArmaReforger ; BritishForces	
+Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_Ball.et	Box_556x45_M249_200rnd_Ball	MACHINE_GUN	7	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_Tracer.et	Box_556x45_M249_200rnd_Tracer	MACHINE_GUN	7	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Box_762x51_GPMG_100rnd_1Ball_1Tracer.et	Box_762x51_GPMG_100rnd_1Ball_1Tracer	MACHINE_GUN	5	UK	BritishForces	
+Prefabs/Weapons/Magazines/Box_762x51_GPMG_100rnd_4Ball_1Tracer.et	Box_762x51_GPMG_100rnd_4Ball_1Tracer	MACHINE_GUN	20	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/Magazines/Box_762x51_GPMG_200rnd_1Ball_1Tracer.et	Box_762x51_GPMG_200rnd_1Ball_1Tracer	MACHINE_GUN	11	UK	BritishForces	
+Prefabs/Weapons/Magazines/Box_762x51_GPMG_200rnd_4Ball_1Tracer.et	Box_762x51_GPMG_200rnd_4Ball_1Tracer	MACHINE_GUN	35	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/Magazines/Box_762x51_GPMG_50rnd_1Ball_1Tracer.et	Box_762x51_GPMG_50rnd_1Ball_1Tracer	MACHINE_GUN	2	UK	BritishForces	
+Prefabs/Weapons/Magazines/Box_762x51_GPMG_50rnd_4Ball_1Tracer.et	Box_762x51_GPMG_50rnd_4Ball_1Tracer	MACHINE_GUN	10	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/Magazines/Magazine_M240_Coax/Box_762x51_M240_coax_200rnd_4AP_1Tracer.et	Box_762x51_M240_coax_200rnd_4AP_1Tracer	MACHINE_GUN	16	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Magazine_M240_Coax/Box_762x51_M240_coax_200rnd_4Ball_1Tracer.et	Box_762x51_M240_coax_200rnd_4Ball_1Tracer	MACHINE_GUN	8	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Magazine_M240_Coax/Box_762x51_M240_coax_200rnd_AP.et	Box_762x51_M240_coax_200rnd_AP	MACHINE_GUN	16	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Magazine_M240_Coax/Box_762x51_M240_coax_200rnd_Ball.et	Box_762x51_M240_coax_200rnd_Ball	MACHINE_GUN	8	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Magazine_M240_Coax/Box_762x51_M240_coax_200rnd_Tracer.et	Box_762x51_M240_coax_200rnd_Tracer	MACHINE_GUN	8	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_4AP_1Tracer.et	Box_762x51_M60_100rnd_4AP_1Tracer	MACHINE_GUN	20	AMAT-LesCiresJaunes/FIA ; US	AMAT-LesCiresJaunes ; ArmaReforger	
+Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_4Ball_1Tracer.et	Box_762x51_M60_100rnd_4Ball_1Tracer	MACHINE_GUN	12	AMAT-LesCiresJaunes/FIA ; US	AMAT-LesCiresJaunes ; ArmaReforger	
+Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_AP.et	Box_762x51_M60_100rnd_AP	MACHINE_GUN	15	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ArmaReforger	
+Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Ball.et	Box_762x51_M60_100rnd_Ball	MACHINE_GUN	5	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Tracer.et	Box_762x51_M60_100rnd_Tracer	MACHINE_GUN	5	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Box_762x51_M60_500rnd_2Ball_1Tracer.et	Box_762x51_M60_500rnd_2Ball_1Tracer	MACHINE_GUN	20	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Box_762x51_M60_500rnd_Ball.et	Box_762x51_M60_500rnd_Ball	MACHINE_GUN	20	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Box_762x51_M60_500rnd_Tracer.et	Box_762x51_M60_500rnd_Tracer	MACHINE_GUN	20	US	ArmaReforger	
+Prefabs/Weapons/Magazines/H82_762x51_GPMG_200rnd_Base.et	H82_762x51_GPMG_200rnd_Base	MACHINE_GUN	8	UK	BritishForces	
+Prefabs/Weapons/MachineGuns/GPMG/MG_GPMG_L7A2.et	MG_GPMG_L7A2	MACHINE_GUN	250	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/MachineGuns/L4LMG/MG_L4_LMG.et	MG_L4_LMG	MACHINE_GUN	50	AMAT-ChernarusLiberationArmy/CLA ; UK	AMAT-ChernarusLiberationArmy ; BritishForces	
+Prefabs/Weapons/MachineGuns/M249/MG_M249.et	MG_M249	MACHINE_GUN	40	US	ArmaReforger	
+Prefabs/Weapons/MachineGuns/M60/MG_M60.et	MG_M60	MACHINE_GUN	50	AMAT-ChernarusLiberationArmy/CLA ; AMAT-LesCiresJaunes/FIA ; US	AMAT-ChernarusLiberationArmy ; AMAT-LesCiresJaunes ; ArmaReforger	
+Prefabs/Weapons/MachineGuns/M249/MG_Minimi.et	MG_Minimi	MACHINE_GUN	200	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/Magazines/Magazine_762x51_Bren_Commonwealth_30rnd_1B1T.et	Magazine_762x51_Bren_Commonwealth_30rnd_1B1T	MACHINE_GUN	3	UK	BritishForces	
+Prefabs/Weapons/Magazines/Magazine_762x51_Bren_Commonwealth_30rnd_4B1T.et	Magazine_762x51_Bren_Commonwealth_30rnd_4B1T	MACHINE_GUN	3	UK	BritishForces	
+Prefabs/Weapons/Magazines/Magazine_762x51_Bren_Commonwealth_30rnd_Ball.et	Magazine_762x51_Bren_Commonwealth_30rnd_Ball	MACHINE_GUN	5	AMAT-ChernarusLiberationArmy/CLA ; UK	AMAT-ChernarusLiberationArmy ; BritishForces	
+Prefabs/Weapons/Magazines/Magazine_762x51_Bren_Commonwealth_30rnd_BattleMix.et	Magazine_762x51_Bren_Commonwealth_30rnd_BattleMix	MACHINE_GUN	3	UK	BritishForces	
+Prefabs/Weapons/Rifles/L85/LSW_A1/Rifle_L85_LSW_A1_Attachments_Irons.et	Rifle_L85_LSW_A1_Attachments_Irons	MACHINE_GUN	125	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/Rifles/L85/LSW_A1/Rifle_L85_LSW_A1_Attachments_SUSAT.et	Rifle_L85_LSW_A1_Attachments_SUSAT	MACHINE_GUN	175	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Props/Military/AmmoBoxes/AmmoBox_81mm_mortar_2rnd.et	AmmoBox_81mm_mortar_2rnd	MORTARS	5	UK	BritishForces	
+Prefabs/Props/Military/AmmoBoxes/AmmoBox_81mm_mortar_3rnd.et	AmmoBox_81mm_mortar_3rnd	MORTARS	5	US	ArmaReforger	
+Prefabs/Weapons/Ammo/Ammo_Shell_81mm_HE_L41A3.et	Ammo_Shell_81mm_HE_L41A3	MORTARS	50	UK	BritishForces	
+Prefabs/Weapons/Ammo/Ammo_Shell_81mm_HE_M821.et	Ammo_Shell_81mm_HE_M821	MORTARS	20	US	ArmaReforger	
+Prefabs/Weapons/Ammo/Ammo_Shell_81mm_Illum_L54A2.et	Ammo_Shell_81mm_Illum_L54A2	MORTARS	5	UK	BritishForces	
+Prefabs/Weapons/Ammo/Ammo_Shell_81mm_Illum_M853A1.et	Ammo_Shell_81mm_Illum_M853A1	MORTARS	4	US	ArmaReforger	
+Prefabs/Weapons/Ammo/Ammo_Shell_81mm_Practice_L27A1.et	Ammo_Shell_81mm_Practice_L27A1	MORTARS	1	UK	BritishForces	
+Prefabs/Weapons/Ammo/Ammo_Shell_81mm_Practice_M879.et	Ammo_Shell_81mm_Practice_M879	MORTARS	1	US	ArmaReforger	
+Prefabs/Weapons/Ammo/Ammo_Shell_81mm_Smoke_L19A2.et	Ammo_Shell_81mm_Smoke_L19A2	MORTARS	NA	UK	BritishForces	
+Prefabs/Weapons/Ammo/Ammo_Shell_81mm_Smoke_M819.et	Ammo_Shell_81mm_Smoke_M819	MORTARS	6	US	ArmaReforger	
+Prefabs/Items/Equipment/BallisticTable/BallisticTable_UK.et	BallisticTable_UK	MORTARS	0	UK	BritishForces	
+Prefabs/Items/Equipment/BallisticTable/BallisticTable_US.et	BallisticTable_US	MORTARS	0	US	ArmaReforger	
+Prefabs/Weapons/Handguns/Handheld Rocket Flares/Schermuly/Schermuly_Rocket_Flare_Green.et	Schermuly_Rocket_Flare_Green	NON_LETHAL_THROWABLE	4	UK	BritishForces	
+Prefabs/Weapons/Handguns/Handheld Rocket Flares/Schermuly/Schermuly_Rocket_Flare_Orange.et	Schermuly_Rocket_Flare_Orange	NON_LETHAL_THROWABLE	4	UK	BritishForces	
+Prefabs/Weapons/Handguns/Handheld Rocket Flares/Schermuly/Schermuly_Rocket_Flare_White.et	Schermuly_Rocket_Flare_White	NON_LETHAL_THROWABLE	4	UK	BritishForces	
+Prefabs/Weapons/Grenades/Smoke_ANM8HC.et	Smoke_ANM8HC	NON_LETHAL_THROWABLE	1	AMAT-LesCiresJaunes/FIA ; US	AMAT-LesCiresJaunes ; ArmaReforger	
+Prefabs/Weapons/Grenades/M18/Smoke_M18_Green.et	Smoke_M18_Green	NON_LETHAL_THROWABLE	1	AMAT-ChernarusLiberationArmy/CLA ; AMAT-LesCiresJaunes/FIA ; US	AMAT-ChernarusLiberationArmy ; AMAT-LesCiresJaunes ; ArmaReforger	
+Prefabs/Weapons/Grenades/M18/Smoke_M18_Red.et	Smoke_M18_Red	NON_LETHAL_THROWABLE	1	AMAT-ChernarusLiberationArmy/CLA ; AMAT-LesCiresJaunes/FIA ; US	AMAT-ChernarusLiberationArmy ; AMAT-LesCiresJaunes ; ArmaReforger	
+Prefabs/Weapons/Grenades/M18/Smoke_M18_Violet.et	Smoke_M18_Violet	NON_LETHAL_THROWABLE	1	US	ArmaReforger	
+Prefabs/Weapons/Grenades/M18/Smoke_M18_Yellow.et	Smoke_M18_Yellow	NON_LETHAL_THROWABLE	1	US	ArmaReforger	
+Prefabs/Weapons/Grenades/Smoke_No80_WP.et	Smoke_No80_WP	NON_LETHAL_THROWABLE	2	UK	BritishForces	
+Prefabs/Weapons/Grenades/Smoke_No83_Blue.et	Smoke_No83_Blue	NON_LETHAL_THROWABLE	1	UK	BritishForces	
+Prefabs/Weapons/Grenades/Smoke_No83_Green.et	Smoke_No83_Green	NON_LETHAL_THROWABLE	1	UK	BritishForces	
+Prefabs/Weapons/Grenades/Smoke_No83_Red.et	Smoke_No83_Red	NON_LETHAL_THROWABLE	1	UK	BritishForces	
+Prefabs/Weapons/Grenades/Smoke_No83_Yellow.et	Smoke_No83_Yellow	NON_LETHAL_THROWABLE	1	UK	BritishForces	
+Prefabs/Weapons/Handguns/ARY_1911/ARY_Handgun_1911.et	ARY_Handgun_1911	PISTOL	5	AMAT-ChernarusLiberationArmy/CLA ; ARMARYM1911A1/ARY_ALL ; US	AMAT-ChernarusLiberationArmy ; ARMARYM1911A1	
+Prefabs/Weapons/Handguns/ARY_1911/ARY_Handgun_1911_delta.et	ARY_Handgun_1911_delta	PISTOL	NA	ARMARYDELTA1911/ARY_ALL ; US	ARMARYDELTA1911	
+Prefabs/Weapons/Handguns/ARY_1911/ARY_Handgun_1911_delta_od.et	ARY_Handgun_1911_delta_od	PISTOL	10	AMAT-LesCiresJaunes/FIA ; ARMARYDELTA1911/ARY_ALL ; US	AMAT-LesCiresJaunes ; ARMARYDELTA1911	
+Prefabs/Weapons/Handguns/ARY_1911/ARY_Handgun_1911_gold.et	ARY_Handgun_1911_gold	PISTOL	60	AMAT-LesCiresJaunes/FIA ; ARMARYM1911A1/ARY_ALL	AMAT-LesCiresJaunes ; ARMARYM1911A1	
+Prefabs/Weapons/Launchers/M79/BC_M79_Shorty.et	BC_M79_Shorty	PISTOL	0	US	ChungusLaunchers	
+Prefabs/Weapons/Handguns/HiPower/Handgun_HiPower.et	Handgun_HiPower	PISTOL	5	AMAT-ChernarusLiberationArmy/CLA ; UK	AMAT-ChernarusLiberationArmy ; BritishForces	
+Prefabs/Weapons/Handguns/HiPower/Handgun_HiPower_20.et	Handgun_HiPower_20	PISTOL	10	AMAT-ChernarusLiberationArmy/CLA	AMAT-ChernarusLiberationArmy	
+Prefabs/Weapons/Handguns/M9/Handgun_M9.et	Handgun_M9	PISTOL	5	US	ArmaReforger + M9ThreadedBarrel	
+Prefabs/Weapons/Handguns/M93R/Handgun_M93R.et	Handgun_M93R	PISTOL	50	AMATLesCireesJaunesBM/BM ; US	AMATLesCireesJaunesBM ; M93R	
+Prefabs/Weapons/Handguns/M93R/Handgun_M93R_Prototype.et	Handgun_M93R_Prototype	PISTOL	11	US	M93R	
+Prefabs/Weapons/Handguns/M93R/Handgun_M93R_stocked.et	Handgun_M93R_stocked	PISTOL	60	AMATLesCireesJaunesBM/BM	AMATLesCireesJaunesBM	
+Prefabs/Weapons/Handguns/M9/Handgun_M9_Threaded_Barrel_Suppressed.et	Handgun_M9_Threaded_Barrel_Suppressed	PISTOL	75	AMATLesCireesJaunesBM/BM ; US	AMATLesCireesJaunesBM ; M9ThreadedBarrel	
+Prefabs/Weapons/Magazines/Magazine_9x19_HiPower_13rnd_Ball.et	Magazine_9x19_HiPower_13rnd_Ball	PISTOL	2	AMAT-ChernarusLiberationArmy/CLA ; UK	AMAT-ChernarusLiberationArmy ; BritishForces	
+Prefabs/Weapons/Magazines/Magazine_9x19_HiPower_20rnd_Ball.et	Magazine_9x19_HiPower_20rnd_Ball	PISTOL	3	AMAT-ChernarusLiberationArmy/CLA ; UK	AMAT-ChernarusLiberationArmy ; BritishForces	
+Prefabs/Weapons/Magazines/Magazine_9x19_M93R_60rnd_drum_Ball_Ext.et	Magazine_9x19_M93R_60rnd_drum_Ball_Ext	PISTOL	6	US	M93R	
+Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et	Magazine_9x19_M9_15rnd_Ball	PISTOL	1	US	ArmaReforger + M9ThreadedBarrel	
+Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_MK_243_MOD_0.et	Magazine_9x19_M9_15rnd_MK_243_MOD_0	PISTOL	2	AMATLesCireesJaunesBM/BM ; US	AMATLesCireesJaunesBM ; M9ThreadedBarrel	
+Prefabs/Weapons/Magazines/Magazine_9x19_Welrod_6rnd.et	Magazine_9x19_Welrod_6rnd	PISTOL	1	UK	BritishForces	
+Prefabs/Weapons/Rifles/VZ61/Rifle_VZ61_base_30_suppressor.et	Rifle_VZ61_base_30_suppressor	PISTOL	30	AMAT-ChernarusLiberationArmy/CLA	AMAT-ChernarusLiberationArmy	
+Prefabs/Weapons/Rifles/VZ61/Rifle_VZ61_wood_stock.et	Rifle_VZ61_wood_stock	PISTOL	15	AMAT-ChernarusLiberationArmy/CLA	AMAT-ChernarusLiberationArmy	
+Prefabs/Weapons/Handguns/Welrod/Welrod.et	Welrod	PISTOL	45	UK	BritishForces	
+Prefabs/Items/Equipment/Radios/Radio_ANPRC77.et	Radio_ANPRC77	RADIO_BACKPACK	50	US	ArmaReforger	
+Prefabs/Items/Equipment/Radios/Radio_PRC319.et	Radio_PRC319	RADIO_BACKPACK	400	UK	BritishForces	
+Prefabs/Items/Equipment/Radios/Radio_PRC320.et	Radio_PRC320	RADIO_BACKPACK	300	UK	BritishForces	
+Prefabs/Items/Equipment/Radios/Radio_PRC350.et	Radio_PRC350	RADIO_BACKPACK	100	UK	BritishForces	
+Prefabs/Items/Equipment/Radios/Radio_PRC351.et	Radio_PRC351	RADIO_BACKPACK	200	UK	BritishForces	
+Prefabs/Weapons/Magazines/ARY_Magazine_556x45_M16_20rnd_M193_Ball.et	ARY_Magazine_556x45_M16_20rnd_M193_Ball	RIFLE	3	AMAT-ChernarusLiberationArmy/CLA ; ARMARYM16A1/ARY_ALL ; US	AMAT-ChernarusLiberationArmy ; ARMARYM16A1	
+Prefabs/Weapons/Magazines/ARY_Magazine_556x45_STANAG_30rnd_Surplus_Ball.et	ARY_Magazine_556x45_STANAG_30rnd_Surplus_Ball	RIFLE	5	AMAT-ChernarusLiberationArmy/CLA ; ARMARYM16A1/ARY_ALL	AMAT-ChernarusLiberationArmy ; ARMARYM16A1	
+Prefabs/Weapons/Magazines/ARY_G3/10Rnd/ARY_Magazine_762x51_G3_10Rnd_DM41_Match.et	ARY_Magazine_762x51_G3_10Rnd_DM41_Match	RIFLE	5	AMAT-LesCiresJaunes/FIA ; ARMARYG3BattleRifles/ARY_ALL	AMAT-LesCiresJaunes ; ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/10Rnd/ARY_Magazine_762x51_G3_10Rnd_SMK_Match.et	ARY_Magazine_762x51_G3_10Rnd_SMK_Match	RIFLE	4	AMATLesCireesJaunesBM/BM ; ARMARYG3BattleRifles/ARY_ALL	AMATLesCireesJaunesBM ; ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/20Rnd_Alu/ARY_Magazine_762x51_G3_20Rnd_Alu_DM11121_Mixed.et	ARY_Magazine_762x51_G3_20Rnd_Alu_DM11121_Mixed	RIFLE	4	AMATLesCireesJaunesBM/BM ; ARMARYG3BattleRifles/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/20Rnd_Alu/ARY_Magazine_762x51_G3_20Rnd_Alu_DM111_Ball.et	ARY_Magazine_762x51_G3_20Rnd_Alu_DM111_Ball	RIFLE	4	AMATLesCireesJaunesBM/BM ; ARMARYG3BattleRifles/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/30Rnd/ARY_Magazine_762x51_G3_30Rnd_DM11121_Mixed.et	ARY_Magazine_762x51_G3_30Rnd_DM11121_Mixed	RIFLE	8	AMATLesCireesJaunesBM/BM ; ARMARYG3BattleRifles/ARY_ALL	AMATLesCireesJaunesBM ; ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/30Rnd/ARY_Magazine_762x51_G3_30Rnd_DM111_Ball.et	ARY_Magazine_762x51_G3_30Rnd_DM111_Ball	RIFLE	8	AMATLesCireesJaunesBM/BM ; ARMARYG3BattleRifles/ARY_ALL	AMATLesCireesJaunesBM ; ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_25rnd_Surplus_Ball.et	ARY_Magazine_9x19_UZI_25rnd_Surplus_Ball	RIFLE	3	AMAT-ChernarusLiberationArmy/CLA ; ARMARYUZI/ARY_ALL	AMAT-ChernarusLiberationArmy ; ARMARYUZI	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_32rnd_Ball_Black.et	ARY_Magazine_9x19_UZI_32rnd_Ball_Black	RIFLE	5	AMAT-ChernarusLiberationArmy/CLA ; ARMARYUZI/ARY_ALL ; US	AMAT-ChernarusLiberationArmy ; ARMARYUZI	
+Prefabs/Weapons/Rifles/AK74/Variants - Black/ARY_Rifle_AK74N_GP25_Polymer_Black.et	ARY_Rifle_AK74N_GP25_Polymer_Black	RIFLE	130	AMATLesCireesJaunesBM/BM ; ARMARYAK74/ARY_ALL	AMATLesCireesJaunesBM ; ARMARYAK74	
+Prefabs/Weapons/Rifles/AK74/Variants - Black/ARY_Rifle_AK74N_PBS4_1P29_Polymer_Black.et	ARY_Rifle_AK74N_PBS4_1P29_Polymer_Black	RIFLE	200	AMATLesCireesJaunesBM/BM	AMATLesCireesJaunesBM	
+Prefabs/Weapons/Rifles/AK74/Variants - Black/ARY_Rifle_AK74N_PBS4_Polymer_Black.et	ARY_Rifle_AK74N_PBS4_Polymer_Black	RIFLE	175	AMATLesCireesJaunesBM/BM	AMATLesCireesJaunesBM	
+Prefabs/Weapons/Rifles/ARY_AKM/ARY_Rifle_AKMS_base.et	ARY_Rifle_AKMS_base	RIFLE	20	AMAT-ChernarusLiberationArmy/CLA	AMAT-ChernarusLiberationArmy	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A3/Variants/HK79/ARY_Rifle_G3A3_HK79_Black.et	ARY_Rifle_G3A3_HK79_Black	RIFLE	120	AMATLesCireesJaunesBM/BM ; ARMARYG3BattleRifles/ARY_ALL	AMATLesCireesJaunesBM ; ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A3/Variants/HK79/ARY_Rifle_G3A3_HK79_Wood.et	ARY_Rifle_G3A3_HK79_Wood	RIFLE	40	AMAT-LesCiresJaunes/FIA ; ARMARYG3BattleRifles/ARY_ALL	AMAT-LesCiresJaunes ; ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A3/Variants/HK79/ARY_Rifle_G3A3_HK79_Wood_Optic.et	ARY_Rifle_G3A3_HK79_Wood_Optic	RIFLE	60	AMAT-LesCiresJaunes/FIA	AMAT-LesCiresJaunes	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A3/Variants/ARY_Rifle_G3A3_WideBlack.et	ARY_Rifle_G3A3_WideBlack	RIFLE	100	AMATLesCireesJaunesBM/BM ; ARMARYG3BattleRifles/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A4/Variants/HK79/ARY_Rifle_G3A4_HK79_Black.et	ARY_Rifle_G3A4_HK79_Black	RIFLE	120	AMATLesCireesJaunesBM/BM ; ARMARYG3BattleRifles/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A4/Variants/Old/ARY_Rifle_G3A4_Old_Wood.et	ARY_Rifle_G3A4_Old_Wood	RIFLE	30	AMAT-LesCiresJaunes/FIA ; ARMARYG3BattleRifles/ARY_ALL	AMAT-LesCiresJaunes ; ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A4/Variants/ARY_Rifle_G3A4_WideBlack.et	ARY_Rifle_G3A4_WideBlack	RIFLE	20	AMAT-ChernarusLiberationArmy/CLA ; AMATLesCireesJaunesBM/BM ; ARMARYG3BattleRifles/ARY_ALL ; US	AMAT-ChernarusLiberationArmy ; AMATLesCireesJaunesBM ; ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3KA3/ARY_Rifle_G3KA3.et	ARY_Rifle_G3KA3	RIFLE	120	AMATLesCireesJaunesBM/BM ; ARMARYG3SpecialRifles/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYG3SpecialRifles	
+Prefabs/Weapons/Rifles/ARY_M16_US/ARY_Rifle_M16A1.et	ARY_Rifle_M16A1	RIFLE	20	AMAT-ChernarusLiberationArmy/CLA ; ARMARYM16A1/ARY_ALL ; US	AMAT-ChernarusLiberationArmy ; ARMARYM16A1	
+Prefabs/Weapons/Rifles/ARY_M16_US/ARY_Rifle_M16A1_M203_base.et	ARY_Rifle_M16A1_M203_base	RIFLE	30	AMAT-ChernarusLiberationArmy/CLA	AMAT-ChernarusLiberationArmy	
+Prefabs/Weapons/Rifles/ARY_M3A1/ARY_Rifle_M3A1_BurpGun.et	ARY_Rifle_M3A1_BurpGun	RIFLE	15	AMAT-ChernarusLiberationArmy/CLA ; AMAT-LesCiresJaunes/FIA ; ARMARYM3A1GREASEGUN/ARY_ALL ; US	AMAT-ChernarusLiberationArmy ; AMAT-LesCiresJaunes ; ARMARYM3A1GREASEGUN	
+Prefabs/Weapons/Rifles/ARY_M3A1/ARY_Rifle_M3A1_FlashHider.et	ARY_Rifle_M3A1_FlashHider	RIFLE	15	AMAT-ChernarusLiberationArmy/CLA ; ARMARYM3A1GREASEGUN/ARY_ALL	AMAT-ChernarusLiberationArmy ; ARMARYM3A1GREASEGUN	
+Prefabs/Weapons/Rifles/ARY_M3A1/ARY_Rifle_M3A1_FlashHider_FlashLight.et	ARY_Rifle_M3A1_FlashHider_FlashLight	RIFLE	30	AMAT-LesCiresJaunes/FIA ; ARMARYM3A1GREASEGUN/ARY_ALL	AMAT-LesCiresJaunes ; ARMARYM3A1GREASEGUN	
+Prefabs/Weapons/Rifles/ARY_M3A1/ARY_Rifle_M3A1_Suppressor.et	ARY_Rifle_M3A1_Suppressor	RIFLE	40	AMAT-LesCiresJaunes/FIA ; ARMARYM3A1GREASEGUN/ARY_ALL	AMAT-LesCiresJaunes ; ARMARYM3A1GREASEGUN	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_MC51/ARY_Rifle_MC51A3.et	ARY_Rifle_MC51A3	RIFLE	120	AMATLesCireesJaunesBM/BM ; ARMARYG3SpecialRifles/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYG3SpecialRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_MC51/ARY_Rifle_MC51A4.et	ARY_Rifle_MC51A4	RIFLE	120	AMATLesCireesJaunesBM/BM ; ARMARYG3SpecialRifles/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYG3SpecialRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_MC51/ARY_Rifle_MC51SD4.et	ARY_Rifle_MC51SD4	RIFLE	150	AMATLesCireesJaunesBM/BM ; ARMARYG3SpecialRifles/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYG3SpecialRifles	
+Prefabs/Weapons/Rifles/ARY_UZI/ARY_Rifle_Uzi_Black.et	ARY_Rifle_Uzi_Black	RIFLE	15	AMAT-ChernarusLiberationArmy/CLA ; ARMARYUZI/ARY_ALL ; US	AMAT-ChernarusLiberationArmy ; ARMARYUZI	
+Prefabs/Weapons/Rifles/ARY_UZI/Variants/ARY_Rifle_Uzi_Black_Suppressor.et	ARY_Rifle_Uzi_Black_Suppressor	RIFLE	30	AMAT-ChernarusLiberationArmy/CLA ; ARMARYUZI/ARY_ALL	AMAT-ChernarusLiberationArmy ; ARMARYUZI	
+Prefabs/Weapons/Rifles/ARY_UZI/ARY_Rifle_Uzi_Fixed_Black.et	ARY_Rifle_Uzi_Fixed_Black	RIFLE	15	AMAT-ChernarusLiberationArmy/CLA ; ARMARYUZI/ARY_ALL	AMAT-ChernarusLiberationArmy ; ARMARYUZI	
+Prefabs/Weapons/Rifles/ARY_M16_US/ARY_Rifle_XM177E2.et	ARY_Rifle_XM177E2	RIFLE	20	AMAT-ChernarusLiberationArmy/CLA ; ARMARYM16A1/ARY_ALL ; US	AMAT-ChernarusLiberationArmy ; ARMARYM16A1	
+Prefabs/Weapons/Rifles/ARY_M16_US/ARY_Rifle_XM177E2_20rnd.et	ARY_Rifle_XM177E2_20rnd	RIFLE	20	AMAT-ChernarusLiberationArmy/CLA	AMAT-ChernarusLiberationArmy	
+Prefabs/Weapons/Rifles/ARY_HarrySingleShotgun/ARY_Shotgun_HarrySingleShot_Slug_Knife.et	ARY_Shotgun_HarrySingleShot_Slug_Knife	RIFLE	5	AMAT-ChernarusLiberationArmy/CLA	AMAT-ChernarusLiberationArmy	
+Prefabs/Weapons/Magazines/M1928A1/BC_Magazine_45acp_M1A1_30rnd_Stick.et	BC_Magazine_45acp_M1A1_30rnd_Stick	RIFLE	5	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ChungusSMGs	
+Prefabs/Weapons/Magazines/M45/BC_Magazine_9x19_M45_36rnd_Ball.et	BC_Magazine_9x19_M45_36rnd_Ball	RIFLE	5	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ChungusSMGs	
+Prefabs/Weapons/Rifles/PPSH41/BC_PPSh41_Stick.et	BC_PPSh41_Stick	RIFLE	15	AMAT-ChernarusLiberationArmy/CLA	AMAT-ChernarusLiberationArmy	
+Prefabs/Weapons/Rifles/M1A1/BC_SMG_M1A1.et	BC_SMG_M1A1	RIFLE	15	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ChungusSMGs	
+Prefabs/Weapons/Rifles/M45/BC_SMG_M45.et	BC_SMG_M45	RIFLE	20	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ChungusSMGs	
+Prefabs/Weapons/Rifles/M45/BC_SMG_M45_Suppressed.et	BC_SMG_M45_Suppressed	RIFLE	25	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ChungusSMGs	
+Prefabs/Weapons/Shotguns/M37/BC_Shotgun_M37.et	BC_Shotgun_M37	RIFLE	15	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ChungusShotguns	
+Prefabs/Weapons/Shotguns/M37/BC_Shotgun_M37_Sawed.et	BC_Shotgun_M37_Sawed	RIFLE	15	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ChungusShotguns	
+Prefabs/Weapons/Shotguns/Remington 870/BC_Shotgun_Remington_870.et	BC_Shotgun_Remington_870	RIFLE	15	AMAT-ChernarusLiberationArmy/CLA	AMAT-ChernarusLiberationArmy	
+Prefabs/Weapons/Rifles/FNC.et	FNC	RIFLE	100	AMATLesCireesJaunesBM/BM ; US	AMATLesCireesJaunesBM ; FNC	
+Prefabs/Weapons/Rifles/FNC_scope.et	FNC_scope	RIFLE	150	AMATLesCireesJaunesBM/BM	AMATLesCireesJaunesBM	
+Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_Ball.et	Magazine_556x45_STANAG_30rnd_M193_Ball	RIFLE	4	AMATLesCireesJaunesBM/BM ; ARMARYM16A1/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYM16A1	
+Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M193_M196_Last_5Tracer.et	Magazine_556x45_STANAG_30rnd_M193_M196_Last_5Tracer	RIFLE	4	AMATLesCireesJaunesBM/BM ; ARMARYM16A1/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYM16A1	
+Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M196_Tracer.et	Magazine_556x45_STANAG_30rnd_M196_Tracer	RIFLE	4	AMATLesCireesJaunesBM/BM ; ARMARYM16A1/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYM16A1	
+Prefabs/Weapons/Magazines/Magazine_762x51_FAL_Commonwealth_20rnd_Ball.et	Magazine_762x51_FAL_Commonwealth_20rnd_Ball	RIFLE	5	AMAT-ChernarusLiberationArmy/CLA ; UK	AMAT-ChernarusLiberationArmy ; BritishForces	
+Prefabs/Weapons/Magazines/Magazine_9x19_M93R_20rnd_Ball_Ext.et	Magazine_9x19_M93R_20rnd_Ball_Ext	RIFLE	4	AMATLesCireesJaunesBM/BM ; US	AMATLesCireesJaunesBM ; M93R	
+Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_M1152.et	Magazine_9x19_M9_15rnd_M1152	RIFLE	2	AMATLesCireesJaunesBM/BM ; US	AMATLesCireesJaunesBM ; M9ThreadedBarrel	
+Prefabs/Weapons/Magazines/Magazine_9x19_MP5_15rnd_Ball.et	Magazine_9x19_MP5_15rnd_Ball	RIFLE	2	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/Magazines/Magazine_9x19_MP5_30rnd_Ball.et	Magazine_9x19_MP5_30rnd_Ball	RIFLE	4	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/Magazines/Magazine_F1.et	Magazine_F1	RIFLE	4	AMATLesCireesJaunesBM/BM ; US	AMATLesCireesJaunesBM ; FAMAS	
+Prefabs/Weapons/Rifles/L1A1_SLR/Rifle_L1A1_SLR_Plastic.et	Rifle_L1A1_SLR_Plastic	RIFLE	20	AMAT-ChernarusLiberationArmy/CLA ; UK	AMAT-ChernarusLiberationArmy ; BritishForces	
+Prefabs/Weapons/Rifles/L1A1_SLR/Rifle_L1A1_SLR_Wood.et	Rifle_L1A1_SLR_Wood	RIFLE	20	AMAT-ChernarusLiberationArmy/CLA ; UK	AMAT-ChernarusLiberationArmy ; BritishForces	
+Prefabs/Weapons/Rifles/L42A1/Rifle_L8.et	Rifle_L8	RIFLE	10	AMAT-ChernarusLiberationArmy/CLA ; UK	AMAT-ChernarusLiberationArmy ; BritishForces	
+Prefabs/Weapons/Rifles/L85/A1/Rifle_L85A1_Attachments_Irons.et	Rifle_L85A1_Attachments_Irons	RIFLE	100	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/Rifles/L85/A1/Rifle_L85A1_Attachments_SUSAT.et	Rifle_L85A1_Attachments_SUSAT	RIFLE	150	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/Rifles/L42A1/Rifle_L8T.et	Rifle_L8T	RIFLE	10	AMAT-ChernarusLiberationArmy/CLA	AMAT-ChernarusLiberationArmy	
+Prefabs/Weapons/Rifles/MP5/Rifle_MP5.et	Rifle_MP5	RIFLE	80	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/Rifles/MP5/Rifle_MP5K.et	Rifle_MP5K	RIFLE	60	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/Rifles/MP5/Rifle_MP5K-PDW.et	Rifle_MP5K-PDW	RIFLE	60	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishMP5KPDW	
+Prefabs/Weapons/Rifles/MP5/Rifle_MP5SD3.et	Rifle_MP5SD3	RIFLE	125	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/Rifles/FAMAS F1/FAMAS F1.et	NA	RIFLE	100	AMATLesCireesJaunesBM/BM ; US	AMATLesCireesJaunesBM ; FAMAS	
+Prefabs/Weapons/Rifles/MP5/Rifle_MP5K-PDW Suppressor.et	NA	RIFLE	120	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishMP5KPDW	
+Prefabs/Weapons/Launchers/ARY_M79/ARY_Launcher_M79.et	ARY_Launcher_M79	ROCKET_LAUNCHER	5	ARMARYM79/ARY_ALL ; UK ; US	ARMARYM79 ; BritishForces	
+Prefabs/Weapons/Launchers/ARY_M79/ARY_Launcher_M79_Wood.et	ARY_Launcher_M79_Wood	ROCKET_LAUNCHER	30	AMAT-ChernarusLiberationArmy/CLA ; ARMARYM79/ARY_ALL	AMAT-ChernarusLiberationArmy ; ARMARYM79	
+Prefabs/Weapons/Ammo/Ammo_Flare_40mm_StarParachute_Green.et	Ammo_Flare_40mm_StarParachute_Green	ROCKET_LAUNCHER	2	AMATLesCireesJaunesBM/BM	AMATLesCireesJaunesBM	
+Prefabs/Weapons/Ammo/Ammo_Flare_40mm_StarParachute_Red.et	Ammo_Flare_40mm_StarParachute_Red	ROCKET_LAUNCHER	2	AMATLesCireesJaunesBM/BM	AMATLesCireesJaunesBM	
+Prefabs/Weapons/Ammo/Ammo_Flare_40mm_StarParachute_White.et	Ammo_Flare_40mm_StarParachute_White	ROCKET_LAUNCHER	2	AMATLesCireesJaunesBM/BM	AMATLesCireesJaunesBM	
+Prefabs/Weapons/Ammo/Ammo_Grenade_HEDP_M433.et	Ammo_Grenade_HEDP_M433	ROCKET_LAUNCHER	5	AMAT-ChernarusLiberationArmy/CLA ; AMAT-LesCiresJaunes/FIA ; AMATLesCireesJaunesBM/BM ; ARMARYG3BattleRifles/ARY_ALL ; US	AMAT-ChernarusLiberationArmy ; AMAT-LesCiresJaunes ; AMATLesCireesJaunesBM ; ArmaReforger ; ARMARYG3BattleRifles	
+Prefabs/Weapons/Ammo/Ammo_Grenade_Smoke_M713_Red.et	Ammo_Grenade_Smoke_M713_Red	ROCKET_LAUNCHER	2	AMATLesCireesJaunesBM/BM ; US	AMATLesCireesJaunesBM ; ArmaReforger	
+Prefabs/Weapons/Ammo/Ammo_Grenade_Smoke_M715_Green.et	Ammo_Grenade_Smoke_M715_Green	ROCKET_LAUNCHER	2	AMATLesCireesJaunesBM/BM ; US	AMATLesCireesJaunesBM ; ArmaReforger	
+Prefabs/Weapons/Ammo/Ammo_Grenade_Smoke_M716_Yellow.et	Ammo_Grenade_Smoke_M716_Yellow	ROCKET_LAUNCHER	2	AMATLesCireesJaunesBM/BM ; US	AMATLesCireesJaunesBM ; ArmaReforger	
+Prefabs/Weapons/Ammo/Ammo_Rocket_HEAT_L40.et	Ammo_Rocket_HEAT_L40	ROCKET_LAUNCHER	15	UK	BritishForces	
+Prefabs/Weapons/Ammo/BC_Ammo_Rocket_M37A1.et	BC_Ammo_Rocket_M37A1	ROCKET_LAUNCHER	0	US	ChungusLaunchers	
+Prefabs/Weapons/Launchers/M67/BC_Launcher_M67.et	BC_Launcher_M67	ROCKET_LAUNCHER	0	US	ChungusLaunchers	
+Prefabs/Weapons/Launchers/MAW_84MM/Launcher_84mm_MAW.et	Launcher_84mm_MAW	ROCKET_LAUNCHER	200	AMATLesCireesJaunesBM/BM	AMATLesCireesJaunesBM	
+Prefabs/Weapons/Launchers/MAW_84MM/Launcher_84mm_MAW_Optic.et	Launcher_84mm_MAW_Optic	ROCKET_LAUNCHER	250	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/Launchers/FIM92_Stinger/Launcher_FIM92_Stinger.et	Launcher_FIM92_Stinger	ROCKET_LAUNCHER	100	US	WCS_Armaments	
+Prefabs/Weapons/Launchers/M72/Launcher_LAW66_L1A1.et	Launcher_LAW66_L1A1	ROCKET_LAUNCHER	25	UK	BritishForces	
+Prefabs/Weapons/Launchers/LAW80/Launcher_LAW80_base.et	Launcher_LAW80_base	ROCKET_LAUNCHER	40	UK	BritishForces	
+Prefabs/Weapons/Launchers/M72/Launcher_M72A3.et	Launcher_M72A3	ROCKET_LAUNCHER	30	AMAT-LesCiresJaunes/FIA ; AMATLesCireesJaunesBM/BM ; US	AMAT-LesCiresJaunes ; AMATLesCireesJaunesBM ; ArmaReforger	
+Prefabs/Weapons/Magazines/ARY_G3/20Rnd_Alu/ARY_Magazine_762x51_G3_20Rnd_Alu_DM41_Match.et	ARY_Magazine_762x51_G3_20Rnd_Alu_DM41_Match	SNIPER_RIFLE	6	ARMARYG3BattleRifles/ARY_ALL ; US	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/20Rnd_Steel/ARY_Magazine_762x51_G3_20Rnd_DM41_Match.et	ARY_Magazine_762x51_G3_20Rnd_DM41_Match	SNIPER_RIFLE	4	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/5Rnd/ARY_Magazine_762x51_G3_5Rnd_DM41_Match.et	ARY_Magazine_762x51_G3_5Rnd_DM41_Match	SNIPER_RIFLE	4	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/5Rnd/ARY_Magazine_762x51_G3_5Rnd_SMK_Match.et	ARY_Magazine_762x51_G3_5Rnd_SMK_Match	SNIPER_RIFLE	8	ARMARYG3BattleRifles/ARY_ALL ; US	ARMARYG3BattleRifles ; ARMARYG3SpecialRifles	
+Prefabs/Weapons/Rifles/ARY_G3_Modern/ARY_Rifle_G3_PSG1_Rail.et	ARY_Rifle_G3_PSG1_Rail	SNIPER_RIFLE	30	ARMARYG3Modernised/ARY_ALL ; US	ARMARYG3Modernised	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_PSG1/ARY_Rifle_G3_PSG1_Scoped.et	ARY_Rifle_G3_PSG1_Scoped	SNIPER_RIFLE	500	AMATLesCireesJaunesBM/BM ; ARMARYG3SpecialRifles/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYG3SpecialRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_SG1/ARY_Rifle_G3_SG1.et	ARY_Rifle_G3_SG1	SNIPER_RIFLE	150	AMATLesCireesJaunesBM/BM ; ARMARYG3BattleRifles/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_SG1/ARY_Rifle_G3_SG1_Optic_10rnds.et	ARY_Rifle_G3_SG1_Optic_10rnds	SNIPER_RIFLE	60	AMAT-LesCiresJaunes/FIA	AMAT-LesCiresJaunes	
+Prefabs/Weapons/Rifles/ARY_G3_Modern/ARY_Rifle_G3_SG1_Rail.et	ARY_Rifle_G3_SG1_Rail	SNIPER_RIFLE	20	ARMARYG3Modernised/ARY_ALL ; US	ARMARYG3Modernised	
+Prefabs/Weapons/Rifles/M1 Garand/BC_Rifle_M1D.et	BC_Rifle_M1D	SNIPER_RIFLE	0	US	BigChungusRifles	
+Prefabs/Weapons/Magazines/Magazine_762x51_AIPM_10rnd_Ball_L2A2.et	Magazine_762x51_AIPM_10rnd_Ball_L2A2	SNIPER_RIFLE	10	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/Magazines/Magazine_762x51_AIPM_10rnd_Tracer.et	Magazine_762x51_AIPM_10rnd_Tracer	SNIPER_RIFLE	10	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/Magazines/Magazine_762x51_L42a1_10rnd_Base.et	Magazine_762x51_L42a1_10rnd_Base	SNIPER_RIFLE	10	AMAT-ChernarusLiberationArmy/CLA ; UK	AMAT-ChernarusLiberationArmy ; BritishForces	
+Prefabs/Weapons/Rifles/PM/Rifle_AI_L96A1_PM6x42.et	Rifle_AI_L96A1_PM6x42	SNIPER_RIFLE	400	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/Rifles/PM/Rifle_AI_PMSD_PM12x42.et	Rifle_AI_PMSD_PM12x42	SNIPER_RIFLE	600	AMATLesCireesJaunesBM/BM	AMATLesCireesJaunesBM	
+Prefabs/Weapons/Rifles/PM/Rifle_AI_PMSD_PM6x42.et	Rifle_AI_PMSD_PM6x42	SNIPER_RIFLE	600	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/Rifles/PM/Rifle_AI_PM_SF_PM12x42.et	Rifle_AI_PM_SF_PM12x42	SNIPER_RIFLE	400	AMATLesCireesJaunesBM/BM	AMATLesCireesJaunesBM	
+Prefabs/Weapons/Rifles/PM/Rifle_AI_PM_SF_PM6x42.et	Rifle_AI_PM_SF_PM6x42	SNIPER_RIFLE	30	UK	BritishForces	
+Prefabs/Weapons/Rifles/L42A1/Rifle_L42A1.et	Rifle_L42A1	SNIPER_RIFLE	60	UK	BritishForces	
+Prefabs/Weapons/Rifles/M14/Rifle_M21.et	Rifle_M21	SNIPER_RIFLE	20	US	ArmaReforger	
+Prefabs/Weapons/Rifles/M14/Rifle_M21_ARTII.et	Rifle_M21_ARTII	SNIPER_RIFLE	20	US	ArmaReforger	
+Prefabs/Weapons/Rifles/M14/Rifle_M21_ARTII_OliveGreen_Sand_Stripes.et	Rifle_M21_ARTII_OliveGreen_Sand_Stripes	SNIPER_RIFLE	20	US	ArmaReforger	
+Prefabs/Weapons/Rifles/M14/Rifle_M21_ARTII_OliveGreen_Sand_Stripes_Wrapped.et	Rifle_M21_ARTII_OliveGreen_Sand_Stripes_Wrapped	SNIPER_RIFLE	40	US	ArmaReforger	
+Prefabs/Weapons/Rifles/M14/Rifle_M21_OliveGreen_Sand_Stripes.et	Rifle_M21_OliveGreen_Sand_Stripes	SNIPER_RIFLE	20	US	ArmaReforger	
+Prefabs/Weapons/Rifles/M14/Rifle_M21_OliveGreen_Sand_Stripes_Wrapped.et	Rifle_M21_OliveGreen_Sand_Stripes_Wrapped	SNIPER_RIFLE	40	US	ArmaReforger	
+Prefabs/Characters/Uniforms/ARY_BDU_ERDL_Green/ARY_BDU_Jacket_ERDL_Green.et	ARY_BDU_Jacket_ERDL_Green	TORSO	0	US	ARMARYDELTAFORCE1980	
+Prefabs/Characters/Uniforms/ARY_BDU_ERDL_Green/ARY_BDU_Jacket_RolledUp_ERDL_Green.et	ARY_BDU_Jacket_RolledUp_ERDL_Green	TORSO	0	US	ARMARYDELTAFORCE1980	
+Prefabs/Characters/Uniforms/ARY_BDU_ERDL_Green/ARY_BDU_Pants_ERDL_Green.et	ARY_BDU_Pants_ERDL_Green	TORSO	0	US	ARMARYDELTAFORCE1980	
+Prefabs/Characters/Uniforms/ARY_Jacket_US_BDU_02_Black.et	ARY_Jacket_US_BDU_02_Black	TORSO	3	AMAT-ChernarusLiberationArmy/CLA ; AMATLesCireesJaunesBM/BM ; US	AMAT-ChernarusLiberationArmy ; AMATLesCireesJaunesBM ; ARMARYDELTAFORCE1980	
+Prefabs/Characters/Uniforms/Jacket_Suit_01/BC_Jacket_Suit_01_black_V1.et	BC_Jacket_Suit_01_black_V1	TORSO	0	US	ChungusSMGs	
+Prefabs/Characters/Uniforms/Jacket_M70_DPM_68.et	Jacket_M70_DPM_68	TORSO	0	UK	BritishForces	
+Prefabs/Characters/Uniforms/Jacket_Raincoat_01/Jacket_Raincoat_01_yellow_LCJ.et	Jacket_Raincoat_01_yellow_LCJ	TORSO	5	AMAT-LesCiresJaunes/FIA ; AMATLesCireesJaunesBM/FIA	AMAT-LesCiresJaunes ; AMATLesCireesJaunesBM	
+Prefabs/Characters/Uniforms/Jacket_US_BDU.et	Jacket_US_BDU	TORSO	0	US	ArmaReforger	
+Prefabs/Characters/Uniforms/Jacket_US_BDU_02.et	Jacket_US_BDU_02	TORSO	0	US	ArmaReforger	
+Prefabs/Characters/Uniforms/Jacket_US_BDU_TigerStripe.et	Jacket_US_BDU_TigerStripe	TORSO	0	US	ArmaReforger	
+Prefabs/Characters/Uniforms/Jacket_US_BDU_rolledup.et	Jacket_US_BDU_rolledup	TORSO	0	US	ArmaReforger	
+Prefabs/Characters/Uniforms/Jacket_US_BDU_rolledup_02.et	Jacket_US_BDU_rolledup_02	TORSO	0	US	ArmaReforger	
+Prefabs/Characters/Uniforms/Jacket_US_BDU_rolledup_TigerStripe.et	Jacket_US_BDU_rolledup_TigerStripe	TORSO	0	US	ArmaReforger	
+Prefabs/Items/Equipment/Accessories/Scrim_Scarf/Scrim_Scarf_1.et	Scrim_Scarf_1	TORSO	0	UK	BritishForces	
+Prefabs/Items/Equipment/Accessories/Scrim_Scarf/Scrim_Scarf_2.et	Scrim_Scarf_2	TORSO	0	UK	BritishForces	
+Prefabs/Items/Equipment/Accessories/Scrim_Scarf/Scrim_Scarf_3.et	Scrim_Scarf_3	TORSO	0	UK	BritishForces	
+Prefabs/Characters/Uniforms/Smock_Combat_68Pat_DPM_01.et	Smock_Combat_68Pat_DPM_01	TORSO	0	UK	BritishForces	
+Prefabs/Characters/Uniforms/Smock_Combat_84Pat_DPM_01.et	Smock_Combat_84Pat_DPM_01	TORSO	0	UK	BritishForces	
+Prefabs/Characters/Uniforms/Smock_Combat_Rolled_68Pat_DPM_01.et	Smock_Combat_Rolled_68Pat_DPM_01	TORSO	0	UK	BritishForces	
+Prefabs/Characters/Uniforms/Smock_Combat_Rolled_84Pat_DPM_01.et	Smock_Combat_Rolled_84Pat_DPM_01	TORSO	0	UK	BritishForces	
+Prefabs/Items/Equipment/Accessories/68Pat_Combat_Smock_Hood/Smock_Hood_68Pattern.et	Smock_Hood_68Pattern	TORSO	0	UK	BritishForces	
+Prefabs/Characters/Uniforms/Suit_Pilot_US_01/Suit_CQB_UK_01_base.et	Suit_CQB_UK_01_base	TORSO	0	UK	BritishForces	
+Prefabs/Characters/Uniforms/Suit_Pilot_NATO_01/Suit_Pilot_NATO_01_base.et	Suit_Pilot_NATO_01_base	TORSO	0	US	AKI_Core	
+Prefabs/Characters/Uniforms/Suit_Pilot_US_01/Suit_Pilot_UK_01.et	Suit_Pilot_UK_01	TORSO	0	UK	BritishForces	
+Prefabs/Characters/Uniforms/Suit_Pilot_US_01/Suit_Pilot_US_01.et	Suit_Pilot_US_01	TORSO	0	US	ArmaReforger	
+Prefabs/Characters/Uniforms/Suit_Tanker_US_01/Suit_Tanker_UK_01_tucked.et	Suit_Tanker_UK_01_tucked	TORSO	0	UK	BritishForces	
+Prefabs/Characters/Uniforms/Suit_Tanker_US_01/Suit_Tanker_US_01.et	Suit_Tanker_US_01	TORSO	0	US	ArmaReforger	
+Prefabs/Weapons/Magazines/AH6_M134_Ammo.et	AH6_M134_Ammo	VEHICLE	3	US	MH6J	
+Prefabs/Weapons/Magazines/Magazine_M242/Box_25x137_M242_150rnd_HEIT.et	Box_25x137_M242_150rnd_HEIT	VEHICLE	3	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Magazine_M242/Box_25x137_M242_60rnd_APDST.et	Box_25x137_M242_60rnd_APDST	VEHICLE	3	US	ArmaReforger	
+Prefabs/Weapons/Magazines/GAU-19_2000rnd_APIT_127x99.et	GAU-19_2000rnd_APIT_127x99	VEHICLE	6	US	MH6J	
+Prefabs/Weapons/Magazines/SmokeLauncher_LAV25_L8A1_Magazine.et	SmokeLauncher_LAV25_L8A1_Magazine	VEHICLE	2	US	ArmaReforger	
+Prefabs/Characters/Vests/Vest_ALICE/Variants/ARY_Vest_ALICE_BeltKit_M3A1.et	ARY_Vest_ALICE_BeltKit_M3A1	VEST_AND_WAIST	2	US	ARMARYM3A1GREASEGUN	
+Prefabs/Characters/Vests/Vest_ALICE/Variants/ARY_Vest_ALICE_rifleman_M3A1.et	ARY_Vest_ALICE_rifleman_M3A1	VEST_AND_WAIST	2	US	ARMARYM3A1GREASEGUN	
+Prefabs/Characters/Vests/Vest_ALICE/Variants/ARY_Vest_ALICE_rifleman_m14.et	ARY_Vest_ALICE_rifleman_m14	VEST_AND_WAIST	2	US	ARMARYM14BattleRifle	
+Prefabs/Characters/Vests/Vest_PLCE/Variants/BF_Vest_PLCE_BeltKit.et	BF_Vest_PLCE_BeltKit	VEST_AND_WAIST	1	UK	BritishForces	
+Prefabs/Characters/Vests/Vest_PLCE/Variants/BF_Vest_PLCE_Commander.et	BF_Vest_PLCE_Commander	VEST_AND_WAIST	5	UK	BritishForces	
+Prefabs/Characters/Vests/Vest_PLCE/Variants/BF_Vest_PLCE_General.et	BF_Vest_PLCE_General	VEST_AND_WAIST	3	UK	BritishForces	
+Prefabs/Characters/Vests/Vest_PLCE/Variants/BF_Vest_PLCE_Officer.et	BF_Vest_PLCE_Officer	VEST_AND_WAIST	5	UK	BritishForces	
+Prefabs/Characters/Vests/Vest_PLCE/Variants/BF_Vest_PLCE_Rifleman.et	BF_Vest_PLCE_Rifleman	VEST_AND_WAIST	4	UK	BritishForces	
+Prefabs/Characters/Vests/Vest_PLCE/Variants/BF_Vest_PLCE_Support.et	BF_Vest_PLCE_Support	VEST_AND_WAIST	5	UK	BritishForces	
+Prefabs/Characters/Vests/Vest_PLCE/Variants/BF_Vest_PLCE_Utility.et	BF_Vest_PLCE_Utility	VEST_AND_WAIST	5	UK	BritishForces	
+Prefabs/Items/Equipment/Backpacks/Rucksack_84mm_MAW_Carrier.et	Rucksack_84mm_MAW_Carrier	VEST_AND_WAIST	25	UK	BritishForces	
+Prefabs/Characters/Vests/Vest_6B3/Vest_6B3_Black.et	Vest_6B3_Black	VEST_AND_WAIST	50	AMAT-ChernarusLiberationArmy/CLA	AMAT-ChernarusLiberationArmy	
+Prefabs/Characters/Vests/Vest_ALICE/Variants/Vest_ALICE_AR.et	Vest_ALICE_AR	VEST_AND_WAIST	2	US	ArmaReforger	
+Prefabs/Characters/Vests/Vest_ALICE/Variants/Vest_ALICE_GL.et	Vest_ALICE_GL	VEST_AND_WAIST	3	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ArmaReforger	
+Prefabs/Characters/Vests/Vest_ALICE/Variants/Vest_ALICE_MG.et	Vest_ALICE_MG	VEST_AND_WAIST	3	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ArmaReforger	
+Prefabs/Characters/Vests/Vest_ALICE/Variants/Vest_ALICE_commander.et	Vest_ALICE_commander	VEST_AND_WAIST	2	US	ArmaReforger	
+Prefabs/Characters/Vests/Vest_ALICE/Variants/Vest_ALICE_officer.et	Vest_ALICE_officer	VEST_AND_WAIST	2	US	ArmaReforger	
+Prefabs/Characters/Vests/Vest_ALICE/Variants/Vest_ALICE_rifleman.et	Vest_ALICE_rifleman	VEST_AND_WAIST	2	AMAT-ChernarusLiberationArmy/CLA ; AMATLesCireesJaunesBM/BM ; US	AMAT-ChernarusLiberationArmy ; AMATLesCireesJaunesBM ; ArmaReforger	
+Prefabs/Characters/Vests/Vest_ALICE/Variants/Vest_ALICE_sniper.et	Vest_ALICE_sniper	VEST_AND_WAIST	2	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ArmaReforger	
+Prefabs/Characters/Vests/Vest_CBA/Vest_CBA.et	Vest_CBA	VEST_AND_WAIST	25	UK	BritishForces	
+Prefabs/Characters/Vests/Vest_COP/Vest_COP.et	Vest_COP	VEST_AND_WAIST	2	AMAT-ChernarusLiberationArmy/CLA ; UK	AMAT-ChernarusLiberationArmy ; BritishForces	
+Prefabs/Characters/Vests/Vest_M69/Vest_M69_M81woodland.et	Vest_M69_M81woodland	VEST_AND_WAIST	25	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ArmaReforger	
+Prefabs/Characters/Vests/Vest_M69/Vest_M69_UK_OD.et	Vest_M69_UK_OD	VEST_AND_WAIST	25	UK	BritishForces	
+Prefabs/Characters/Vests/Vest_M69/Vest_M69_black.et	Vest_M69_black	VEST_AND_WAIST	3	AMAT-ChernarusLiberationArmy/CLA ; AMATLesCireesJaunesBM/BM	AMAT-ChernarusLiberationArmy ; AMATLesCireesJaunesBM	
+Prefabs/Characters/Vests/Vest_M69/Vest_M69_olive.et	Vest_M69_olive	VEST_AND_WAIST	25	AMAT-ChernarusLiberationArmy/CLA ; US	AMAT-ChernarusLiberationArmy ; ArmaReforger	
+Prefabs/Characters/Vests/Vest_M79GrenadeCarrier/Vest_M79GrenadeCarrier.et	Vest_M79GrenadeCarrier	VEST_AND_WAIST	3	AMAT-ChernarusLiberationArmy/CLA	AMAT-ChernarusLiberationArmy	
+Prefabs/Characters/Vests/Vest_NAZ/Vest_NAZ_base_CQB_Retex.et	Vest_NAZ_base_CQB_Retex	VEST_AND_WAIST	25	UK	BritishForces	
+Prefabs/Characters/Vests/Vest_58Pattern/Variants/Vest_P58_GL.et	Vest_P58_GL	VEST_AND_WAIST	2	UK	BritishForces	
+Prefabs/Characters/Vests/Vest_58Pattern/Variants/Vest_P58_beltkit.et	Vest_P58_beltkit	VEST_AND_WAIST	1	UK	BritishForces	
+Prefabs/Characters/Vests/Vest_58Pattern/Variants/Vest_P58_officer.et	Vest_P58_officer	VEST_AND_WAIST	2	UK	BritishForces	
+Prefabs/Characters/Vests/Vest_58Pattern/Variants/Vest_P58_rifleman.et	Vest_P58_rifleman	VEST_AND_WAIST	2	UK	BritishForces	
+Prefabs/Characters/Vests/Vest_58Pattern/Variants/Vest_P58_rifleman_2.et	Vest_P58_rifleman_2	VEST_AND_WAIST	2	UK	BritishForces	
+Prefabs/Characters/Vests/Vest_58Pattern/Variants/Vest_P58_rifleman_2_L85.et	Vest_P58_rifleman_2_L85	VEST_AND_WAIST	2	UK	BritishForces	
+Prefabs/Characters/Vests/Vest_58Pattern/Variants/Vest_P58_rifleman_L85.et	Vest_P58_rifleman_L85	VEST_AND_WAIST	2	UK	BritishForces	
+Prefabs/Characters/Vests/Vest_PASGT/Vest_PASGT.et	Vest_PASGT	VEST_AND_WAIST	25	US	ArmaReforger	
+Prefabs/Characters/Vests/Vest_SRU21P/Vest_SRU21P.et	Vest_SRU21P	VEST_AND_WAIST	2	US	ArmaReforger	
+Prefabs/Weapons/Attachments/Bayonets/ARY_Bayonet_M6.et	ARY_Bayonet_M6	WEAPON_ATTACHMENT	0	ARMARYM14BattleRifle/ARY_ALL ; US	ARMARYM14BattleRifle	
+Prefabs/Weapons/Attachments/Optics/ARY_Optic_AP3k/ARY_Collim_AP3k.et	ARY_Collim_AP3k	WEAPON_ATTACHMENT	125	AMATLesCireesJaunesBM/BM ; ARMARYRETROOPTICS/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYRETROOPTICS	
+Prefabs/Weapons/Attachments/Optics/ARY_Optic_AP3k/ARY_Collim_AP3k_OD.et	ARY_Collim_AP3k_OD	WEAPON_ATTACHMENT	13	ARMARYRETROOPTICS/ARY_ALL ; US	ARMARYRETROOPTICS	
+Prefabs/Weapons/Attachments/Optics/ARY_Optic_AP3k/ARY_Collim_AP3k_Sand.et	ARY_Collim_AP3k_Sand	WEAPON_ATTACHMENT	13	ARMARYRETROOPTICS/ARY_ALL ; US	ARMARYRETROOPTICS	
+Prefabs/Weapons/Attachments/Optics/ARY_Optic_AP3k/ARY_Collim_AP3k_Silver.et	ARY_Collim_AP3k_Silver	WEAPON_ATTACHMENT	12	ARMARYRETROOPTICS/ARY_ALL ; US	ARMARYRETROOPTICS	
+Prefabs/Weapons/Attachments/Optics/ARY_Optic_APElectronic/ARY_Collim_APElectronic.et	ARY_Collim_APElectronic	WEAPON_ATTACHMENT	125	AMATLesCireesJaunesBM/BM ; ARMARYCLAWMOUNT/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYCLAWMOUNT	
+Prefabs/Weapons/Attachments/Muzzle/ARY_FlashHiders_AR15/ARY_FlashHider_M16_BirdCage.et	ARY_FlashHider_M16_BirdCage	WEAPON_ATTACHMENT	0	ARMARYM16A1/ARY_ALL ; US	ARMARYM16A1	
+Prefabs/Weapons/Attachments/Muzzle/ARY_FlashHiders_AR15/ARY_FlashHider_M16_DuckBill.et	ARY_FlashHider_M16_DuckBill	WEAPON_ATTACHMENT	0	ARMARYM16A1/ARY_ALL ; US	ARMARYM16A1	
+Prefabs/Weapons/Attachments/Muzzle/ARY_FlashHiders_AR15/ARY_FlashHider_M16_ThreeProng.et	ARY_FlashHider_M16_ThreeProng	WEAPON_ATTACHMENT	0	ARMARYM16A1/ARY_ALL ; US	ARMARYM16A1	
+Prefabs/Weapons/Attachments/Muzzle/ARY_FlashHider_M3A1/ARY_FlashHider_M3A1.et	ARY_FlashHider_M3A1	WEAPON_ATTACHMENT	1	ARMARYM3A1GREASEGUN/ARY_ALL ; US	ARMARYM3A1GREASEGUN	
+Prefabs/Weapons/Attachments/Muzzle/ARY_FlashHider_M3A1/ARY_FlashHider_M3A1_SL20.et	ARY_FlashHider_M3A1_SL20	WEAPON_ATTACHMENT	1	ARMARYM3A1GREASEGUN/ARY_ALL ; US	ARMARYM3A1GREASEGUN	
+Prefabs/Weapons/Attachments/Optics/ARY_Optic_Flashlight_ClawMount/ARY_Flashlight_Clawmount.et	ARY_Flashlight_Clawmount	WEAPON_ATTACHMENT	50	AMATLesCireesJaunesBM/BM ; ARMARYCLAWMOUNT/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYCLAWMOUNT	
+Prefabs/Weapons/Attachments/ARY_Flashlights/ARY_Flashlight_DiveLight_1911/ARY_Flashlight_DiveLight_1911.et	ARY_Flashlight_DiveLight_1911	WEAPON_ATTACHMENT	NA	ARMARYDELTA1911/ARY_ALL ; US	ARMARYDELTA1911	
+Prefabs/Weapons/Attachments/Underbarrel/ARY_Flashlight_QXLDivelight/ARY_Flashlight_QXLDivelight.et	ARY_Flashlight_QXLDivelight	WEAPON_ATTACHMENT	50	AMATLesCireesJaunesBM/BM ; ARMARYRETROOPTICS/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYRETROOPTICS	
+Prefabs/Weapons/Attachments/Optics/ARY_Flashlight_S660/ARY_Flashlight_S660.et	ARY_Flashlight_S660	WEAPON_ATTACHMENT	50	AMATLesCireesJaunesBM/BM ; ARMARYRETROOPTICS/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYRETROOPTICS	
+Prefabs/Weapons/Attachments/Optics/ARY_Flashlight_S660/ARY_Flashlight_S660_Camo.et	ARY_Flashlight_S660_Camo	WEAPON_ATTACHMENT	NA	ARMARYRETROOPTICS/ARY_ALL ; US	ARMARYRETROOPTICS	
+Prefabs/Weapons/Attachments/Optics/ARY_Flashlight_S660/ARY_Flashlight_S660_Desert.et	ARY_Flashlight_S660_Desert	WEAPON_ATTACHMENT	NA	ARMARYRETROOPTICS/ARY_ALL ; US	ARMARYRETROOPTICS	
+Prefabs/Weapons/Attachments/Optics/ARY_Flashlight_S660/ARY_Flashlight_S660_Olive.et	ARY_Flashlight_S660_Olive	WEAPON_ATTACHMENT	NA	ARMARYRETROOPTICS/ARY_ALL ; US	ARMARYRETROOPTICS	
+Prefabs/Weapons/Attachments/Bayonets/ARY_Laser_UZI.et	ARY_Laser_UZI	WEAPON_ATTACHMENT	NA	ARMARYUZI/ARY_ALL ; US	ARMARYUZI	
+Prefabs/Weapons/Attachments/Optics/ARY_Optic_ANPVS2/ARY_Optic_ANPVS2_M16Mount.et	ARY_Optic_ANPVS2_M16Mount	WEAPON_ATTACHMENT	500	AMATLesCireesJaunesBM/BM ; ARMARYRETROOPTICS/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYRETROOPTICS	
+Prefabs/Weapons/Attachments/Optics/ARY_Optic_ANPVS4/ARY_Optic_ANPVS4_M16Mount.et	ARY_Optic_ANPVS4_M16Mount	WEAPON_ATTACHMENT	500	AMATLesCireesJaunesBM/BM ; ARMARYRETROOPTICS/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYRETROOPTICS	
+Prefabs/Weapons/Attachments/Optics/ARY_Optic_SG1/ARY_Optic_G3_DA_1-5_6x.et	ARY_Optic_G3_DA_1-5_6x	WEAPON_ATTACHMENT	400	AMATLesCireesJaunesBM/BM ; ARMARYCLAWMOUNT/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYCLAWMOUNT	
+Prefabs/Weapons/Attachments/Optics/ARY_Optic_PSG1/ARY_Optic_PSG1_ZF_6x42.et	ARY_Optic_PSG1_ZF_6x42	WEAPON_ATTACHMENT	75	ARMARYG3SpecialRifles/ARY_ALL	ARMARYG3SpecialRifles	
+Prefabs/Weapons/Attachments/Optics/ARY_Optic_ZF4/ARY_Optic_Z24_4x.et	ARY_Optic_Z24_4x	WEAPON_ATTACHMENT	250	AMATLesCireesJaunesBM/BM ; ARMARYCLAWMOUNT/ARY_ALL ; US	AMATLesCireesJaunesBM ; ARMARYCLAWMOUNT	
+Prefabs/Weapons/Attachments/Optics/ARY_Optic_ZF4/ARY_Optic_Z24_4x_Quality.et	ARY_Optic_Z24_4x_Quality	WEAPON_ATTACHMENT	38	ARMARYCLAWMOUNT/ARY_ALL	ARMARYCLAWMOUNT	
+Prefabs/Weapons/Attachments/Muzzle/ARY_Suppressor_G3/ARY_Suppressor_G3.et	ARY_Suppressor_G3	WEAPON_ATTACHMENT	15	ARMARYG3SpecialRifles/ARY_ALL ; US	ARMARYG3SpecialRifles	
+Prefabs/Weapons/Attachments/Muzzle/ARY_Suppressor_M3A1/ARY_Suppressor_M3A1.et	ARY_Suppressor_M3A1	WEAPON_ATTACHMENT	1	ARMARYM3A1GREASEGUN/ARY_ALL ; US	ARMARYM3A1GREASEGUN	
+Prefabs/Weapons/Attachments/Muzzle/ARY_Suppressor_M3A1/ARY_Suppressor_M3A1_SL20.et	ARY_Suppressor_M3A1_SL20	WEAPON_ATTACHMENT	1	ARMARYM3A1GREASEGUN/ARY_ALL ; US	ARMARYM3A1GREASEGUN	
+Prefabs/Weapons/Attachments/Muzzle/ARY_Suppressor_UZI/ARY_Suppressor_UZI.et	ARY_Suppressor_UZI	WEAPON_ATTACHMENT	NA	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Attachments/Muzzle/ARY_Suppressor_UZI/ARY_Suppressor_UZI_Black.et	ARY_Suppressor_UZI_Black	WEAPON_ATTACHMENT	NA	ARMARYUZI/ARY_ALL ; US	ARMARYUZI	
+Prefabs/Weapons/Attachments/Bayonets/BC_Bayonet_M1917.et	BC_Bayonet_M1917	WEAPON_ATTACHMENT	0	US	ChungusShotguns	
+Prefabs/Weapons/Attachments/Bayonets/BC_Bayonet_M4.et	BC_Bayonet_M4	WEAPON_ATTACHMENT	0	US	BigChungusRifles	
+Prefabs/Weapons/Attachments/Bayonets/Bayonet_M45/BC_Bayonet_M45.et	BC_Bayonet_M45	WEAPON_ATTACHMENT	0	US	ChungusSMGs	
+Prefabs/Weapons/Attachments/Bayonets/BC_Bayonet_M7.et	BC_Bayonet_M7	WEAPON_ATTACHMENT	0	US	ChungusShotguns	
+Prefabs/Weapons/Attachments/Muzzle/Chokes/BC_Choke_Duckbill.et	BC_Choke_Duckbill	WEAPON_ATTACHMENT	0	US	ChungusShotguns	
+Prefabs/Weapons/Attachments/Muzzle/Chokes/BC_Choke_Full.et	BC_Choke_Full	WEAPON_ATTACHMENT	0	US	ChungusShotguns	
+Prefabs/Weapons/Attachments/Muzzle/Chokes/BC_Choke_Improved_Cylinder.et	BC_Choke_Improved_Cylinder	WEAPON_ATTACHMENT	0	US	ChungusShotguns	
+Prefabs/Weapons/Attachments/Muzzle/Chokes/BC_Choke_Improved_Modified.et	BC_Choke_Improved_Modified	WEAPON_ATTACHMENT	0	US	ChungusShotguns	
+Prefabs/Weapons/Attachments/Muzzle/Chokes/BC_Choke_Modified.et	BC_Choke_Modified	WEAPON_ATTACHMENT	0	US	ChungusShotguns	
+Prefabs/Weapons/Attachments/Muzzle/Chokes/BC_Choke_Tactical.et	BC_Choke_Tactical	WEAPON_ATTACHMENT	0	US	ChungusShotguns	
+Prefabs/Weapons/Attachments/Muzzle/FlashHider M16/BC_FlashHider_M16.et	BC_FlashHider_M16	WEAPON_ATTACHMENT	0	US	BigChungusRifles	
+Prefabs/Weapons/Attachments/Muzzle/FlashHider M16A1/BC_FlashHider_M16A1.et	BC_FlashHider_M16A1	WEAPON_ATTACHMENT	0	US	BigChungusRifles	
+Prefabs/Weapons/Attachments/Muzzle/FlashSuppressor XM177/BC_Flash_Suppresor_XM177.et	BC_Flash_Suppresor_XM177	WEAPON_ATTACHMENT	0	US	BigChungusRifles	
+Prefabs/Weapons/Attachments/Bayonets/BC_M1_Bayonet.et	BC_M1_Bayonet	WEAPON_ATTACHMENT	0	US	BigChungusRifles	
+Prefabs/Weapons/Attachments/Muzzle/M2 Flash Hider/BC_M2_Flash_Hider.et	BC_M2_Flash_Hider	WEAPON_ATTACHMENT	0	US	BigChungusRifles	
+Prefabs/Weapons/Attachments/Optics/M84 Scope/BC_Optic_M84.et	BC_Optic_M84	WEAPON_ATTACHMENT	0	US	BigChungusRifles	
+Prefabs/Weapons/Attachments/Bayonets/Bayonet_F1.et	Bayonet_F1	WEAPON_ATTACHMENT	NA	US	FAMAS	
+Prefabs/Weapons/Attachments/Bayonets/Bayonet_L1A4_SLR.et	Bayonet_L1A4_SLR	WEAPON_ATTACHMENT	NA	UK	BritishForces	
+Prefabs/Weapons/Attachments/Bayonets/Bayonet_L3A1_L85.et	Bayonet_L3A1_L85	WEAPON_ATTACHMENT	NA	UK	BritishForces	
+Prefabs/Weapons/Attachments/Bayonets/M7Bayonet/Bayonet_M7.et	Bayonet_M7	WEAPON_ATTACHMENT	0	US	FNC	
+Prefabs/Weapons/Attachments/Bayonets/Bayonet_M9.et	Bayonet_M9	WEAPON_ATTACHMENT	0	US	ArmaReforger	
+Prefabs/Weapons/Attachments/Optics/Optic_AP2k/Collim_AP2k.et	Collim_AP2k	WEAPON_ATTACHMENT	125	AMATLesCireesJaunesBM/BM ; UK ; US	AMATLesCireesJaunesBM ; ArmaReforger ; BritishForces	
+Prefabs/Weapons/Attachments/Optics/Optic_AP2k/Collim_AP2k_OliveGreen_Sand_Stripes.et	Collim_AP2k_OliveGreen_Sand_Stripes	WEAPON_ATTACHMENT	NA	UK ; US	ArmaReforger ; BritishForces	
+Prefabs/Weapons/Attachments/Optics/Optic_AP2k/Collim_AP2k_OliveGreen_Solid.et	Collim_AP2k_OliveGreen_Solid	WEAPON_ATTACHMENT	NA	UK ; US	ArmaReforger ; BritishForces	
+Prefabs/Weapons/Attachments/Muzzle/FlashhiderFNC/FNC_FlashHider.et	FNC_FlashHider	WEAPON_ATTACHMENT	0	US	FNC	
+Prefabs/Weapons/Attachments/Muzzle/FlashHider_M16A2/FlashHider_M16.et	FlashHider_M16	WEAPON_ATTACHMENT	0	US	ArmaReforger	
+Prefabs/Weapons/Attachments/Optics/Flashlight_MP5/Flashlight_MP5.et	Flashlight_MP5	WEAPON_ATTACHMENT	50	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20.et	Optic_4x20	WEAPON_ATTACHMENT	250	AMATLesCireesJaunesBM/BM ; US	AMATLesCireesJaunesBM ; ArmaReforger	
+Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20_OliveGreen_Sand_Stripes.et	Optic_4x20_OliveGreen_Sand_Stripes	WEAPON_ATTACHMENT	32	US	ArmaReforger	
+Prefabs/Weapons/Attachments/Optics/Optic_4x20/Optic_4x20_OliveGreen_Solid.et	Optic_4x20_OliveGreen_Solid	WEAPON_ATTACHMENT	32	US	ArmaReforger	
+Prefabs/Weapons/Attachments/Optics/Scrome J4 4x26/Optic_4x26_SCROME_J4.et	Optic_4x26_SCROME_J4	WEAPON_ATTACHMENT	NA	US	FAMAS	
+Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII.et	Optic_ARTII	WEAPON_ATTACHMENT	400	AMATLesCireesJaunesBM/BM ; US	AMATLesCireesJaunesBM ; ArmaReforger	
+Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII_OliveGreen_Sand_Stripes.et	Optic_ARTII_OliveGreen_Sand_Stripes	WEAPON_ATTACHMENT	75	US	ArmaReforger	
+Prefabs/Weapons/Attachments/Optics/Optic_ARTII/Optic_ARTII_OliveGreen_Sand_Stripes_Wrapped.et	Optic_ARTII_OliveGreen_Sand_Stripes_Wrapped	WEAPON_ATTACHMENT	75	US	ArmaReforger	
+Prefabs/Weapons/Attachments/Optics/Optic_SUIT/Optic_L2A2_SUIT.et	Optic_L2A2_SUIT	WEAPON_ATTACHMENT	35	UK	BritishForces	
+Prefabs/Weapons/Attachments/Optics/Optic_SUIT/Optic_L2A2_SUIT_AR15.et	Optic_L2A2_SUIT_AR15	WEAPON_ATTACHMENT	35	UK	BritishForces	
+Prefabs/Weapons/Attachments/Optics/Optic_L85_Irons/Optic_L85_Ironsight.et	Optic_L85_Ironsight	WEAPON_ATTACHMENT	5	UK	BritishForces	
+Prefabs/Weapons/Attachments/Optics/Optic_SB_PM/Optic_SB_PM_L13A1_12x42.et	Optic_SB_PM_L13A1_12x42	WEAPON_ATTACHMENT	85	UK	BritishForces	
+Prefabs/Weapons/Attachments/Optics/Optic_SB_PM/Optic_SB_PM_L13A1_6x42.et	Optic_SB_PM_L13A1_6x42	WEAPON_ATTACHMENT	75	UK	BritishForces	
+Prefabs/Weapons/Attachments/Optics/Optic_SB_PM/Optic_SB_PM_L13A1_6x42_SF.et	Optic_SB_PM_L13A1_6x42_SF	WEAPON_ATTACHMENT	85	UK	BritishForces	
+Prefabs/Weapons/Attachments/Optics/Optic_SUSAT/Optic_SUSAT_base.et	Optic_SUSAT_base	WEAPON_ATTACHMENT	250	AMATLesCireesJaunesBM/BM ; UK	AMATLesCireesJaunesBM ; BritishForces	
+Prefabs/Weapons/Attachments/Stocks/Stock_M93R/Stock_M93R_base.et	Stock_M93R_base	WEAPON_ATTACHMENT	4	US	M93R	
+Prefabs/Weapons/Attachments/Stock/Stock_MP5/Stock_MP5_A2.et	Stock_MP5_A2	WEAPON_ATTACHMENT	0	US	MP5StickMag	
+Prefabs/Weapons/Attachments/Muzzle/Suppressor_9mm_placeholder.et	Suppressor_9mm_placeholder	WEAPON_ATTACHMENT	20	UK	BritishMP5KPDW	
+Prefabs/Weapons/Attachments/Muzzle/Suppressor_M16/Suppressor_M16.et	Suppressor_M16	WEAPON_ATTACHMENT	NA	US	ArmaReforger	
+Prefabs/Weapons/Attachments/Muzzle/Suppressor_M16/Suppressor_M16_OliveGreen_Sand_Stripes.et	Suppressor_M16_OliveGreen_Sand_Stripes	WEAPON_ATTACHMENT	NA	US	ArmaReforger	
+Prefabs/Weapons/Attachments/Muzzle/Suppressor_M16/Suppressor_M16_OliveGreen_Solid.et	Suppressor_M16_OliveGreen_Solid	WEAPON_ATTACHMENT	NA	US	ArmaReforger	
+Prefabs/Weapons/Attachments/Muzzle/Suppressor_M9/Suppressor_M9.et	Suppressor_M9	WEAPON_ATTACHMENT	5	US	M9ThreadedBarrel	
+Prefabs/Weapons/Attachments/Optics/FN_4x28_Scope/WeaponOptic_FNC_4x28_Scope.et	WeaponOptic_FNC_4x28_Scope	WEAPON_ATTACHMENT	20	US	FNC	
+Prefabs/Weapons/Attachments/Muzzle/MP5K-PDW Thread_cap.et	NA	WEAPON_ATTACHMENT	1	UK	BritishMP5KPDW	
+Prefabs/Weapons/Magazines/ARY_Magazine_45acp_M3A1_30rnd_Mixed.et	ARY_Magazine_45acp_M3A1_30rnd_Mixed	NA	1	ARMARYM3A1GREASEGUN/ARY_ALL ; US	ARMARYM3A1GREASEGUN	
+Prefabs/Weapons/Magazines/ARY_Magazine_45acp_M3A1_30rnd_Tracer.et	ARY_Magazine_45acp_M3A1_30rnd_Tracer	NA	1	ARMARYM3A1GREASEGUN/ARY_ALL ; US	ARMARYM3A1GREASEGUN	
+Prefabs/Weapons/Magazines/ARY_Magazine_556x45_M16_20rnd_M193_M196_Last_5Tracer.et	ARY_Magazine_556x45_M16_20rnd_M193_M196_Last_5Tracer	NA	1	ARMARYM16A1/ARY_ALL ; US	ARMARYM16A1	
+Prefabs/Weapons/Magazines/ARY_Magazine_556x45_M16_20rnd_M196_Tracer.et	ARY_Magazine_556x45_M16_20rnd_M196_Tracer	NA	1	ARMARYM16A1/ARY_ALL ; US	ARMARYM16A1	
+Prefabs/Weapons/Magazines/ARY_Magazine_556x45_STANAG_30rnd_Surplus_Last_5Tracer.et	ARY_Magazine_556x45_STANAG_30rnd_Surplus_Last_5Tracer	NA	1	ARMARYM16A1/ARY_ALL	ARMARYM16A1	
+Prefabs/Weapons/Magazines/ARY_Magazine_556x45_STANAG_30rnd_Surplus_Tracer.et	ARY_Magazine_556x45_STANAG_30rnd_Surplus_Tracer	NA	1	ARMARYM16A1/ARY_ALL	ARMARYM16A1	
+Prefabs/Weapons/Magazines/ARY_G3/10Rnd/ARY_Magazine_762x51_G3_10Rnd_DM111_Ball.et	ARY_Magazine_762x51_G3_10Rnd_DM111_Ball	NA	3	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/10Rnd/ARY_Magazine_762x51_G3_10Rnd_DM151_AP.et	ARY_Magazine_762x51_G3_10Rnd_DM151_AP	NA	4	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/10Rnd/ARY_Magazine_762x51_G3_10Rnd_DM21_Tracer.et	ARY_Magazine_762x51_G3_10Rnd_DM21_Tracer	NA	2	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/10Rnd/ARY_Magazine_762x51_G3_10Rnd_DM41_Ball.et	ARY_Magazine_762x51_G3_10Rnd_DM41_Ball	NA	2	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/10Rnd/ARY_Magazine_762x51_G3_10Rnd_Surplus_Tracer.et	ARY_Magazine_762x51_G3_10Rnd_Surplus_Tracer	NA	1	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/20Rnd_Alu/ARY_Magazine_762x51_G3_20Rnd_Alu_DM151_AP.et	ARY_Magazine_762x51_G3_20Rnd_Alu_DM151_AP	NA	6	ARMARYG3BattleRifles/ARY_ALL ; US	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/20Rnd_Alu/ARY_Magazine_762x51_G3_20Rnd_Alu_DM21_Tracer.et	ARY_Magazine_762x51_G3_20Rnd_Alu_DM21_Tracer	NA	2	ARMARYG3BattleRifles/ARY_ALL ; US	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/20Rnd_Alu/ARY_Magazine_762x51_G3_20Rnd_Alu_DM4121_Mixed.et	ARY_Magazine_762x51_G3_20Rnd_Alu_DM4121_Mixed	NA	2	ARMARYG3BattleRifles/ARY_ALL ; US	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/20Rnd_Alu/ARY_Magazine_762x51_G3_20Rnd_Alu_DM41_Ball.et	ARY_Magazine_762x51_G3_20Rnd_Alu_DM41_Ball	NA	2	ARMARYG3BattleRifles/ARY_ALL ; US	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/20Rnd_Alu/ARY_Magazine_762x51_G3_20Rnd_Alu_Surplus_Ball.et	ARY_Magazine_762x51_G3_20Rnd_Alu_Surplus_Ball	NA	2	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/20Rnd_Alu/ARY_Magazine_762x51_G3_20Rnd_Alu_Surplus_Mixed.et	ARY_Magazine_762x51_G3_20Rnd_Alu_Surplus_Mixed	NA	2	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/20Rnd_Alu/ARY_Magazine_762x51_G3_20Rnd_Alu_Surplus_Tracer.et	ARY_Magazine_762x51_G3_20Rnd_Alu_Surplus_Tracer	NA	2	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/20Rnd_Steel/ARY_Magazine_762x51_G3_20Rnd_DM11121_Mixed.et	ARY_Magazine_762x51_G3_20Rnd_DM11121_Mixed	NA	3	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/20Rnd_Steel/ARY_Magazine_762x51_G3_20Rnd_DM111_Ball.et	ARY_Magazine_762x51_G3_20Rnd_DM111_Ball	NA	3	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/20Rnd_Steel/ARY_Magazine_762x51_G3_20Rnd_DM151_AP.et	ARY_Magazine_762x51_G3_20Rnd_DM151_AP	NA	4	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/20Rnd_Steel/ARY_Magazine_762x51_G3_20Rnd_DM21_Tracer.et	ARY_Magazine_762x51_G3_20Rnd_DM21_Tracer	NA	2	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/20Rnd_Steel/ARY_Magazine_762x51_G3_20Rnd_DM4121_Mixed.et	ARY_Magazine_762x51_G3_20Rnd_DM4121_Mixed	NA	2	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/20Rnd_Steel/ARY_Magazine_762x51_G3_20Rnd_DM41_Ball.et	ARY_Magazine_762x51_G3_20Rnd_DM41_Ball	NA	2	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/30Rnd/ARY_Magazine_762x51_G3_30Rnd_DM151_AP.et	ARY_Magazine_762x51_G3_30Rnd_DM151_AP	NA	12	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/30Rnd/ARY_Magazine_762x51_G3_30Rnd_DM21_Tracer.et	ARY_Magazine_762x51_G3_30Rnd_DM21_Tracer	NA	6	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/30Rnd/ARY_Magazine_762x51_G3_30Rnd_DM4121_Mixed.et	ARY_Magazine_762x51_G3_30Rnd_DM4121_Mixed	NA	6	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/30Rnd/ARY_Magazine_762x51_G3_30Rnd_DM41_Ball.et	ARY_Magazine_762x51_G3_30Rnd_DM41_Ball	NA	6	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/30Rnd/ARY_Magazine_762x51_G3_30Rnd_Surplus_Ball.et	ARY_Magazine_762x51_G3_30Rnd_Surplus_Ball	NA	4	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/30Rnd/ARY_Magazine_762x51_G3_30Rnd_Surplus_Tracer.et	ARY_Magazine_762x51_G3_30Rnd_Surplus_Tracer	NA	4	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/5Rnd/ARY_Magazine_762x51_G3_5Rnd_DM111_Ball.et	ARY_Magazine_762x51_G3_5Rnd_DM111_Ball	NA	1	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/5Rnd/ARY_Magazine_762x51_G3_5Rnd_DM151_AP.et	ARY_Magazine_762x51_G3_5Rnd_DM151_AP	NA	2	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/5Rnd/ARY_Magazine_762x51_G3_5Rnd_DM21_Tracer.et	ARY_Magazine_762x51_G3_5Rnd_DM21_Tracer	NA	1	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_G3/5Rnd/ARY_Magazine_762x51_G3_5Rnd_DM41_Ball.et	ARY_Magazine_762x51_G3_5Rnd_DM41_Ball	NA	1	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Magazines/ARY_Magazine_762x51_M14_20rnd_M80_M62_Last3Tracer.et	ARY_Magazine_762x51_M14_20rnd_M80_M62_Last3Tracer	NA	2	ARMARYM14BattleRifle/ARY_ALL ; US	ARMARYM14BattleRifle	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_25rnd_Ball.et	ARY_Magazine_9x19_UZI_25rnd_Ball	NA	1	ARMARYUZI/ARY_ALL ; US	ARMARYUZI	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_25rnd_Ball_Black.et	ARY_Magazine_9x19_UZI_25rnd_Ball_Black	NA	1	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_25rnd_Mixed.et	ARY_Magazine_9x19_UZI_25rnd_Mixed	NA	1	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_25rnd_Mixed_Black.et	ARY_Magazine_9x19_UZI_25rnd_Mixed_Black	NA	1	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_25rnd_Surplus_Mixed.et	ARY_Magazine_9x19_UZI_25rnd_Surplus_Mixed	NA	1	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_25rnd_Surplus_Tracer.et	ARY_Magazine_9x19_UZI_25rnd_Surplus_Tracer	NA	1	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_25rnd_Tracer.et	ARY_Magazine_9x19_UZI_25rnd_Tracer	NA	1	ARMARYUZI/ARY_ALL ; US	ARMARYUZI	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_25rnd_Tracer_Black.et	ARY_Magazine_9x19_UZI_25rnd_Tracer_Black	NA	1	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_32rnd_Ball.et	ARY_Magazine_9x19_UZI_32rnd_Ball	NA	1	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_32rnd_Mixed.et	ARY_Magazine_9x19_UZI_32rnd_Mixed	NA	1	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_32rnd_Mixed_Black.et	ARY_Magazine_9x19_UZI_32rnd_Mixed_Black	NA	1	ARMARYUZI/ARY_ALL ; US	ARMARYUZI	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_32rnd_Tracer.et	ARY_Magazine_9x19_UZI_32rnd_Tracer	NA	1	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_32rnd_Tracer_Black.et	ARY_Magazine_9x19_UZI_32rnd_Tracer_Black	NA	1	ARMARYUZI/ARY_ALL ; US	ARMARYUZI	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_50rnd_Ball.et	ARY_Magazine_9x19_UZI_50rnd_Ball	NA	1	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_50rnd_Ball_Black.et	ARY_Magazine_9x19_UZI_50rnd_Ball_Black	NA	1	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_50rnd_Mixed.et	ARY_Magazine_9x19_UZI_50rnd_Mixed	NA	1	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_50rnd_Mixed_Black.et	ARY_Magazine_9x19_UZI_50rnd_Mixed_Black	NA	1	ARMARYUZI/ARY_ALL ; US	ARMARYUZI	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_50rnd_Tracer.et	ARY_Magazine_9x19_UZI_50rnd_Tracer	NA	1	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Magazines/ARY_Magazine_9x19_UZI_50rnd_Tracer_Black.et	ARY_Magazine_9x19_UZI_50rnd_Tracer_Black	NA	1	ARMARYUZI/ARY_ALL ; US	ARMARYUZI	
+Prefabs/Weapons/Rifles/AK74/Variants - Plum/ARY_Rifle_AK74N_GP25_Polymer_Plum.et	ARY_Rifle_AK74N_GP25_Polymer_Plum	NA	25	ARMARYAK74/ARY_ALL	ARMARYAK74	
+Prefabs/Weapons/Rifles/ARY_AKM/ARY_Rifle_AKMS_Folded.et	ARY_Rifle_AKMS_Folded	NA	NA	ARMARYAKM/ARY_ALL	ARMARYAKM	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A3/Variants/Quality/ARY_Rifle_G3A3_Bipod_Quality_WideBlack.et	ARY_Rifle_G3A3_Bipod_Quality_WideBlack	NA	12	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A3/Variants/Quality/ARY_Rifle_G3A3_Bipod_Quality_WideOD.et	ARY_Rifle_G3A3_Bipod_Quality_WideOD	NA	12	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3_Modern/ARY_Rifle_G3A3_Bipod_Rail.et	ARY_Rifle_G3A3_Bipod_Rail	NA	NA	ARMARYG3Modernised/ARY_ALL	ARMARYG3Modernised	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A3/Variants/ARY_Rifle_G3A3_Bipod_WideBlack.et	ARY_Rifle_G3A3_Bipod_WideBlack	NA	NA	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A3/Variants/ARY_Rifle_G3A3_Bipod_WideOD.et	ARY_Rifle_G3A3_Bipod_WideOD	NA	NA	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A3/Variants/Old/ARY_Rifle_G3A3_Old_HK79_OD.et	ARY_Rifle_G3A3_Old_HK79_OD	NA	8	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A3/Variants/Quality/ARY_Rifle_G3A3_Quality_HK79_Black.et	ARY_Rifle_G3A3_Quality_HK79_Black	NA	8	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A3/Variants/Quality/ARY_Rifle_G3A3_Quality_HK79_OD.et	ARY_Rifle_G3A3_Quality_HK79_OD	NA	8	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A3/Variants/Quality/ARY_Rifle_G3A3_Quality_SlimBlack.et	ARY_Rifle_G3A3_Quality_SlimBlack	NA	NA	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A3/Variants/Quality/ARY_Rifle_G3A3_Quality_SlimOD.et	ARY_Rifle_G3A3_Quality_SlimOD	NA	NA	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A3/Variants/Quality/ARY_Rifle_G3A3_Quality_WideBlack.et	ARY_Rifle_G3A3_Quality_WideBlack	NA	NA	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A3/Variants/Quality/ARY_Rifle_G3A3_Quality_WideOD.et	ARY_Rifle_G3A3_Quality_WideOD	NA	NA	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3_Modern/ARY_Rifle_G3A3_Rail.et	ARY_Rifle_G3A3_Rail	NA	NA	ARMARYG3Modernised/ARY_ALL ; US	ARMARYG3Modernised	
+Prefabs/Weapons/Rifles/ARY_G3_Modern/ARY_Rifle_G3A3_Rail_HK79.et	ARY_Rifle_G3A3_Rail_HK79	NA	NA	ARMARYG3Modernised/ARY_ALL ; US	ARMARYG3Modernised	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A3/Variants/ARY_Rifle_G3A3_SlimBlack.et	ARY_Rifle_G3A3_SlimBlack	NA	8	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A3/Variants/ARY_Rifle_G3A3_SlimOD.et	ARY_Rifle_G3A3_SlimOD	NA	8	ARMARYG3BattleRifles/ARY_ALL ; US	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A3/Variants/ARY_Rifle_G3A3_WideOD.et	ARY_Rifle_G3A3_WideOD	NA	8	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A3/Variants/ARY_Rifle_G3A3_Wood.et	ARY_Rifle_G3A3_Wood	NA	8	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A4/Variants/Quality/ARY_Rifle_G3A4_Bipod_Quality_WideBlack.et	ARY_Rifle_G3A4_Bipod_Quality_WideBlack	NA	16	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A4/Variants/Quality/ARY_Rifle_G3A4_Bipod_Quality_WideOD.et	ARY_Rifle_G3A4_Bipod_Quality_WideOD	NA	16	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3_Modern/ARY_Rifle_G3A4_Bipod_Rail.et	ARY_Rifle_G3A4_Bipod_Rail	NA	12	ARMARYG3Modernised/ARY_ALL	ARMARYG3Modernised	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A4/Variants/HK79/ARY_Rifle_G3A4_HK79_OD.et	ARY_Rifle_G3A4_HK79_OD	NA	8	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3_Modern/ARY_Rifle_G3A4_Modernised.et	ARY_Rifle_G3A4_Modernised	NA	12	ARMARYG3Modernised/ARY_ALL ; US	ARMARYG3Modernised	
+Prefabs/Weapons/Rifles/ARY_G3_Modern/ARY_Rifle_G3A4_Modernised_HK79.et	ARY_Rifle_G3A4_Modernised_HK79	NA	12	ARMARYG3Modernised/ARY_ALL ; US	ARMARYG3Modernised	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A4/Variants/Old/ARY_Rifle_G3A4_Old_HK79.et	ARY_Rifle_G3A4_Old_HK79	NA	8	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A4/Variants/Quality/ARY_Rifle_G3A4_Quality_HK79_Black.et	ARY_Rifle_G3A4_Quality_HK79_Black	NA	8	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A4/Variants/Quality/ARY_Rifle_G3A4_Quality_HK79_OD.et	ARY_Rifle_G3A4_Quality_HK79_OD	NA	8	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A4/Variants/Quality/ARY_Rifle_G3A4_Quality_SlimBlack.et	ARY_Rifle_G3A4_Quality_SlimBlack	NA	12	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A4/Variants/Quality/ARY_Rifle_G3A4_Quality_SlimOD.et	ARY_Rifle_G3A4_Quality_SlimOD	NA	12	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A4/Variants/Quality/ARY_Rifle_G3A4_Quality_WideBlack.et	ARY_Rifle_G3A4_Quality_WideBlack	NA	12	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A4/Variants/Quality/ARY_Rifle_G3A4_Quality_WideOD.et	ARY_Rifle_G3A4_Quality_WideOD	NA	12	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3_Modern/ARY_Rifle_G3A4_Rail.et	ARY_Rifle_G3A4_Rail	NA	12	ARMARYG3Modernised/ARY_ALL ; US	ARMARYG3Modernised	
+Prefabs/Weapons/Rifles/ARY_G3_Modern/ARY_Rifle_G3A4_Rail_HK79.et	ARY_Rifle_G3A4_Rail_HK79	NA	12	ARMARYG3Modernised/ARY_ALL ; US	ARMARYG3Modernised	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A4/Variants/ARY_Rifle_G3A4_SlimBlack.et	ARY_Rifle_G3A4_SlimBlack	NA	NA	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A4/Variants/ARY_Rifle_G3A4_SlimOD.et	ARY_Rifle_G3A4_SlimOD	NA	NA	ARMARYG3BattleRifles/ARY_ALL ; US	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A4/Variants/ARY_Rifle_G3A4_WideOD.et	ARY_Rifle_G3A4_WideOD	NA	NA	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3A4/Variants/ARY_Rifle_G3A4_Wood.et	ARY_Rifle_G3A4_Wood	NA	NA	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3_Modern/ARY_Rifle_G3KA3_Rail.et	ARY_Rifle_G3KA3_Rail	NA	16	ARMARYG3Modernised/ARY_ALL ; US	ARMARYG3Modernised	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_G3KA4/ARY_Rifle_G3KA4.et	ARY_Rifle_G3KA4	NA	18	ARMARYG3SpecialRifles/ARY_ALL ; US	ARMARYG3SpecialRifles	
+Prefabs/Weapons/Rifles/ARY_G3_Modern/ARY_Rifle_G3KA4_Rail.et	ARY_Rifle_G3KA4_Rail	NA	18	ARMARYG3Modernised/ARY_ALL ; US	ARMARYG3Modernised	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_41/Variants/Quality/ARY_Rifle_G3_41_Bipod_Quality_WideBlack.et	ARY_Rifle_G3_41_Bipod_Quality_WideBlack	NA	NA	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_41/Variants/ARY_Rifle_G3_41_Bipod_WideBlack.et	ARY_Rifle_G3_41_Bipod_WideBlack	NA	6	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_41/Variants/Old/ARY_Rifle_G3_41_Old_SlimOD.et	ARY_Rifle_G3_41_Old_SlimOD	NA	2	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_41/Variants/Quality/ARY_Rifle_G3_41_Quality_SlimBlack.et	ARY_Rifle_G3_41_Quality_SlimBlack	NA	8	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_41/Variants/Quality/ARY_Rifle_G3_41_Quality_WideBlack.et	ARY_Rifle_G3_41_Quality_WideBlack	NA	8	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3_Modern/ARY_Rifle_G3_41_Rail.et	ARY_Rifle_G3_41_Rail	NA	8	ARMARYG3Modernised/ARY_ALL	ARMARYG3Modernised	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_41/Variants/ARY_Rifle_G3_41_SlimBlack.et	ARY_Rifle_G3_41_SlimBlack	NA	4	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_G3/ARY_G3_41/Variants/ARY_Rifle_G3_41_Wood.et	ARY_Rifle_G3_41_Wood	NA	4	ARMARYG3BattleRifles/ARY_ALL	ARMARYG3BattleRifles	
+Prefabs/Weapons/Rifles/ARY_M14/ARY_Rifle_M14.et	ARY_Rifle_M14	NA	20	ARMARYM14BattleRifle/ARY_ALL ; US	ARMARYM14BattleRifle	
+Prefabs/Weapons/Rifles/ARY_M14/ARY_Rifle_M14_OliveGreen.et	ARY_Rifle_M14_OliveGreen	NA	20	ARMARYM14BattleRifle/ARY_ALL ; US	ARMARYM14BattleRifle	
+Prefabs/Weapons/Rifles/ARY_M14/ARY_Rifle_M14_OpticMount.et	ARY_Rifle_M14_OpticMount	NA	20	ARMARYM14BattleRifle/ARY_ALL ; US	ARMARYM14BattleRifle	
+Prefabs/Weapons/Rifles/ARY_M14/ARY_Rifle_M14_OpticMount_OliveGreen.et	ARY_Rifle_M14_OpticMount_OliveGreen	NA	20	ARMARYM14BattleRifle/ARY_ALL ; US	ARMARYM14BattleRifle	
+Prefabs/Weapons/Rifles/ARY_M14/ARY_Rifle_M14_OpticMount_SandStripes.et	ARY_Rifle_M14_OpticMount_SandStripes	NA	20	ARMARYM14BattleRifle/ARY_ALL ; US	ARMARYM14BattleRifle	
+Prefabs/Weapons/Rifles/ARY_M14/ARY_Rifle_M14_SandStripes.et	ARY_Rifle_M14_SandStripes	NA	20	ARMARYM14BattleRifle/ARY_ALL ; US	ARMARYM14BattleRifle	
+Prefabs/Weapons/Rifles/ARY_M16_US/ARY_Rifle_M16A1_M203.et	ARY_Rifle_M16A1_M203	NA	8	ARMARYM16A1/ARY_ALL ; US	ARMARYM16A1	
+Prefabs/Weapons/Rifles/ARY_M16_US/ARY_Rifle_M16A1_Optic.et	ARY_Rifle_M16A1_Optic	NA	NA	ARMARYM16A1/ARY_ALL ; US	ARMARYM16A1	
+Prefabs/Weapons/Rifles/ARY_M16_US/Worn/ARY_Rifle_M16A1_Worn.et	ARY_Rifle_M16A1_Worn	NA	8	ARMARYM16A1/ARY_ALL	ARMARYM16A1	
+Prefabs/Weapons/Rifles/M16/ARY_Rifle_M16A2_Rail.et	ARY_Rifle_M16A2_Rail	NA	NA	US	ARMARYRETROOPTICS	
+Prefabs/Weapons/Rifles/M16/ARY_Rifle_M16A2_carbine_Rail.et	ARY_Rifle_M16A2_carbine_Rail	NA	14	US	ARMARYRETROOPTICS	
+Prefabs/Weapons/Rifles/ARY_M3A1/ARY_Rifle_M3A1.et	ARY_Rifle_M3A1	NA	2	ARMARYM3A1GREASEGUN/ARY_ALL ; US	ARMARYM3A1GREASEGUN	
+Prefabs/Weapons/Rifles/ARY_M3A1/ARY_Rifle_M3A1_Suppressor_FlashLight.et	ARY_Rifle_M3A1_Suppressor_FlashLight	NA	2	ARMARYM3A1GREASEGUN/ARY_ALL	ARMARYM3A1GREASEGUN	
+Prefabs/Weapons/Rifles/ARY_G3_Modern/ARY_Rifle_MC51A3_Rail.et	ARY_Rifle_MC51A3_Rail	NA	20	ARMARYG3Modernised/ARY_ALL ; US	ARMARYG3Modernised	
+Prefabs/Weapons/Rifles/ARY_G3_Modern/ARY_Rifle_MC51A4_Rail.et	ARY_Rifle_MC51A4_Rail	NA	22	ARMARYG3Modernised/ARY_ALL ; US	ARMARYG3Modernised	
+Prefabs/Weapons/Rifles/ARY_G3_Modern/ARY_Rifle_MC51SD4_Rail.et	ARY_Rifle_MC51SD4_Rail	NA	22	ARMARYG3Modernised/ARY_ALL ; US	ARMARYG3Modernised	
+Prefabs/Weapons/Rifles/ARY_UZI/ARY_Rifle_Uzi.et	ARY_Rifle_Uzi	NA	6	ARMARYUZI/ARY_ALL ; US	ARMARYUZI	
+Prefabs/Weapons/Rifles/ARY_UZI/ARY_Rifle_Uzi_Black_Optic.et	ARY_Rifle_Uzi_Black_Optic	NA	NA	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Rifles/ARY_UZI/ARY_Rifle_Uzi_Black_Optic_Dovetail.et	ARY_Rifle_Uzi_Black_Optic_Dovetail	NA	12	ARMARYUZI/ARY_ALL ; US	ARMARYUZI	
+Prefabs/Weapons/Rifles/ARY_UZI/ARY_Rifle_Uzi_Fixed.et	ARY_Rifle_Uzi_Fixed	NA	6	ARMARYUZI/ARY_ALL ; US	ARMARYUZI	
+Prefabs/Weapons/Rifles/ARY_UZI/ARY_Rifle_Uzi_Fixed_Black_Optic.et	ARY_Rifle_Uzi_Fixed_Black_Optic	NA	NA	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Rifles/ARY_UZI/ARY_Rifle_Uzi_Fixed_Black_Optic_Dovetail.et	ARY_Rifle_Uzi_Fixed_Black_Optic_Dovetail	NA	NA	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Rifles/ARY_UZI/Variants/ARY_Rifle_Uzi_Fixed_Black_Suppressor.et	ARY_Rifle_Uzi_Fixed_Black_Suppressor	NA	NA	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Rifles/ARY_UZI/ARY_Rifle_Uzi_Fixed_Optic.et	ARY_Rifle_Uzi_Fixed_Optic	NA	8	ARMARYUZI/ARY_ALL ; US	ARMARYUZI	
+Prefabs/Weapons/Rifles/ARY_UZI/Variants/ARY_Rifle_Uzi_Fixed_Suppressor.et	ARY_Rifle_Uzi_Fixed_Suppressor	NA	NA	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Rifles/ARY_UZI/Variants/ARY_Rifle_Uzi_Fixed_Worn_Suppressor.et	ARY_Rifle_Uzi_Fixed_Worn_Suppressor	NA	NA	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Rifles/ARY_UZI/ARY_Rifle_Uzi_Optic.et	ARY_Rifle_Uzi_Optic	NA	8	ARMARYUZI/ARY_ALL ; US	ARMARYUZI	
+Prefabs/Weapons/Rifles/ARY_UZI/Variants/ARY_Rifle_Uzi_Suppressor.et	ARY_Rifle_Uzi_Suppressor	NA	NA	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Rifles/ARY_UZI/Variants/ARY_Rifle_Uzi_Worn_Suppressor.et	ARY_Rifle_Uzi_Worn_Suppressor	NA	NA	ARMARYUZI/ARY_ALL	ARMARYUZI	
+Prefabs/Weapons/Rifles/ARY_M16_US/ARY_Rifle_XM177E2_Optic.et	ARY_Rifle_XM177E2_Optic	NA	14	ARMARYM16A1/ARY_ALL ; US	ARMARYM16A1	
+Prefabs/Weapons/Ammo/Ammo_Flare_40mm_M583A1_White.et	Ammo_Flare_40mm_M583A1_White	NA	3	AMAT-LesCiresJaunes/FIA ; UK ; US	AMAT-LesCiresJaunes ; ArmaReforger ; BritishForces	
+Prefabs/Weapons/Ammo/Ammo_Flare_40mm_M661_Green.et	Ammo_Flare_40mm_M661_Green	NA	3	AMAT-LesCiresJaunes/FIA ; US	AMAT-LesCiresJaunes ; ArmaReforger	
+Prefabs/Weapons/Ammo/Ammo_Flare_40mm_M662_Red.et	Ammo_Flare_40mm_M662_Red	NA	3	AMAT-LesCiresJaunes/FIA ; US	AMAT-LesCiresJaunes ; ArmaReforger	
+Prefabs/Weapons/Ammo/Ammo_LAW80_Spotting_Tracer.et	Ammo_LAW80_Spotting_Tracer	NA	1	UK	BritishForces	
+Prefabs/Weapons/Ammo/BC_Ammo_Grenade_M576_Buckshot.et	BC_Ammo_Grenade_M576_Buckshot	NA	0	US	ChungusLaunchers	
+Prefabs/Weapons/Magazines/M1 Garand/BC_Clip_8rnd_M1_Garand.et	BC_Clip_8rnd_M1_Garand	NA	0	US	BigChungusRifles	
+Prefabs/Weapons/Launchers/M79/BC_M79.et	BC_M79	NA	0	US	ChungusLaunchers	
+Prefabs/Weapons/Magazines/M1 Carbine/BC_Magazine_30_Carbine_M1_Carbine_15rnd_Ball.et	BC_Magazine_30_Carbine_M1_Carbine_15rnd_Ball	NA	0	US	BigChungusRifles	
+Prefabs/Weapons/Magazines/M2 Carbine/BC_Magazine_30_Carbine_M2_Carbine_30rnd_Ball.et	BC_Magazine_30_Carbine_M2_Carbine_30rnd_Ball	NA	0	US	BigChungusRifles	
+Prefabs/Weapons/Magazines/M1928A1/BC_Magazine_45acp_M1928A1_30rnd_Stick.et	BC_Magazine_45acp_M1928A1_30rnd_Stick	NA	0	US	ChungusSMGs	
+Prefabs/Weapons/Magazines/M1928A1/BC_Magazine_45acp_M1928A1_50rnd_Drum.et	BC_Magazine_45acp_M1928A1_50rnd_Drum	NA	0	US	ChungusSMGs	
+Prefabs/Weapons/Magazines/XM177E2/BC_Magazine_556x45_XM177_20rnd_M855_Ball.et	BC_Magazine_556x45_XM177_20rnd_M855_Ball	NA	0	US	BigChungusRifles	
+Prefabs/Weapons/Rifles/M16A1/BC_Rifle_M16A1.et	BC_Rifle_M16A1	NA	0	US	BigChungusRifles	
+Prefabs/Weapons/Rifles/M16A1/BC_Rifle_M16A1_M203.et	BC_Rifle_M16A1_M203	NA	0	US	BigChungusRifles	
+Prefabs/Weapons/Rifles/M1 Carbine/BC_Rifle_M1_Carbine.et	BC_Rifle_M1_Carbine	NA	0	US	BigChungusRifles	
+Prefabs/Weapons/Rifles/M1 Garand/BC_Rifle_M1_Garand.et	BC_Rifle_M1_Garand	NA	0	US	BigChungusRifles	
+Prefabs/Weapons/Rifles/M2 Carbine/BC_Rifle_M2_Carbine.et	BC_Rifle_M2_Carbine	NA	0	US	BigChungusRifles	
+Prefabs/Weapons/Rifles/XM177/BC_Rifle_XM177.et	BC_Rifle_XM177	NA	0	US	BigChungusRifles	
+Prefabs/Weapons/Rifles/M1928A1/BC_SMG_M1928A1.et	BC_SMG_M1928A1	NA	0	US	ChungusSMGs	
+Prefabs/Weapons/Shotguns/M37/BC_Shotgun_M37_Duckbill.et	BC_Shotgun_M37_Duckbill	NA	0	US	ChungusShotguns	
+Prefabs/Weapons/Shotguns/M870/BC_Shotgun_M870.et	BC_Shotgun_M870	NA	0	US	ChungusShotguns	
+Prefabs/Weapons/Attachments/Underbarrel/LAW80_SpottingRifle_Base.et	LAW80_SpottingRifle_Base	NA	1	UK	BritishForces	
+Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_20rnd_Ball.et	Magazine_556x45_STANAG_20rnd_Ball	NA	1	UK	BritishForces	
+Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_20rnd_Tracer.et	Magazine_556x45_STANAG_20rnd_Tracer	NA	1	UK	BritishForces	
+Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855_Ball.et	Magazine_556x45_STANAG_30rnd_M855_Ball	NA	2	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855_M856_Last_5Tracer.et	Magazine_556x45_STANAG_30rnd_M855_M856_Last_5Tracer	NA	2	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M856_Tracer.et	Magazine_556x45_STANAG_30rnd_M856_Tracer	NA	2	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_RadwayGreen_4B1T.et	Magazine_556x45_STANAG_30rnd_RadwayGreen_4B1T	NA	2	UK	BritishForces	
+Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_RadwayGreen_Ball.et	Magazine_556x45_STANAG_30rnd_RadwayGreen_Ball	NA	2	UK	BritishForces	
+Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_RadwayGreen_Tracer.et	Magazine_556x45_STANAG_30rnd_RadwayGreen_Tracer	NA	2	UK	BritishForces	
+Prefabs/Weapons/Magazines/Magazine_762x51_FAL_Commonwealth_20rnd_BattleMix.et	Magazine_762x51_FAL_Commonwealth_20rnd_BattleMix	NA	2	UK	BritishForces	
+Prefabs/Weapons/Magazines/Magazine_762x51_FAL_Commonwealth_20rnd_Tracer.et	Magazine_762x51_FAL_Commonwealth_20rnd_Tracer	NA	2	UK	BritishForces	
+Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_M61_AP.et	Magazine_762x51_M14_20rnd_M61_AP	NA	4	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_M62_Tracer.et	Magazine_762x51_M14_20rnd_M62_Tracer	NA	2	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_M80.et	Magazine_762x51_M14_20rnd_M80	NA	2	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_SpecialBall.et	Magazine_762x51_M14_20rnd_SpecialBall	NA	4	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Magazine_9x19_L2A3_34rnd_Ball.et	Magazine_9x19_L2A3_34rnd_Ball	NA	2	UK	BritishForces	
+Prefabs/Weapons/Magazines/Magazine_9x19_L2A3_34rnd_BattleMix.et	Magazine_9x19_L2A3_34rnd_BattleMix	NA	2	UK	BritishForces	
+Prefabs/Weapons/Magazines/Magazine_9x19_L2A3_34rnd_Tracer.et	Magazine_9x19_L2A3_34rnd_Tracer	NA	2	UK	BritishForces	
+Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_DM11_A1B2.et	Magazine_9x19_M9_15rnd_DM11_A1B2	NA	5	US	M9ThreadedBarrel	
+Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_M1153.et	Magazine_9x19_M9_15rnd_M1153	NA	3	US	M9ThreadedBarrel	
+Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_M874.et	Magazine_9x19_M9_15rnd_M874	NA	2	US	M9ThreadedBarrel	
+Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Tracer_Incendiary.et	Magazine_9x19_M9_15rnd_Tracer_Incendiary	NA	6	US	M9ThreadedBarrel	
+Prefabs/Weapons/Magazines/Magazine_9x19_MP5_Stick_30rnd_Ball.et	Magazine_9x19_MP5_Stick_30rnd_Ball	NA	1	US	MP5StickMag	
+Prefabs/Weapons/Rifles/M16/Rifle_AR15_604.et	Rifle_AR15_604	NA	8	UK	BritishForces	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_AR15_604_OliveGreen_SandStripes.et	Rifle_AR15_604_OliveGreen_SandStripes	NA	8	UK	BritishForces	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_AR15_604_OliveGreen_Solid.et	Rifle_AR15_604_OliveGreen_Solid	NA	8	UK	BritishForces	
+Prefabs/Weapons/Rifles/M16/Rifle_AR15_715.et	Rifle_AR15_715	NA	8	UK	BritishForces	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_AR15_715_OliveGreen_SandStripes.et	Rifle_AR15_715_OliveGreen_SandStripes	NA	8	UK	BritishForces	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_AR15_715_OliveGreen_Solid.et	Rifle_AR15_715_OliveGreen_Solid	NA	8	UK	BritishForces	
+Prefabs/Weapons/Rifles/M16/Rifle_AR15_M203_715.et	Rifle_AR15_M203_715	NA	38	UK	BritishForces	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_AR15_M203_715_OliveGreen_SandStripes.et	Rifle_AR15_M203_715_OliveGreen_SandStripes	NA	38	UK	BritishForces	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_AR15_M203_715_OliveGreen_Solid.et	Rifle_AR15_M203_715_OliveGreen_Solid	NA	38	UK	BritishForces	
+Prefabs/Weapons/Rifles/M16/Rifle_CAR15_653.et	Rifle_CAR15_653	NA	12	UK	BritishForces	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_CAR15_653_OliveGreen_SandStripes.et	Rifle_CAR15_653_OliveGreen_SandStripes	NA	12	UK	BritishForces	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_CAR15_653_OliveGreen_Solid.et	Rifle_CAR15_653_OliveGreen_Solid	NA	12	UK	BritishForces	
+Prefabs/Weapons/Rifles/M16/Rifle_CAR15_733.et	Rifle_CAR15_733	NA	12	UK	BritishForces	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_CAR15_733_OliveGreen_SandStripes.et	Rifle_CAR15_733_OliveGreen_SandStripes	NA	12	UK	BritishForces	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_CAR15_733_OliveGreen_Solid.et	Rifle_CAR15_733_OliveGreen_Solid	NA	12	UK	BritishForces	
+Prefabs/Weapons/Rifles/L1A1_SLR/Rifle_L1A1_SLR_Laminate.et	Rifle_L1A1_SLR_Laminate	NA	9	UK	BritishForces	
+Prefabs/Weapons/Rifles/L1A1_SLR/Rifle_L1A1_SLR_Mixed.et	Rifle_L1A1_SLR_Mixed	NA	9	UK	BritishForces	
+Prefabs/Weapons/Rifles/L1A1_SLR/Rifle_L1A1_SLR_Plastic_SUIT.et	Rifle_L1A1_SLR_Plastic_SUIT	NA	9	UK	BritishForces	
+Prefabs/Weapons/Rifles/L2A3/Rifle_L2A3_Sterling.et	Rifle_L2A3_Sterling	NA	5	UK	BritishForces	
+Prefabs/Weapons/Rifles/L2A3/Rifle_L34A1_Sterling.et	Rifle_L34A1_Sterling	NA	20	UK	BritishForces	
+Prefabs/Weapons/Rifles/M16/Rifle_M16A2.et	Rifle_M16A2	NA	8	US	ArmaReforger	
+Prefabs/Weapons/Rifles/M16/Rifle_M16A2_4x20.et	Rifle_M16A2_4x20	NA	NA	US	FreedomFighters	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_4x20_OliveGreen_Sand_Stripes.et	Rifle_M16A2_4x20_OliveGreen_Sand_Stripes	NA	8	US	ArmaReforger	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_4x20_OliveGreen_Solid.et	Rifle_M16A2_4x20_OliveGreen_Solid	NA	NA	US	FreedomFighters	
+Prefabs/Weapons/Rifles/M16/Rifle_M16A2_M203.et	Rifle_M16A2_M203	NA	8	US	ArmaReforger	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_M203_OliveGreen_Sand_Stripes.et	Rifle_M16A2_M203_OliveGreen_Sand_Stripes	NA	8	US	ArmaReforger	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_M203_OliveGreen_Solid.et	Rifle_M16A2_M203_OliveGreen_Solid	NA	8	US	ArmaReforger	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_OliveGreen_Sand_Stripes.et	Rifle_M16A2_OliveGreen_Sand_Stripes	NA	8	US	ArmaReforger	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_OliveGreen_Solid.et	Rifle_M16A2_OliveGreen_Solid	NA	8	US	ArmaReforger	
+Prefabs/Weapons/Rifles/M16/Rifle_M16A2_carbine.et	Rifle_M16A2_carbine	NA	12	US	ArmaReforger	
+Prefabs/Weapons/Rifles/M16/Rifle_M16A2_carbine_4x20.et	Rifle_M16A2_carbine_4x20	NA	NA	US	FreedomFighters	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_carbine_4x20_OliveGreen_Solid.et	Rifle_M16A2_carbine_4x20_OliveGreen_Solid	NA	NA	US	FreedomFighters	
+Prefabs/Weapons/Rifles/M16/Rifle_M16A2_carbine_AP2k.et	Rifle_M16A2_carbine_AP2k	NA	NA	US	FreedomFighters	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_carbine_AP2k_OliveGreen_Sand_Stripes.et	Rifle_M16A2_carbine_AP2k_OliveGreen_Sand_Stripes	NA	12	US	ArmaReforger ; FreedomFighters	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_carbine_AP2k_OliveGreen_Solid.et	Rifle_M16A2_carbine_AP2k_OliveGreen_Solid	NA	NA	US	FreedomFighters	
+Prefabs/Weapons/Rifles/M16/Rifle_M16A2_carbine_M203.et	Rifle_M16A2_carbine_M203	NA	12	US	ArmaReforger ; FreedomFighters	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_carbine_M203_OliveGreen_Sand_Stripes.et	Rifle_M16A2_carbine_M203_OliveGreen_Sand_Stripes	NA	12	US	ArmaReforger + FreedomFighters	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_carbine_M203_OliveGreen_Solid.et	Rifle_M16A2_carbine_M203_OliveGreen_Solid	NA	12	US	ArmaReforger	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_carbine_OliveGreen_Sand_Stripes.et	Rifle_M16A2_carbine_OliveGreen_Sand_Stripes	NA	12	US	ArmaReforger	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_carbine_OliveGreen_Solid.et	Rifle_M16A2_carbine_OliveGreen_Solid	NA	12	US	ArmaReforger ; FreedomFighters	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_carbine_suppressor_AP2K_OliveGreen_Sand_Stripes.et	Rifle_M16A2_carbine_suppressor_AP2K_OliveGreen_Sand_Stripes	NA	12	US	ArmaReforger ; FreedomFighters	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_carbine_suppressor_M203_OliveGreen_Sand_Stripes.et	Rifle_M16A2_carbine_suppressor_M203_OliveGreen_Sand_Stripes	NA	NA	US	FreedomFighters	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_carbine_suppressor_OliveGreen_Sand_Stripes.et	Rifle_M16A2_carbine_suppressor_OliveGreen_Sand_Stripes	NA	12	US	ArmaReforger ; FreedomFighters	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_suppressor_4x20_OliveGreen_Sand_Stripes.et	Rifle_M16A2_suppressor_4x20_OliveGreen_Sand_Stripes	NA	8	US	ArmaReforger ; FreedomFighters	
+Prefabs/Weapons/Rifles/M16/Variants/Rifle_M16A2_suppressor_M203_OliveGreen_Sand_Stripes.et	Rifle_M16A2_suppressor_M203_OliveGreen_Sand_Stripes	NA	8	US	ArmaReforger ; FreedomFighters	
+Prefabs/Weapons/Rifles/MP5/Rifle_MP5A2.et	Rifle_MP5A2	NA	30	US	MP5StickMag	
+Prefabs/Weapons/Rifles/MP5/Rifle_MP5SD1.et	Rifle_MP5SD1	NA	40	UK	BritishForces	
+Prefabs/Weapons/Rifles/MP5/Rifle_MP5SDA2.et	Rifle_MP5SDA2	NA	45	US	MP5StickMag	
+Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_long.et	UGL_M203_long	NA	30	US	ArmaReforger	
+Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_long_OliveGreen_Sand_Stripes.et	UGL_M203_long_OliveGreen_Sand_Stripes	NA	30	US	ArmaReforger	
+Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_long_OliveGreen_Solid.et	UGL_M203_long_OliveGreen_Solid	NA	30	US	ArmaReforger	
+Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_short.et	UGL_M203_short	NA	30	US	ArmaReforger	
+Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_short_OliveGreen_Sand_Stripes.et	UGL_M203_short_OliveGreen_Sand_Stripes	NA	30	US	ArmaReforger	
+Prefabs/Weapons/Attachments/Underbarrel/UGL_M203_short_OliveGreen_Solid.et	UGL_M203_short_OliveGreen_Solid	NA	30	US	ArmaReforger	
+Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_20rnd_2+2.et	NA	NA	1	UK	BritishForces	
+Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_RadwayGreen_2+2.et	NA	NA	2	UK	BritishForces	
+Prefabs/Weapons/Rifles/FAMAS F1/FAMAS F1 DESERT.et	NA	NA	12	US	FAMAS	
+Prefabs/Weapons/Rifles/FAMAS F1/FAMAS F1 WOOD.et	NA	NA	12	US	FAMAS	
+Prefabs/Weapons/Rifles/FAMAS F1/FAMAS F1 INF PGMP RIS.et	NA	NA	12	US	FAMAS	
+Prefabs/Weapons/Rifles/FAMAS F1/FAMAS F1 INF PGMP RIS DESERT.et	NA	NA	12	US	FAMAS	
+Prefabs/Weapons/Rifles/FAMAS F1/FAMAS F1 INF PGMP RIS WOOD.et	NA	NA	12	US	FAMAS	
+Prefabs/Weapons/Rifles/FAMAS VALORISE/FAMAS VALORISE.et	NA	NA	12	US	FAMAS	
+Prefabs/Weapons/Rifles/FAMAS VALORISE/FAMAS VALORISE DESERT.et	NA	NA	12	US	FAMAS	
+Prefabs/Weapons/Rifles/FAMAS VALORISE/FAMAS VALORISE WOOD.et	NA	NA	12	US	FAMAS	

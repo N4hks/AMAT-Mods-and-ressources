@@ -1,5 +1,12 @@
 # /!\ Copy/paste the loot table from Dynamic Loot ran with all mods including Dynamic Loot Reblance ? /!\
-file.path(Paths$Inputs$path,
+items %>%
+  dplyr::select(Item_prefab,
+                m_eItemType) %>%
+  distinct() %>%
+  dplyr::filter(! is.na(m_eItemType)) %>%
+  group_by(Item_prefab) %>%
+  mutate(m_eItemType = unique(m_eItemType)) %>%
+  right_join(y = file.path(Paths$Inputs$path,
           "DL_LootSystem") %>%
   list.files(full.names = TRUE) %>%
   file.info() %>%
@@ -38,7 +45,7 @@ file.path(Paths$Inputs$path,
                                 pattern = "^\\{?[0-9A-Fa-f]+\\}?Prefabs(?:/(?:LCJ|Modded))?/") %>%
            str_extract(pattern = "^[^/]+/[^/]+"),
          Prefab_file = basename(Prefab_path),
-         Prefab_name = str_remove(string = Prefab_file,
+         Item_prefab = str_remove(string = Prefab_file,
                                   pattern = "(_CIV)?\\.et$"),
          Loot_categories = Loot_categories %>%
            str_remove_all("[\\{\\}\\[\\]\\(\\)]") %>%
@@ -110,7 +117,7 @@ file.path(Paths$Inputs$path,
                     Entry_kind,)) %>%
   dplyr::relocate(c(Item_type,
                     Item_subtype,
-                    Prefab_name,
+                    Item_prefab,
                     CIV_duplicate,
                     Weight,
                     Loot_categories),
@@ -120,9 +127,9 @@ file.path(Paths$Inputs$path,
                   Prefab_file,
                   Prefab_path,
                   .after = everything()) %>%
-  group_by(Prefab_name) %>%
-  summarise(across(.cols = c(Item_type,
-                             Item_subtype,
+  group_by(Item_prefab) %>%
+  summarise(across(.cols = c(# Item_type,
+                             # Item_subtype,
                              Weight,
                              Faction_key,
                              Loot_categories),
@@ -134,27 +141,28 @@ file.path(Paths$Inputs$path,
                              URBAN,
                              RURAL,
                              MEDICAL,
-                             COMMERCIAL,
                              INDUSTRIAL,
                              POLICE,
+                             COMMERCIAL,
                              MILITARY),
-                   .fns = any)) %>%
-  arrange(MILITARY,
-          INDUSTRIAL,
-          POLICE,
-          COMMERCIAL,
-          MEDICAL,
-          RURAL,
-          URBAN,
-          Item_type,
-          Item_subtype,
-          Prefab_name)->
+                   .fns = any))) %>%
+  arrange(desc(RURAL),
+          desc(URBAN),
+          desc(MEDICAL),
+          desc(INDUSTRIAL),
+          desc(POLICE),
+          desc(COMMERCIAL),
+          desc(MILITARY),
+          m_eItemType,
+          # Item_type,
+          # Item_subtype,
+          Item_prefab)->
   Data[["DL_LootSytem"]][["Loot tables"]][["lastest"]][["full"]]
 
-Data[["DL_LootSytem"]][["Loot tables"]][["lastest"]][["full"]]
+View(Data[["DL_LootSytem"]][["Loot tables"]][["lastest"]][["full"]])
 
 Data[["DL_LootSytem"]][["Loot tables"]][["lastest"]][["full"]] %>%
   write_tsv(file = file.path(Paths$Outputs$path,
-                             "DL_LootSytem_Loot_table-lastest.tsv"))
+                             "DL_LootSytem_Loot_table-latest.tsv"))
 
 
