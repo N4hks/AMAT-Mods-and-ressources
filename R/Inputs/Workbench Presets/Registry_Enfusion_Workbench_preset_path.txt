@@ -1,0 +1,1 @@
+Ordinateur\HKEY_CURRENT_USER\Software\Bohemia Interactive\Arma Reforger Workbench\Game Project Manager\AddonPresets
