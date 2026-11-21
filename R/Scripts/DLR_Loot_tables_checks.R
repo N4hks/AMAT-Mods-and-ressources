@@ -5,9 +5,10 @@ items %>%
   distinct() %>%
   dplyr::filter(! is.na(m_eItemType)) %>%
   group_by(Item_prefab) %>%
-  mutate(m_eItemType = unique(m_eItemType)) %>%
+  summarise(m_eItemType = paste(unique(m_eItemType),
+                                collapse = " ; ")) %>%
   right_join(y = file.path(Paths$Inputs$path,
-          "DL_LootSystem") %>%
+          "Loot tables") %>%
   list.files(full.names = TRUE) %>%
   file.info() %>%
   rownames_to_column(var = "filepath") %>%

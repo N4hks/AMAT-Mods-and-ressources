@@ -22,7 +22,7 @@ source(file.path("R", "Scripts", "DLR_item_rules.R"))
 CORE_GROUPS            <- c("CIV", "FIA", "USSR")  # catalogs that get a CIV_DL override
 VANILLA_MOD            <- "ArmaReforger"           # folder under .../Copy/ with the base game catalogs
 INCLUDE_OTHER_FACTIONS <- TRUE                     # TRUE: also parse US/UK/... (needed for the candidate list)
-                                                   # FALSE: former behaviour (paths with US/UK skipped)
+# FALSE: former behaviour (paths with US/UK skipped)
 DEPLOY                 <- FALSE                    # TRUE: copy the result into the Workbench addon at the end
 EXCLUDE_CONTEXT_PATTERNS <- character()            # regexes on the context (former "Problematic ..." list)
 
@@ -38,6 +38,11 @@ MOD_FILES_DIR   <- file.path(Paths$Inputs$path, "DL_Mod_files")   # faction file
 OUT_DIR         <- file.path(Paths$Outputs$path, "DynamicLootReblance")
 CATALOG_OUT_DIR <- file.path(OUT_DIR, "Configs", "EntityCatalog", "CIV_DL")
 REGISTRY_PATH   <- file.path(DL_INPUT_DIR, "DL_GUID_registry.csv")
+
+# Items to be found in URBAN/RURAL areas (see section 4b)
+URBAN_RURAL_PATTERNS_FILE <- file.path(DL_INPUT_DIR, "Should_be_urban_rural_patterns.txt")
+URBAN_RURAL_ITEM_TYPE     <- "TORSO"   # must be in commonItemTypes of DL_LootSystem.conf, and no natural
+# item type of the other (POLICE/MEDICAL/...) items may be there
 
 ITEM_PATTERN         <- '[A-Za-z0-9_]+Item "\\{([A-Z0-9]+)\\}"'
 ITEM_CONTEXT_PATTERN <- '^.*?[A-Za-z0-9_]+Item "\\{[A-Z0-9]+\\}"'
@@ -306,6 +311,50 @@ clones <- clones %>%
 items <- items %>% left_join(clones %>% dplyr::select(prefab, prefab_civ), by = "prefab")
 
 
+# -- 4b. Item type: put the whitelisted items in URBAN/RURAL -- ####
+# Dynamic Loot tags an entry from its m_eItemType (and its faction) ONLY, never from the prefab.
+#  - items matching Should_be_urban_rural_patterns.txt get URBAN_RURAL_ITEM_TYPE, a type listed in
+#    commonItemTypes => tags URBAN + RURAL (+ whatever other list that type is in)
+#  - every other item keeps its own type: the police / medical / industrial / commercial lists of
+#    DL_LootSystem.conf decide its tags (so its type must NOT be in commonItemTypes)
+# Patterns are matched against the prefab as it appears in the CIV_DL catalog, i.e. the
+# "{GUID}..._CIV.et" clone when there is one, the original prefab otherwise.
+# One regex per line; empty lines and lines starting with # are ignored.
+# Done AFTER the rules of section 3, which rely on the natural item type.
+urban_rural_patterns <- if (file.exists(URBAN_RURAL_PATTERNS_FILE)) {
+  read_lines(URBAN_RURAL_PATTERNS_FILE) %>%
+    str_trim() %>%
+    str_subset("\\S") %>%
+    str_subset("^#", negate = TRUE) %>%
+    unique()
+} else {
+  warning("Missing ", URBAN_RURAL_PATTERNS_FILE, ": no item is moved to ", URBAN_RURAL_ITEM_TYPE, ".")
+  character()
+}
+
+items <- items %>%
+  mutate(prefab_final    = coalesce(prefab_civ, prefab),
+         enabled_final   = coalesce(m_bEnabled_new, m_bEnabled, "1") != "0",
+         in_urban_rural  = in_core & enabled_final & !is.na(prefab_final) &
+           (if (length(urban_rural_patterns) > 0) {
+             coalesce(str_detect(prefab_final, paste(urban_rural_patterns, collapse = "|")), FALSE)
+           } else FALSE),
+         m_eItemType_new = if_else(in_urban_rural & (is.na(m_eItemType) | m_eItemType != URBAN_RURAL_ITEM_TYPE),
+                                   URBAN_RURAL_ITEM_TYPE, NA_character_))
+
+unused_patterns <- urban_rural_patterns[!map_lgl(urban_rural_patterns, \(p) {
+  any(str_detect(items$prefab_final[items$in_core & items$enabled_final], p), na.rm = TRUE)
+})]
+if (length(unused_patterns) > 0) {
+  warning("URBAN/RURAL patterns matching no enabled item: ", paste(unused_patterns, collapse = " ; "))
+}
+
+message("URBAN/RURAL whitelist: ", sum(items$in_urban_rural), " entries -> ", URBAN_RURAL_ITEM_TYPE,
+        " (", sum(!is.na(items$m_eItemType_new)), " type changes)")
+message("Enabled entries keeping their own type (tags come from the police/medical/industrial/commercial lists):")
+print(items %>% dplyr::filter(in_core, enabled_final, !in_urban_rural) %>% count(m_eItemType, sort = TRUE))
+
+
 # -- 5. Outputs -- ####
 ## 5.1 _CIV prefabs (.et + .et.meta) ####
 prefab_dir <- file.path(OUT_DIR, "Prefabs")
@@ -338,6 +387,12 @@ clones %>%
   })
 
 ## 5.2 Catalog overrides: what changed, derived straight from `items` ####
+no_type_context <- items %>% dplyr::filter(in_core, !is.na(m_eItemType_new), is.na(ctx_arsenal))
+if (nrow(no_type_context) > 0) {
+  warning(nrow(no_type_context), " item(s) have no SCR_ArsenalItem block: m_eItemType cannot be written for ",
+          paste(head(no_type_context$Item_prefab, 10), collapse = ", "), " ...")
+}
+
 changes <- bind_rows(
   items %>% dplyr::filter(in_core, !is.na(prefab), !is.na(parent_GUID)) %>%
     transmute(catalog_group, Item_GUID, entry_order, item_order,
@@ -350,7 +405,11 @@ changes <- bind_rows(
   items %>% dplyr::filter(in_core, !is.na(prefab), !is.na(parent_GUID)) %>%
     transmute(catalog_group, Item_GUID, entry_order, item_order,
               context = ctx_item, property = "m_bEnabled",
-              old = m_bEnabled, new = m_bEnabled_new, ctx_fallback = FALSE)) %>%
+              old = m_bEnabled, new = m_bEnabled_new, ctx_fallback = FALSE),
+  items %>% dplyr::filter(in_core, !is.na(prefab), !is.na(parent_GUID), !is.na(ctx_arsenal)) %>%
+    transmute(catalog_group, Item_GUID, entry_order, item_order,
+              context = ctx_arsenal, property = "m_eItemType",
+              old = m_eItemType, new = m_eItemType_new, ctx_fallback = FALSE)) %>%
   dplyr::filter(!is.na(new), new != "NA", is.na(old) | old != new) %>%
   arrange(catalog_group, entry_order, item_order)
 
