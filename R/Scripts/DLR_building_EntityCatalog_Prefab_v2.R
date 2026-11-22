@@ -8,9 +8,9 @@
 #   2. ONE data frame, one row per (catalog, item)        -> items   <== base of everything
 #   3. Apply the CIV_DL rules (DLR_item_rules.R)          -> items$m_*_new
 #   4. Clone prefabs as "_CIV" with PERSISTENT GUIDs      -> items$prefab_civ
-#   5. Write catalogs, prefab clones, faction files       -> Outputs
+#   5. Write catalogs + prefab clones; copy the files you edit in the Workbench -> Outputs
 #   6. List items that are NOT in CIV/FIA/USSR            -> DL_extra_candidates.tsv
-#   7. (optional) deploy to the Workbench addon
+#   7. (optional) deploy the WHOLE mod, Outputs -> Workbench addon
 #
 # Requires 0-Env_prep.R (parse_enfusion_conf, add_to_tree, write_tree,
 # generate_enfusion_guid, Paths) and DLR_item_rules.R.
@@ -34,10 +34,16 @@ VANILLA_INHERITS <- c(
 ADDON_DIR       <- file.path("C:", "Users", Sys.info()[["user"]], "Documents", "My Games",
                              "ArmaReforgerWorkbench", "addons", "Dynamic Loot Rebalance")
 DL_INPUT_DIR    <- file.path(Paths$Inputs$path, "DL_LootSystem")
-MOD_FILES_DIR   <- file.path(Paths$Inputs$path, "DL_Mod_files")   # faction files, same layout as the addon
 OUT_DIR         <- file.path(Paths$Outputs$path, "DynamicLootReblance")
 CATALOG_OUT_DIR <- file.path(OUT_DIR, "Configs", "EntityCatalog", "CIV_DL")
 REGISTRY_PATH   <- file.path(DL_INPUT_DIR, "DL_GUID_registry.csv")
+
+# Files you edit in the Enfusion Workbench. The Workbench stays their single source of truth: they are
+# copied FROM the addon INTO the Outputs at every run (their .meta too), so that the whole mod can then
+# be deployed from the Outputs. Paths are relative to the addon folder.
+WORKBENCH_FILES <- c("Configs/Systems/DL_LootSystem.conf",
+                     "Configs/Factions/CIV_DL.conf",
+                     "Prefabs/MP/Managers/Factions/FactionManager_Base.et")
 
 # Items to be found in URBAN/RURAL areas (see section 4b)
 URBAN_RURAL_PATTERNS_FILE <- file.path(DL_INPUT_DIR, "Should_be_urban_rural_patterns.txt")
@@ -51,14 +57,22 @@ PARENT_PATTERN       <- '(?<=SCR_EntityCatalogMultiListEntry "\\{)[A-Z0-9]+(?=\\
 # -- Helpers -- ####
 first_non_na <- function(x) x[!is.na(x)][1]
 
-copy_tree <- function(from, to) {
-  rel <- list.files(from, recursive = TRUE)
-  walk(rel, \(r) {
-    dir.create(dirname(file.path(to, r)), recursive = TRUE, showWarnings = FALSE)
-    file.copy(file.path(from, r), file.path(to, r), overwrite = TRUE)
-  })
-  invisible(length(rel))
+# Copies the files `rel` (paths relative to `from`) into `to`, only when they differ
+# (so the Workbench / Git are not bothered by untouched files). Returns the number of files written.
+copy_files <- function(rel, from, to) {
+  src  <- file.path(from, rel)
+  dst  <- file.path(to, rel)
+  md5  <- \(f) unname(tools::md5sum(f))
+  same <- file.exists(dst) & md5(src) == md5(dst)
+  same[is.na(same)] <- FALSE
+  for (i in which(!same)) {
+    dir.create(dirname(dst[i]), recursive = TRUE, showWarnings = FALSE)
+    file.copy(src[i], dst[i], overwrite = TRUE)
+  }
+  invisible(sum(!same))
 }
+
+copy_tree <- function(from, to) copy_files(list.files(from, recursive = TRUE), from, to)
 
 ## GUID registry: kind / key / guid / id2 -- persisted in REGISTRY_PATH ####
 #  kind "clone"   : key = original prefab path, guid = GUID of the _CIV prefab, id2 = inner entity ID
@@ -279,9 +293,21 @@ civilian_patterns <- read_lines(file.path(DL_INPUT_DIR, "Should_be_civilian_patt
   str_subset("\\S") %>%
   unique()
 
+# A clone only matters when another faction can carry the same prefab: Dynamic Loot keeps the FIRST
+# faction that has a given ResourceName. Prefabs found only in CIV catalogs (the CIV and CIV_USSR
+# factions are blacklisted) have nothing to collide with, so they keep their original prefab.
+carried_elsewhere <- items %>%
+  dplyr::filter(catalog_group != "CIV", !is.na(prefab_path)) %>%
+  distinct(prefab_path)
+
+matches_civilian <- items$in_core & !is.na(items$prefab) &
+  str_detect(items$prefab, paste(civilian_patterns, collapse = "|"))
+
 items <- items %>%
-  mutate(needs_clone = in_core & !is.na(prefab) &
-           str_detect(prefab, paste(civilian_patterns, collapse = "|")))
+  mutate(needs_clone = matches_civilian & prefab_path %in% carried_elsewhere$prefab_path)
+
+message("Clones: ", n_distinct(items$prefab_path[items$needs_clone]), " prefabs; skipped because only in CIV catalogs: ",
+        n_distinct(items$prefab_path[matches_civilian & !items$needs_clone]))
 
 registry <- if (file.exists(REGISTRY_PATH)) {
   read_csv(REGISTRY_PATH, col_types = cols(.default = col_character()))
@@ -426,32 +452,33 @@ for (grp in CORE_GROUPS) {
   write_conf_meta(grp, registry$guid[registry$kind == "catalog" & registry$key == grp], CATALOG_OUT_DIR)
 }
 
-# ## 5.3 Faction files (FactionManager, CIV_DL.conf + metas) ####
-# # Put the files you use in the mod in MOD_FILES_DIR (same sub-folders as in the addon):
-# #   Prefabs/MP/Managers/Factions/FactionManager_Base.et (+ .meta)
-# #   Configs/Factions/CIV_DL.conf (+ .meta)
-# if (dir.exists(MOD_FILES_DIR)) {
-#   copy_tree(MOD_FILES_DIR, OUT_DIR)
-#   
-#   faction_conf <- file.path(OUT_DIR, "Configs", "Factions", "CIV_DL.conf")
-#   if (file.exists(faction_conf)) {
-#     # Only m_aEntityCatalogs is regenerated (from the registry); the rest of the file is kept as is
-#     catalog_entries <- registry %>%
-#       dplyr::filter(kind == "catalog", key %in% CORE_GROUPS) %>%
-#       arrange(match(key, CORE_GROUPS)) %>%
-#       mutate(txt = sprintf(paste0('  SCR_EntityCatalogMultiList "{%s}" : "{%s}Configs/EntityCatalog/CIV_DL/',
-#                                   'InventoryItems_EntityCatalog_%s_for_CIV_DL.conf" {\n  }\n'),
-#                            id2, guid, key)) %>%
-#       pull(txt)
-#     faction_parts <- str_split_fixed(paste(read_lines(faction_conf), collapse = "\n"),
-#                                      "\\n[ \\t]*m_aEntityCatalogs[ \\t]*\\{", 2)
-#     write_file(paste0(faction_parts[1, 1], "\n m_aEntityCatalogs {\n",
-#                       paste(catalog_entries, collapse = ""), " }\n}\n"),
-#                faction_conf)
-#   }
-# } else {
-#   warning("MOD_FILES_DIR not found (", MOD_FILES_DIR, "): faction files not exported.")
-# }
+## 5.3 Files edited in the Workbench: addon -> Outputs ####
+# DL_LootSystem.conf, CIV_DL.conf and FactionManager_Base.et are NOT generated here: they are copied
+# as they currently are in the addon, so the Outputs always hold the complete mod (section 8 deploys it).
+workbench_files <- c(WORKBENCH_FILES, paste0(WORKBENCH_FILES, ".meta"))
+workbench_found <- file.exists(file.path(ADDON_DIR, workbench_files))
+if (!all(workbench_found)) {
+  warning("Not found in the Workbench addon (not copied): ",
+          paste(workbench_files[!workbench_found], collapse = ", "))
+}
+n_wb <- copy_files(workbench_files[workbench_found], from = ADDON_DIR, to = OUT_DIR)
+message("Workbench files copied to the Outputs: ", n_wb, " updated, ",
+        sum(workbench_found) - n_wb, " unchanged")
+
+# The faction must reference the catalogs written above (GUIDs come from the registry)
+faction_conf <- file.path(OUT_DIR, "Configs", "Factions", "CIV_DL.conf")
+if (file.exists(faction_conf)) {
+  faction_txt  <- paste(read_lines(faction_conf), collapse = "\n")
+  catalog_refs <- registry %>%
+    dplyr::filter(kind == "catalog", key %in% CORE_GROUPS) %>%
+    mutate(ref = paste0("{", guid, "}Configs/EntityCatalog/CIV_DL/InventoryItems_EntityCatalog_",
+                        key, "_for_CIV_DL.conf"))
+  unreferenced <- catalog_refs$key[!str_detect(faction_txt, fixed(catalog_refs$ref))]
+  if (length(unreferenced) > 0) {
+    warning("CIV_DL.conf does not reference the generated catalog(s): ", paste(unreferenced, collapse = ", "),
+            " -> check m_aEntityCatalogs in the Workbench.")
+  }
+}
 
 
 # -- 6. Candidates for the future "extra" catalog -- ####
@@ -480,12 +507,16 @@ Data[["InventoryItems_EntityCatalog"]] <- list(items = items, changes = changes,
                                                clones = clones, candidates = candidates)
 
 
-# -- 8. Deploy to the Workbench addon (DEPLOY <- TRUE) -- ####
+# -- 8. Deploy the WHOLE mod: Outputs -> Workbench addon (DEPLOY <- TRUE) -- ####
+# Everything under OUT_DIR (catalogs, _CIV prefabs, and the files copied from the Workbench in 5.3).
+# Only files that differ are written; _CIV prefabs that are no longer generated are removed.
 if (DEPLOY) {
-  list.files(file.path(ADDON_DIR, "Prefabs"),
-             pattern = "_CIV\\.et(\\.meta)?$", recursive = TRUE, full.names = TRUE) %>%
-    file.remove()
-  walk(c("Prefabs", "Configs"),
-       \(d) copy_tree(file.path(OUT_DIR, d), file.path(ADDON_DIR, d)))
-  message("Deployed to ", ADDON_DIR)
+  clone_pattern <- "_CIV\\.et(\\.meta)?$"
+  out_clones    <- list.files(file.path(OUT_DIR,   "Prefabs"), pattern = clone_pattern, recursive = TRUE)
+  addon_clones  <- list.files(file.path(ADDON_DIR, "Prefabs"), pattern = clone_pattern, recursive = TRUE)
+  stale         <- setdiff(addon_clones, out_clones)
+  file.remove(file.path(ADDON_DIR, "Prefabs", stale))
+  
+  n_written <- copy_tree(OUT_DIR, ADDON_DIR)
+  message("Deployed to ", ADDON_DIR, ": ", n_written, " file(s) written, ", length(stale), " stale _CIV file(s) removed.")
 }
