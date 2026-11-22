@@ -1,3 +1,2 @@
 ARY_Helmet_Skate_01
-BC_Shotgun_M37
 BC_PPSh41_Stick

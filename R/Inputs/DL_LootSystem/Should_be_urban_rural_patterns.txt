@@ -6,7 +6,7 @@ Compass_Adrianov
 Flashlight_Soviet
 MedicalKit_[0-9]{2}_FIA
 RepairKit_01_wrench
-PaperMap_01_folded
+PaperMap_01_folded(?!=_)
 Portable_Radio
 Radio_R148_FIA
 Watch_Orlik
@@ -14,7 +14,6 @@ Watch_Vostok
 Jerrycan_
 FieldDressing_USSR
 EpinephrineInjection
-MorphineInjection
 Vodka
 MPL50
 Rifle_AKS74U_Bandit
@@ -45,7 +44,7 @@ Backpack_GunBag_Black_LCJ
 RearmingKit_01_FIA
 ZipTieItem
 Baseball_Cap
-Hat_
+Hat_(?!=Hard)
 Waist_Pack
 Balaclava_
 Cigarette

@@ -168,7 +168,7 @@ apply_civ_dl_rules <- function(item_property_df) {
                                                                         ")")) ~ 
                                             "1",
                                           str_detect(string = file_name,
-                                                     pattern = "US(SR)?") & 
+                                                     pattern = "US(?!=SR)") & 
                                             str_detect(string = Item_prefab,
                                                        pattern = "Radio") ~ 
                                             "0",

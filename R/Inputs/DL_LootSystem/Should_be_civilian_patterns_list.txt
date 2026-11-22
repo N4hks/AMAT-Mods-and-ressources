@@ -40,7 +40,7 @@ Vodka
 Barbed(_)?Tape
 Part_Sandbag
 MPL50
-Rifle_AKS74U_Bandit
+AKS74U_Bandit
 E_PortableRadio
 Flare_RSP30
 ShotgunShells
@@ -55,7 +55,6 @@ _9x18_[A-Za-z0-9]+_[0-9]+rnd
 HarrySingleShot
 Double_Barrel
 Over_Under
-M37
 BC_Optic_PU
 Grenade_Molotov
 hiking

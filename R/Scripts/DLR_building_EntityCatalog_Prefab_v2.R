@@ -23,7 +23,7 @@ CORE_GROUPS            <- c("CIV", "FIA", "USSR")  # catalogs that get a CIV_DL 
 VANILLA_MOD            <- "ArmaReforger"           # folder under .../Copy/ with the base game catalogs
 INCLUDE_OTHER_FACTIONS <- TRUE                     # TRUE: also parse US/UK/... (needed for the candidate list)
 # FALSE: former behaviour (paths with US/UK skipped)
-DEPLOY                 <- FALSE                    # TRUE: copy the result into the Workbench addon at the end
+DEPLOY                 <- TRUE                    # TRUE: copy the result into the Workbench addon at the end
 EXCLUDE_CONTEXT_PATTERNS <- character()            # regexes on the context (former "Problematic ..." list)
 
 VANILLA_INHERITS <- c(
@@ -47,7 +47,7 @@ WORKBENCH_FILES <- c("Configs/Systems/DL_LootSystem.conf",
 
 # Items to be found in URBAN/RURAL areas (see section 4b)
 URBAN_RURAL_PATTERNS_FILE <- file.path(DL_INPUT_DIR, "Should_be_urban_rural_patterns.txt")
-URBAN_RURAL_ITEM_TYPE     <- "TORSO"   # must be in commonItemTypes of DL_LootSystem.conf, and no natural
+URBAN_RURAL_ITEM_TYPE     <- "MORTARS"   # must be in commonItemTypes of DL_LootSystem.conf, and no natural
 # item type of the other (POLICE/MEDICAL/...) items may be there
 
 ITEM_PATTERN         <- '[A-Za-z0-9_]+Item "\\{([A-Z0-9]+)\\}"'
@@ -347,6 +347,13 @@ items <- items %>% left_join(clones %>% dplyr::select(prefab, prefab_civ), by = 
 # "{GUID}..._CIV.et" clone when there is one, the original prefab otherwise.
 # One regex per line; empty lines and lines starting with # are ignored.
 # Done AFTER the rules of section 3, which rely on the natural item type.
+# MORTARS, HELICOPTER and VEHICLE are hard-coded in DL_LootSystem.c (itemBlacklist, not configurable):
+# such entries get weight 0 and are rejected in DL_LootSpawn.SpawnItem, i.e. they NEVER spawn.
+stopifnot("URBAN_RURAL_ITEM_TYPE is blacklisted by Dynamic Loot (HELICOPTER/VEHICLE): its items would never spawn" =
+            !URBAN_RURAL_ITEM_TYPE %in% c("HELICOPTER",
+                                          # "MORTARS",
+                                          "VEHICLE"))
+
 urban_rural_patterns <- if (file.exists(URBAN_RURAL_PATTERNS_FILE)) {
   read_lines(URBAN_RURAL_PATTERNS_FILE) %>%
     str_trim() %>%
@@ -377,8 +384,21 @@ if (length(unused_patterns) > 0) {
 
 message("URBAN/RURAL whitelist: ", sum(items$in_urban_rural), " entries -> ", URBAN_RURAL_ITEM_TYPE,
         " (", sum(!is.na(items$m_eItemType_new)), " type changes)")
-message("Enabled entries keeping their own type (tags come from the police/medical/industrial/commercial lists):")
-print(items %>% dplyr::filter(in_core, enabled_final, !in_urban_rural) %>% count(m_eItemType, sort = TRUE))
+# The slot type must not be a type that other (non whitelisted) items naturally have: those would be
+# URBAN/RURAL too, and could never be POLICE-only.
+natural_slot_users <- items %>%
+  dplyr::filter(in_core, enabled_final, !in_urban_rural, m_eItemType == URBAN_RURAL_ITEM_TYPE)
+if (nrow(natural_slot_users) > 0) {
+  warning(nrow(natural_slot_users), " enabled item(s) naturally have the type ", URBAN_RURAL_ITEM_TYPE,
+          " (your URBAN/RURAL slot) without being in the URBAN/RURAL patterns: they will be URBAN/RURAL too, e.g. ",
+          paste(head(natural_slot_users$Item_prefab, 8), collapse = ", "),
+          ". Add them to the patterns, or choose a slot type that no item uses.")
+}
+
+message("Natural item types of the enabled CIV/FIA/USSR entries (in_urban_rural = TRUE: moved to ",
+        URBAN_RURAL_ITEM_TYPE, "). Their tags come from the police/medical/industrial/commercial lists; ",
+        "a type that is in none of them falls back to URBAN+RURAL.")
+print(items %>% dplyr::filter(in_core, enabled_final) %>% count(m_eItemType, in_urban_rural, sort = TRUE), n = Inf)
 
 
 # -- 5. Outputs -- ####

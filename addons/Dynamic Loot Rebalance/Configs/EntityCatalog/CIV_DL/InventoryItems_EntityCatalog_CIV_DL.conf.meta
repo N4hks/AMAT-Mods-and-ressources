@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{004986AEAA551222}Configs/Factions/DL_CIV.conf"
+ Name "{4789C3C5E1361429}Configs/EntityCatalog/CIV_DL/InventoryItems_EntityCatalog_CIV_DL.conf"
  Configurations {
   CONFResourceClass PC {
   }
@@ -12,6 +12,8 @@ MetaFileClass {
   CONFResourceClass PS5 : PC {
   }
   CONFResourceClass HEADLESS : PC {
+  }
+  CONFResourceClass Xbox : PC {
   }
  }
 }
